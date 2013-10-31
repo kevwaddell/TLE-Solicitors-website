@@ -1,0 +1,175 @@
+.sidebar {
+	.pad-top(4);
+	
+	.sidebar-block {
+		.bg-col(@black);
+		.mag-bot(1);
+		.rounded(4px);
+			ul {
+				list-style: none;
+				.pad-left(0);
+				.pad-all(2);
+				.mag-bot(0);
+			}
+			
+			.block-content {
+				.pad-all(2);
+				
+				p {
+				.col(@white);
+				.mag-bot(0);	
+				}
+			}
+			
+			h2 {
+			.bg-col(lighten(@black, 20%));
+			.font-size(1.6);
+			.pad(1; 2; 1; 2);	
+			.col(@white);
+			.caps;
+			.mag-all(0);
+			.border-radius(4px, 0, 0, 4px);
+			}
+			
+			h2.link {
+			.bg-col(transparent);	
+			.pad-all(0);
+				a {
+					.bg-col(lighten(@black, 20%));
+					.block;
+					.col(@white);
+					.pad(1; 2; 1; 2);	
+					.no-text-dec;
+					.border-radius(4px, 0, 0, 4px);
+					outline: 0;
+					
+					&:hover, &:active, &:focus {
+					.bg-col(lighten(@black, 60%));
+					.col(@black);
+					}
+				}
+			}
+			
+			a {
+				.block;
+				.col(@white);
+			}
+			
+			span.post-date {
+				.block;
+				.col(lighten(@black, 60%));
+				.font-size(1.2);
+				.caps;
+				.pad-bot(1);
+				.mag-bot(1);
+				.border-bot(@white; 0.1);
+			}
+			
+			li:last-child{
+				span.post-date {
+				.mag-bot(0);
+				.pad-bot(0);
+				.no-border;
+				}
+			}
+			
+			.tagcloud {
+				.pad-all(2);
+				
+				a {
+				.inline;
+				}
+
+			}
+			
+	}
+	
+	.sidebar-downloads {
+		.mag-bot(1);
+		
+		a {
+		.transition;
+		.no-text-dec;
+		outline: 0;
+		
+			img {
+			.rounded(4px);
+			.opacity(1.0);
+			width: 100% !important;
+			height: auto !important;
+			}
+			
+			&:hover, &:active, &:focus {
+			.opacity(0.7);
+			}
+		}
+	}
+	
+	.sidebar-promotion {
+		.mag-bot(1);
+		
+		a {
+		.transition;
+		.no-text-dec;
+		outline: 0;
+		
+			img {
+			.rounded(4px);
+			.opacity(1.0);
+			width: 100% !important;
+			height: auto !important;
+			}
+			
+			&:hover, &:active, &:focus {
+			.opacity(0.7);
+			}
+		}
+	}
+	
+	.promo-message {
+	.bg-col(@black);
+	.col(@white);
+	.pad-all(2);	
+	.rounded(4px);
+	.mag-bot(1);
+	
+		p {
+		.mag-all(0);
+		.font-size(1.6);	
+		}
+		
+		h3 {
+		.mag-all(0);
+		.font-size(3);			
+		}
+	}
+	
+	.sidebar-map {
+		.mag-bot(1);
+		
+		img {
+		.rounded(4px);
+		.opacity(1.0);
+		width: 100% !important;
+		height: auto !important;
+		}
+	}
+	
+	#dotMailer_news_letter {
+	.pad(1.5; 2; 2; 2);
+		p, label {
+		.col(@white);	
+		}
+		input[type="text"], input[type="string"] {
+		width: 98%;	
+		.mag-bot(.5);
+		 .rounded(4px);
+		 .h(3);
+		 .no-border;
+		 .indent(.5);
+		}
+		
+		
+	}
+
+}

@@ -1,0 +1,59 @@
+//Claim form
+.claim-form {
+.abs;
+.bottom(0);
+.pad-all(2);
+.trans-bg(@black; 0.75);
+.border-radius(10px, 0, 0, 10px);
+.col(@white);
+	h3 {
+	.mag-top(0);	
+		small {
+		.pad-top(1);
+		.fright;	
+		}
+	}	
+	
+	div.submit {
+	.pad-top(2.5);
+	.center;
+	}
+	
+	p {
+	.center;
+	.mag-bot(0);
+	}
+	
+	span.wpcf7-form-control-wrap {
+	.block;
+	.rel;	
+	}
+	
+	.wpcf7-response-output {
+	.mag-all(0);	
+	.pad-all(.5);
+	.font-size(1.2);
+	.center;
+	}
+	.wpcf7-validation-errors {
+		.border-col(red);
+	}
+	
+	span.wpcf7-not-valid-tip {
+		.block;
+		.top(0);
+		.left(0);
+		.right(0);
+		.bottom(0);
+		.pad-top(.8);
+		.pad-left(1);
+		.pad-right(1);
+		.trans-bg(red; 0.75);
+		.col(@white);
+		.rounded(4px);
+		.no-border;
+		.center;
+		width: auto;
+	}
+	
+}//Claim form

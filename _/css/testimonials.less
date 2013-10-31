@@ -1,0 +1,62 @@
+#testimonials {
+	.pad-top(4);
+	.pad-bot(4);
+	.h(18);
+	.rel;
+		span.icon{
+		.abs;
+		.top(-2);
+		.w(3);
+		.h(4);
+		left: 50%;
+		.mag-left(-1.5);
+		.bg-col(@black);
+		.bg(transparent; "testy-icon.png"; no-repeat; center ;center);	
+		}
+		
+		span.bracket {
+		.abs;	
+		.top(0);
+		.bottom(0);
+		.w(1.5);
+		.bg-img("testy-bracket.png");
+		.bg-repeat(no-repeat);
+		.bg-pos-y(center);
+		}
+		
+		span.bracket-left {
+		.left(0);
+		.bg-pos-x(left);
+		}
+		
+		span.bracket-right {
+		.right(0);
+		.bg-pos-x(right);
+		}
+		
+		.quote {
+		.pad-left(1);
+		.pad-right(1);	
+		}
+		
+		
+		blockquote {
+		.center;
+		.pad-all(0);
+		.mag-all(0);
+		.no-border;
+		.h(8);
+		.font-size(2.4);
+		.line-h(2.4);
+		.serif;
+		.italic;
+		}
+		
+		p {
+		.center;
+		.caps;
+		.mag-all(0);
+		.h(2);
+		.col(lighten(@black, 30%));
+		}
+}

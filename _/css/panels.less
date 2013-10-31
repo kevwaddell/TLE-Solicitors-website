@@ -1,0 +1,133 @@
+#panels {
+	.bg-col( lighten(@black, 60%) );
+	.pad-top(3);
+	.pad-bot(4);
+	
+	.panel-outer {
+	.fleft;
+	width: 20%;
+	
+	}
+	
+	a.parent-link { .font-size(1.8); .line-h(2)}
+		
+	li {.font-size(1.2) }
+	
+	@media (min-width: @screen-md) { 
+		
+		a.parent-link { .font-size(1.8); .min-h(4.1); .line-h(2);}
+		
+		li {
+			.font-size(1.2);	
+		}
+	}
+	
+	@media (min-width: @screen-lg) { 
+	
+		a.parent-link { .font-size(2); .min-h(4.5); .line-h(2.2) }
+		
+		li {.font-size(1.4) }
+	}
+
+	
+	.panel-wrap {
+	.rel;
+	.mag-left(1.5);
+	.mag-right(1.5);
+	.pad-bot(4.5);
+	
+		span.icon {
+			.block;
+			.h(8.1);
+			.bg-pos(transparent; "no-repeat");
+			background-position: center center;
+			.mag-bot(1);
+			
+				&#clinical-negligence-icon {
+				.bg-img("clinical-negligence-icon.png");
+				}
+				
+				&#personal-injury-icon {
+				.bg-img("personal-injury-icon.png");
+				}
+				
+				&#road-traffic-accidents-icon {
+				.bg-img("road-traffic-accidents-icon.png");
+				}
+				
+				&#professional-negligence-icon {
+				.bg-img("professional-negligence-icon.png");
+				}
+
+				
+				&#corporate-litigation-icon {
+				.bg-img("corporate-litigation-icon.png");
+				}
+
+		}
+	
+		a.parent-link {
+		.block;	
+		.center;
+		.mag-bot(2);
+		.bold;
+		.no-text-dec;
+		}
+		
+		.panel-list-wrap {
+		.over-hide;
+		.transition;
+		
+			&.list-closed {
+			.h(0);	
+			}
+			
+			&.list-open {
+			height: auto;	
+			.pad-bot(1);
+			}
+
+		}
+		
+		ul {
+			list-style: none;
+			.pad-left(0);
+			.mag-bot(0);
+			.center;
+			li {
+				.line-h(1.6);
+				.pad-bot(.8);
+				.mag-bot(.8);
+				.border-bot(@black;0.1);
+				a {
+				.no-text-dec;
+				}
+			}
+		}
+		
+		.panel-list-btn {
+		.mag-bot(1);
+		.bg-col(@black);
+		.col(@white);
+			
+			&.list-closed {
+				span.up {
+					.none;
+				}
+			}
+			
+			&.list-open {
+				
+				span.down {
+					.none;
+				}
+			}
+		}
+				
+		.claim-btn {
+		.abs;
+		.bottom(0);
+		}
+	}
+	
+}

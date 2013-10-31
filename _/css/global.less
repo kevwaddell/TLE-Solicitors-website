@@ -1,0 +1,89 @@
+html {
+width: 100%;
+height: 100%;	
+}
+
+body {
+width: 100%;	
+height: 100%;
+min-height: 100%;
+.bg-col(@white);
+.pad-all(0);
+.min-w(100);
+
+	.a11y-toolbar {
+	top: 90%;	
+	}
+	
+	&#home {
+	
+		.a11y-toolbar {
+			.none;	
+			}
+		
+	}
+
+}
+
+body.fontsize, 
+body.fontsize h1, 
+body.fontsize h2, 
+body.fontsize h3, 
+body.fontsize h4, 
+body.fontsize h5, 
+body.fontsize h6, 
+body.fontsize p, 
+body.fontsize li, 
+body.fontsize label, 
+body.fontsize input, 
+body.fontsize select, 
+body.fontsize textarea, 
+body.fontsize legend, 
+body.fontsize code, 
+body.fontsize pre, 
+body.fontsize dd, 
+body.fontsize dt, 
+body.fontsize blockquote {
+font-size: 125% !important;
+line-height: 1.4;
+}
+
+body.fontsize #side-icon-links ul li , {
+.font-size(2.5) !important;
+line-height: inherit;
+}
+
+body.fontsize #main-content article h1, 
+body.fontsize #main-content article h2, 
+body.fontsize #main-content article h3, 
+body.fontsize #main-content article h4, 
+body.fontsize #main-content article h5, 
+body.fontsize #main-content article h6 {
+font-size: 400% !important;
+line-height: 1.4;
+}
+
+body.fontsize #main-content article p, 
+body.fontsize #main-content article li, 
+body.fontsize #main-content article label, 
+body.fontsize #main-content article input, 
+body.fontsize #main-content article select, 
+body.fontsize #main-content article textarea, 
+body.fontsize #main-content article legend, 
+body.fontsize #main-content article code, 
+body.fontsize #main-content article pre, 
+body.fontsize #main-content article dd, 
+body.fontsize #main-content article dt, 
+body.fontsize #main-content article blockquote {
+font-size: 125% !important;
+line-height: 1.4;
+}
+
+
+a {
+.col(@black);
+outline: 0;
+	&:hover, &:active, &:focus {
+	.col(lighten(@black, 40%));
+	}		
+}

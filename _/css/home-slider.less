@@ -1,0 +1,247 @@
+#home-screen {
+.fixed;
+.transition(0.5s, ease-in);
+height: 100%;
+width: 100%;
+.min-h(60);
+.min-w(100);
+.top(0);
+.over-hide;
+
+
+	#home-screen-wrap {
+	height: 100%;
+	z-index: 10;
+	//.gradient(@color: #1872b6, @start: #5fbfeb, @stop: #1872b6);
+	.bg-col(@black);
+	.rel;
+	.transition;
+		&.sidenav-closed {
+			.left(0);		
+		}
+	
+		&.sidenav-open {
+			.left(-30.5);	
+		}
+	}
+		
+	#home-slider {
+	width: 100%;
+	height: 100%;
+	.rel;
+	//.bg(transparent; "clouds.png"; no-repeat; center ;center);
+	.bg-size;
+	
+		.slider-corner {
+			.abs;
+			.right(0);	
+			
+			&.top-right {
+			.w(48.3);
+			.h(34.1);
+			.top(0);
+			.bg(transparent; "slider-corner-top.png"; no-repeat; right ;top);
+			z-index: 10;
+			}
+			
+			&.bottom-right {
+			.w(50.9);
+			.h(68);
+			.bottom(0);
+			.bg(transparent; "slider-corner-bottom.png"; no-repeat; right ;top);
+			z-index: 11;
+			}
+		}
+
+	}
+	
+	#home-carousel {
+	height: 100%;
+		.carousel-inner {
+		height: 100%;
+		}
+		
+		.item {
+		height: 100%;
+		.rel;
+		.over-hide;
+		.opacity(0);
+		 
+		 /* fade in styles */
+		 -webkit-transition: 1.0s ease-in-out opacity;
+		 -moz-transition: 1.0s ease-in-out opacity;
+		 -ms-transition: 1.0s ease-in-out opacity;
+		 -o-transition: 1.0s ease-in-out opacity;
+		 transition: 1.0s ease-in-out opacity;	
+		 -webkit-backface-visibility: hidden;
+
+		&.active {
+			 	.opacity(1.0);
+		 	}
+		 	
+		 	&.next.left, &.prev.right, {
+			 	.opacity(1.0);
+		 	}
+		 	
+		 	&.active.left, &.active.right {
+			 	.opacity(0);
+			    z-index: 1;
+			    .left(0) !important;
+		 	}
+
+		 	/* Slide up styles */
+		 	
+		 	.img {
+			 height: 100%;	
+			 .bg-pos(transparent; no-repeat; center; center);
+			 .bg-size;
+			 //.none;
+			 	img {
+			 	.block;
+			 	.mag-auto;
+				height: 100%;
+			 	}
+		 	}
+		 	
+		 	.carousel-caption {
+		 	.abs;
+			.pad-all(2);
+			.bottom(21);
+			right: auto;
+			.left(3);
+			.align-left;
+			.trans-bg(@black; 0.4);
+			.rounded(4px);
+			.col(@white);
+			//.none;
+			 
+				p.title {
+				.serif;
+				.italic;
+				.mag-all(0);
+				.font-size(6);
+				.line-h(6);
+				//.trans-bg(@black; .8);
+				}
+				
+				p.tag {
+				.font-size(4);
+				.line-h(4);
+				.serif;
+				.italic;
+				.mag-all(0);
+				}
+
+			 	
+			}
+					 	
+		}
+				
+		.carousel-indicators {
+			.bottom(10);
+			.left(3);
+			.mag-left(0);
+			.w(50);
+			
+			.tooltip-inner {
+				.col(@black);
+				.bg-col(@white);	
+				
+			}
+			
+			.tooltip-arrow{	
+			border-top-color: @white;
+			}
+			
+				li {
+				.w(7.3);
+				.h(8.1);
+				.mag-right(1);
+				.bg-pos(transparent;no-repeat; center; center);
+				.no-border;
+				.opacity(0.5);
+				.transition;
+				overflow: visible;
+				.fleft;
+					
+					&.first {
+						.none;
+						}
+						
+					&.active, &:hover, &:active, &:focus {
+					.opacity(1.0);
+					}
+						
+					&.clinical-negligence {
+						.bg-img("clinical-negligence-icon.png");
+					}
+					
+					&.personal-injury {
+						.bg-img("personal-injury-icon.png");
+					}
+					
+					&.professional-negligence {
+						.bg-img("professional-negligence-icon.png");
+					}
+					
+					&.rta {
+						.bg-img("road-traffic-accidents-icon.png");
+					}
+					
+					&.corporate-litigation {
+						.bg-img("corporate-litigation-icon.png");
+					}
+				
+				}
+		}
+		
+	}
+	
+	button.enter-btn {
+	.abs;	
+	.left(3);
+	.bottom(0);	
+	.w(40.5);
+	.h(8);
+	.trans-bg(@white; 0.7);
+	z-index: 20;
+	.font-size(3);
+	.no-border;
+	.drop-shadow(0, 0, 10px, 0.7);
+	.border-radius(4px, 0, 0, 4px);
+		&:hover, &:active, &:focus {
+		.trans-bg(@black; .8);	
+		.col(@white);
+		}
+	}
+	
+	p.tel-num {
+	.abs;	
+	.right(2);
+	.bottom(2);
+	.font-size(4.5);
+	.line-h(3.5);	
+	.col(@white);
+	.serif;
+	.italic;
+	.txt-shadow;
+	z-index: 12;
+		span {
+			.mag-right(.5);
+			.font-size(4);
+		}
+	}
+	
+	/* HIDDEN - TO REMOVE */
+	#slider-logo {
+	.abs;
+	.left(3);
+	.bottom(11);	
+	.w(30.5);
+	.h(15);	
+	 .txt-gone;
+	.bg(transparent; "tlw-banner-logo.png"; no-repeat; left ;center);
+	.none;
+	}
+
+}
