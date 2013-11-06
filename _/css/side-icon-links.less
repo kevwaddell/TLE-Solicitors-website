@@ -54,12 +54,12 @@
 			.h(4);
 			.w(4);
 			.no-border;
-			.col(@black);
+			.col(@red);
 			.bg-col(transparent);	
 			.fright;
 			.pad-all(0);
 				&:hover, &:active, &:focus {
-					.col(lighten(@black, 50%));
+					.col(@redMid);
 				}
 			}
 			
@@ -70,11 +70,11 @@
 			.w(4);
 			.center;
 			.line-h(4);
-			.col(@black);	
+			.col(@red);	
 			.no-text-dec;
 				
 				&:hover, &:active, &:focus {
-					.col(lighten(@black, 50%));
+					.col(@redMid);
 				}
 				
 				span {
@@ -98,10 +98,10 @@
 			.mag-left(0);
 			
 				button {
-					.col(lighten(@black, 50%));
+					.col(@red);
 					
 					&:hover, &:active, &:focus {
-					.col(@black);
+					.col(@redMid);
 					}
 				}
 			}

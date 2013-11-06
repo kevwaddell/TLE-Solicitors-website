@@ -1,15 +1,15 @@
 #claim-form-wrap {
 	.w(30.5);
-	.border-left(@black, 0.5);
+	.border-left(@red, 0.5);
 	height: 100%;
 	.top(0);
 	.right(0);
 	.over-y;
-	.bg(@white; 'inner-side-shadow-left.png'; repeat-y);
+	.bg(@redDk; 'inner-side-shadow-left.png'; repeat-y);
 	z-index: 10;
 	
 	&.home-screen-enabled {
-	top: 102%;
+	top: 100%;
 	}
 	
 	&.home-screen-disabled {
@@ -21,10 +21,15 @@
 	}
 	
 		button.close {
-		.col(@black);	
+		.col(@red);	
 		.abs;
 		.right(1);
-		.top(.5);	
+		.top(.5);
+		.opacity(1);	
+		text-shadow: none;
+			&:hover, &:active, &:focus {
+			.col(@white);	
+			}
 		}
 		
 		#gforms_confirmation_message {
@@ -34,8 +39,47 @@
 		.gform_wrapper {
 			.mag-all(0);
 			
+			.gform_heading {
+				h3 {
+				.col(@red);
+				.serif;
+				.italic;	
+				.font-size(3);
+				.normal;
+				}
+				
+				span.gform_description {
+					.col(@white);
+				}
+			}
+			
+			.gfield {
+				label {
+				.col(@white);	
+					span.gfield_required {
+					.col(@red);
+					}
+				}
+				input[type=text], input[type=email], input[type=tel] {
+					.rounded(4px);
+					.no-border;
+				}
+				
+				&.gfield_error {
+					label {
+					.col(@red);	
+					}
+					
+					.validation_message {
+					.col(@red);	
+					}
+
+				}
+			}
+			
 			.validation_error {
 				.font-size(1.2);
+				.col(@red);
 			}
 			
 			li.gfield.gfield_error.gfield_contains_required label.gfield_label, 
@@ -58,6 +102,22 @@
 			
 			.gform_footer {
 				.mag-top(0);
+				
+				.button {
+				width: 100%;
+				.h(4);
+				.col(@white);
+				.slab-serif;
+				.no-border;	
+				.rounded(4px);
+				.font-size(1.8);
+				.bg(@red; "circle-arrow-right-20x20.png"; no-repeat; right ;center);
+				.align-left;
+				.indent(2);
+					&:hover, &:active, &:focus {
+					.bg-col(@redMid90);
+					}
+				}
 			}
 			
 		}	
@@ -131,4 +191,64 @@
 	}	
 	
 	
+}
+
+.block-content .gform_wrapper {
+	.mag-all(0);
+	
+	h3.gform_title {
+		.col(@white);
+		.mag-all(0);
+	}
+	
+	.gform_heading {
+		.mag-bot(1);
+	}
+	
+	.gform_description, label {
+	.col(@white);
+	}
+	
+	.validation_error {
+	.col(@red);
+	.font-size(1.4);	
+	}
+	
+	li.gfield.gfield_error.gfield_contains_required label.gfield_label, 
+	li.gfield.gfield_error.gfield_contains_required div.ginput_container {
+		.mag-top(0);
+	}
+	
+	gfield_description validation_message {
+		.mag-top(0);
+	}
+	
+	.top_label .gfield_description.validation_message, 
+	.gfield_description.validation_message {
+	.pad-all(0) !important;	
+	}
+	
+	.gfield_required {
+	.col(@red);
+	}
+	
+	.ginput_container input[type="text"], 
+	.ginput_container input[type="email"],
+	.ginput_container input[type="tel"] {
+	.rounded(4px);
+	.no-border;	
+	}
+	.gform_footer {
+	.mag-top(1);
+	
+		input.button {
+			.block;
+			width: 100%;	
+			.rounded(4px);
+			.no-border;
+			.bg-col(@red);
+			.col(@white);
+			.slab-serif;
+		}
+	}
 }

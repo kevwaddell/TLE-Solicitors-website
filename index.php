@@ -17,8 +17,8 @@
 	 
 	 <article>
 		<header class="page-header">
-		<h1><?php echo $blog_page->post_title; ?></h1>
-		<time datetime="<?php echo date('Y-m-d', time()); ?>"><?php echo date('l - jS F - Y', time()); ?></time>
+		<h1><span><?php echo $blog_page->post_title; ?></span></h1>
+		<time class="date" datetime="<?php echo date('Y-m-d', time()); ?>"><span class="glyphicon glyphicon-calendar"></span> <?php echo date('l - jS F - Y', time()); ?></time>
 		</header>
 		
 		<?php if ($content) { ?>

@@ -9,7 +9,7 @@
 	
 	<article>
 		<header class="page-header">
-		<h1><?php single_month_title(); ?></h1>
+		<h1><span><?php single_month_title(); ?></span></h1>
 		</header>
 	</article>
 	

@@ -7,7 +7,8 @@ if ( !function_exists(core_mods) ) {
 			wp_register_script( 'tool-tip', get_stylesheet_directory_uri() . '/_/js/bootstrap-tooltip.js', array('jquery', 'jquery-ui-core', 'bootstrap-all-min'), '1.0.0', true );
 			wp_register_script( 'jquery-cookie', get_stylesheet_directory_uri() . '/_/js/jquery.cookie.js', array('jquery'), '1.0.0', true );
 			wp_register_script( 'scroll-end', get_stylesheet_directory_uri() . '/_/js/scrollEnd.js', array('jquery'), '1.0.0', true );
-			wp_register_script( 'functions', get_stylesheet_directory_uri() . '/_/js/functions.js', array('jquery', 'jquery-ui-core', 'bootstrap-all-min', 'tool-tip', 'jquery-cookie', 'scroll-end'), '1.0.1', true );
+			wp_register_script( 'slim-scroll', get_stylesheet_directory_uri() . '/_/js/jquery.slimscroll.min.js', array('jquery'), '1.0.0', true );
+			wp_register_script( 'functions', get_stylesheet_directory_uri() . '/_/js/functions.js', array('jquery', 'jquery-ui-core', 'bootstrap-all-min', 'tool-tip', 'jquery-cookie', 'scroll-end', 'slim-scroll'), '1.0.1', true );
 			wp_register_script( 'touch-punch', get_stylesheet_directory_uri() . '/_/js/jquery.ui.touch-punch.min.js', array('jquery-ui-core'), '1.0.0', true );
 			//wp_register_script( 'img-fit', get_stylesheet_directory_uri() . '/_/js/jquery.imagefit.js', array('jquery'), '1.0.0', true );
 			
@@ -15,6 +16,7 @@ if ( !function_exists(core_mods) ) {
 			wp_enqueue_style('styles');
 			wp_enqueue_script('tool-tip');
 			wp_enqueue_script('jquery-cookie');
+			wp_enqueue_script('slim-scroll');
 			wp_enqueue_script('functions');
 			wp_enqueue_script('touch-punch');
 			//wp_enqueue_script('img-fit');
@@ -106,6 +108,7 @@ include (STYLESHEETPATH . '/_/functions/twitter-feed.php');
 
 /* FORM ACTIONS */
 //include (STYLESHEETPATH . '/_/functions/form_functions.php');
+include (STYLESHEETPATH . '/_/functions/gform_functions.php');
 
 holder_add_theme( 'wordpress', '333333', 'eeeeee' );
 holder_add_theme( 'lite-gray', '888888', 'eeeeee' );

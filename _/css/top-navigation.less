@@ -14,12 +14,16 @@ position: inherit;
 	//top level ul
 	ul.menu {
 	.fright;
+	.serif;
+	.italic;
 		
 		//Top level li	
 		li {
 		.fleft;
 		.h(10);
 		.mag-right(.5);
+		.border-bot(transparent, 0.5);
+		.font-size(1.6);
 		
 			&.with-sub-nav {
 				a {
@@ -28,11 +32,17 @@ position: inherit;
 					.bg-pos-y(bottom);
 					}
 				}
+				
+				&:hover {
+				.border-col(@redMid);	
+				}
 			}
 			
 			&:hover {
 				a {
+				.bg-col(@redMid);
 				.bg-pos-y(bottom);	
+				.col(@white);
 				}
 					
 			}
@@ -45,10 +55,11 @@ position: inherit;
 			.mag-top(1);
 			.line-h(8.5);
 			outline: 0;
+			.col(@red);
+			.border-radius(4px, 0,  0, 4px);
 				&:hover, &:active, &:focus {
-				.bg-col(@black);
+				.bg-col(@redMid);
 				.col(@white);
-				.border-radius(4px, 0,  0, 4px);
 				}
 			}	
 			
@@ -56,7 +67,7 @@ position: inherit;
 			ul.sub-menu {
 				.center;
 				.abs;
-				.top(10); .left(0); .right(0);
+				.top(10); .left(1.5); .right(1.5);
 				.opacity(0);
 				.none;
 				.pad-all(1);
@@ -67,11 +78,21 @@ position: inherit;
 				//sub li
 				li {
 				.fleft;
+				.no-border;
 				clear: right;
 				width: 23%;
 				height: auto; 
 				margin-left: 1%;
 				margin-right: 1%;
+				font-style: normal;
+				.slab-serif;
+				.font-size(1.4);
+					&:hover {
+						a {
+						.bg-col(transparent);	
+						}
+					}
+					
 					a {
 					.mag-top(0);
 					.col(@white);	
@@ -84,7 +105,7 @@ position: inherit;
 					.rounded(0px);
 					background-image: none;
 						&:hover, &:active {
-						.col( lighten(@black, 50%) );
+						.col(@red);
 						}
 					}
 					
@@ -136,7 +157,7 @@ position: inherit;
 				ul.sub-menu {
 				height: auto;
 				display: block;
-				.bg-col(@black);
+				.bg-col(@redMid);
 				.opacity(1);
 				}
 				
@@ -168,20 +189,52 @@ position: inherit;
 				
 			}
 			
-			&.current-menu-item {
+			&.current-menu-item, &.current_page_parent {
 				a {
-				.bg-col(@black);
+				.bg-col(@red);
 				.col(@white);	
 				.border-radius(4px, 0,  0, 4px);
 				}
 				
 				&.with-sub-nav {
 					a {
-					.bg(@black; "main-nav-arrow.png"; no-repeat;  center ;bottom);
+					.bg(@red; "main-nav-arrow.png"; no-repeat;  center ;bottom);
 					}
 					
-					ul.sub-menu li a { 
-					background-image: none;
+					ul.sub-menu li {
+					 		a { 
+						 	background-image: none;
+						 	.bg-col(transparent);
+						 	}
+					}
+				}
+				
+				&.one-level-menu {
+				
+				ul.sub-menu li a {
+					.bg-col(transparent);
+					}
+				}
+				
+				&.home {
+					a {
+					.bg-pos-y (bottom);	
+					}
+				}
+			}
+			
+			&.home {
+				a {
+				.txt-gone;
+				text-align: left;
+				.w(5.5);
+				.pad-all(0);
+				.bg-img("home-page-icon.png");
+				.bg-repeat(no-repeat);
+				.bg-pos-x (center);
+				.bg-pos-y (top);
+					&:hover {
+					.bg-pos-y (bottom);
 					}
 				}
 			}

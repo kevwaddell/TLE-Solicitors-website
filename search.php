@@ -11,7 +11,7 @@
 	 
 	 <article>
 		<header class="page-header">
-		<h1>Search Results</h1>
+		<h1><span>>Search Results</span></h1>
 		<h2>You Searched for: "<?php echo $search_query; ?>"</h2>
 		</header>
 	</article>

@@ -15,25 +15,15 @@
 	
 			<?php if ($feat_img_id) { ?>
 				
-				<figure class="feat-img">
-				
-					<div class="corner-top"></div>
-					<div class="corner-bottom"></div>
-				
-					<div class="img">
-						<?php holder( array( 'height' => '350', 'width' => '850', 'theme' => 'lite-gray' , 'text'=>'Featured image') ); ?>
-						
-						<div class="inner-shadow"></div>
-					</div>
-
-				</figure>
+				<?php include (STYLESHEETPATH . '/_/inc/global/featured-img.php'); ?> 
 				
 			<?php }  ?>
+
 
 			<article class="page<?php echo ( $children ) ? ' intro':''; ?>">
 				
 				<header class="page-header">
-				<h1><?php the_title(); ?></h1>
+				<h1><span><?php the_title(); ?></span></h1>
 				</header>
 				
 				<?php the_content(); ?>

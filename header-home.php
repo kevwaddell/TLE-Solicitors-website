@@ -68,7 +68,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4 col-sm-offset-8 col-md-4 col-md-offset-8 col-lg-3 col-lg-offset-9">
-				<button id="show-main-menu-btn">Menu <span class="glyphicon glyphicon-th-list"></span></button>
+				<button id="show-main-menu-btn">Navigation</button>
 			</div>
 		</div>
 	</div>

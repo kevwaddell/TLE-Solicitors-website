@@ -1,6 +1,6 @@
 #page-banner-lrg {
 .h(55);	
-.bg-col(@black);	
+.bg-col(@red);	
 //.gradient(@color: #1872b6, @start: #5fbfeb, @stop: #1872b6);
 .rel;
 	
@@ -11,6 +11,7 @@
 	.bg-size;
 	.inner-shadow(0,0, 20px, @alpha: 0.5);
 	.rel;
+	.border-radius(0, 12px,12px, 0);
 		p.tag {
 		.abs;
 		.left(2);
@@ -33,6 +34,17 @@
 		.top(0);
 		.h(54);
 		.bg(transparent; "slider-arch.png"; no-repeat; center ;top);
+		.border-radius(0, 12px,12px, 0);
+	}
+	
+	.pattern-bg {
+		.abs;
+		.right(0);
+		.top(1.5);
+		.bottom(1);
+		.w(40);
+		.border-radius(0, 12px,0, 0);
+		.bg(transparent; "pattern-bg.png"; repeat-y; right;top);
 	}
 	
 	.container {
@@ -45,6 +57,7 @@
 		.bottom(3.5);
 		.w(30);
 		.drop-shadow(0, 0, 20px, 0.5);
+		.rounded(20px);
 		
 		p {
 		.serif;
@@ -56,13 +69,14 @@
 			.pad-all(2);
 			.bg-col(@black80);
 			.border-radius(20px, 0, 0, 20px);
+			.red-gradient-bg;
 			
 			p {	
 			.font-size(3.5);
 			.line-h(3.5);
 			.serif;
 				span {
-				.col(@black50);
+				.col(@red);
 				.font-size(3);
 				}
 			}
@@ -70,13 +84,26 @@
 		
 		.promo-bottom {
 		.pad(1;2;2;2);
-		.bg-col(@black50);
+		//.bg-col(@red);
+		.red-gradient-radial-bg;
 		.border-radius(0, 20px, 20px, 0);
 		
 			p {
 			.font-size(2.8);
 			.line-h(3);
 			.mag-bot(2);
+			}
+			
+			.btn {
+				.caps;
+				.slab-serif;
+				.col(@redMid);
+				.border(transparent; 0.2);
+				&:hover, &:active, &:focus {
+					.bg-col(@red);
+					.col(@white);
+					.border-col(@white);
+				}
 			}
 		}
 		

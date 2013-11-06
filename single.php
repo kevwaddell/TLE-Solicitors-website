@@ -10,7 +10,7 @@
 <?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>	
 
 	<?php 
-	$post_date = get_the_date();
+	$post_date = get_the_date('l - jS F - Y');
 	$topics = get_the_category_list(', ');
 	$subjects = get_the_tag_list('<strong>Subjects:</strong> ', ', ');
 	
@@ -18,22 +18,24 @@
 	?>	
 	
 		<?php if ($feat_img_id) { ?>
-			
-		<figure>
-			<div class="img">
-				<?php holder( array( 'height' => '350', 'width' => '850', 'theme' => 'lite-gray' , 'text'=>'Featured image') ); ?>
-				<div class="inner-shadow"></div>
-			</div>
-		</figure>
-
+				
+			<?php include (STYLESHEETPATH . '/_/inc/global/featured-img.php'); ?> 
+				
 		<?php }  ?>
+
 	
 		<article class="post">
 					
 			<header class="page-header">
-			<h1><?php the_title(); ?></h1>
-			<time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><span class="glyphicon glyphicon-calendar"></span> <?php echo $post_date; ?> <?php the_time(); ?></time>
+				<h1><span><?php the_title(); ?></span></h1>
+				<time class="date" datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><span class="glyphicon glyphicon-calendar"></span> <?php echo $post_date; ?> - <?php the_time(); ?></time>
 			</header>
+			
+			<div class="rule mag-bottom-20"></div>
+			
+			<div class="intro">
+			<?php the_excerpt(); ?>
+			</div>
 			
 			<?php the_content(); ?>
 			

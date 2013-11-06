@@ -303,7 +303,7 @@ if ($('body').attr("id") == "home") {
 	   
 	   if (home_screen_seen && (home_carousel.length == 1)) {
 		 
-		 scrollPosition_calc = ( (window_pos - 19) - $('#home-screen').height() ); 
+		 scrollPosition_calc = ( (window_pos) - $('#home-screen').height() ); 
 		   
 	   }
 	   
@@ -317,6 +317,15 @@ if ($('body').attr("id") == "home") {
 	   
 	   return false;
    });
+   
+   /* FEED SCROLLER 
+	   
+	Adds new styled scroll bars to media feeds   
+   */
+   	
+	$('.feed-wrap').slimScroll({
+        height: '180px'
+    });
     
     
 });
@@ -366,19 +375,23 @@ onScrollEnd.subscribe(function (scrollPosition) {
 					$('#claim-form-wrap').removeClass('abs').addClass('fixed');
 				}
 				
+				if ($('#side-icon-links').hasClass('icons-hidden')) {
+					$('#side-icon-links').removeClass('icons-hidden').addClass('icons-visible');
+				}
+				
 			}
 			
 			if (home_screen_seen && (home_carousel.length == 1)) {
 				
-				if ($('#claim-form-wrap').hasClass('abs home-screen-enabled') && $('#claim-form-wrap')) {
+				if ($('#claim-form-wrap').hasClass('abs home-screen-enabled')) {
 					$('#claim-form-wrap').removeClass('abs home-screen-enabled').addClass('fixed home-screen-disabled');
 				}
 				
-				if ($('#side-icon-links').hasClass('icons-visible')) {
-					$('#side-icon-links').removeClass('icons-visible').addClass('icons-hidden');
+				if ($('#side-icon-links').hasClass('icons-hidden')) {
+					$('#side-icon-links').removeClass('icons-hidden').addClass('icons-visible');
 				}
 				
-				scrollPosition_calc = ( (scrollPosition - 19) - $('#home-screen').height() ) - ( $('.header').outerHeight() + 2  );
+				scrollPosition_calc = ( (scrollPosition) - $('#home-screen').height() ) - ( $('.header').outerHeight() + 2  );
 			}
 			
 			/* Menu Button Checks */
@@ -397,10 +410,6 @@ onScrollEnd.subscribe(function (scrollPosition) {
 					$('#show-main-menu').removeClass('btn-hidden').addClass('btn-visible');
 			
 					}
-					
-				if ($('#side-icon-links').hasClass('icons-hidden')) {
-					$('#side-icon-links').removeClass('icons-hidden').addClass('icons-visible');
-				}
 	
 			}
 						
@@ -487,6 +496,12 @@ $(window).on("scroll", function(e){
 			if ($('#claim-form-wrap').hasClass('fixed home-screen-disabled')) {
 					$('#claim-form-wrap').removeClass('fixed home-screen-disabled').addClass('abs home-screen-enabled');
 				}
+				
+			if ($('#side-icon-links').hasClass('icons-visible')) {
+		
+				$('#side-icon-links').removeClass('icons-visible').addClass('icons-hidden');
+		
+			}
 			
 		}
 		
@@ -499,7 +514,6 @@ $(window).on("scroll", function(e){
 		}
 	
 	}
-
     
 });
 

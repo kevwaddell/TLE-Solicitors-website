@@ -15,6 +15,12 @@ text-decoration: underline;
 .serif{
 font-family: @serif;
 }
+.slab-serif{
+font-family: @slab-serif;
+}
+.slab-serif-bold{
+font-family: @slab-serif-bold;
+}
 .sans-serif{
 font-family: @san-serif;
 }
@@ -115,6 +121,39 @@ background-color: hsla(hue(@col), saturation(@col), lightness(@col), @opacity);
 @posRight: @y;
 
 background: ~"@{bgCol} url(img/@{imgSrc}) @{rep} @{posLeft} @{posRight}";
+}
+
+.red-gradient-bg {
+background: @redDk;
+background: -moz-linear-gradient(top,  @redDk 0%, @redMid 25%, @redMid 50%, @redMid 75%, @redDk 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@redDk), color-stop(25%,@redMid), color-stop(50%,@redMid), color-stop(75%,@redMid), color-stop(100%,@redDk));
+background: -webkit-linear-gradient(top,  @redDk 0%,@redMid 25%,@redMid 50%,@redMid 75%,@redDk 100%);
+background: -o-linear-gradient(top,  @redDk 0%,@redMid 25%,@redMid 50%,@redMid 75%,@redDk 100%);
+background: -ms-linear-gradient(top,  @redDk 0%,@redMid 25%,@redMid 50%,@redMid 75%,@redDk 100%);
+background: linear-gradient(to bottom,  @redDk 0%,@redMid 25%,@redMid 50%,@redMid 75%,@redDk 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@redDk', endColorstr='@redDk',GradientType=0 );
+}
+
+.red-gradient-radial-bg {
+background: @red;
+background: -moz-radial-gradient(center, ellipse cover,  @red 1%, @redMid 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,@red), color-stop(100%,@redMid));
+background: -webkit-radial-gradient(center, ellipse cover,  @red 1%,@redMid 100%);
+background: -o-radial-gradient(center, ellipse cover,  @red 1%,@redMid 100%);
+background: -ms-radial-gradient(center, ellipse cover,  @red 1%,@redMid 100%);
+background: radial-gradient(ellipse at center,  @red 1%,@redMid 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@red', endColorstr='@redMid',GradientType=1 );
+}
+
+.gray-gradient-bg {
+background: #bbbbbb;
+background: -moz-linear-gradient(top,  #bbbbbb 0%, @white 10%, @white 50%, @white 90%, #bbbbbb 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bbbbbb), color-stop(10%,@white), color-stop(50%,@white), color-stop(90%,@white), color-stop(100%,#bbbbbb));
+background: -webkit-linear-gradient(top,  #bbbbbb 0%,@white 10%,@white 50%,@white 90%,#bbbbbb 100%);
+background: -o-linear-gradient(top,  #bbbbbb 0%,@white 10%,@white 50%,@white 90%,#bbbbbb 100%);
+background: -ms-linear-gradient(top,  #bbbbbb 0%,@white 10%,@white 50%,@white 90%,#bbbbbb 100%);
+background: linear-gradient(to bottom,  #bbbbbb 0%,@white 10%,@white 50%,@white 90%,#bbbbbb 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bbbbbb', endColorstr='#bbbbbb',GradientType=0 );
 }
 
 .bg-img(@img){

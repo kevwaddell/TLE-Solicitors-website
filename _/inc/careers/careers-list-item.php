@@ -15,7 +15,7 @@ $post_date = get_the_date();
 	<footer>
 		<span class="glyphicon glyphicon-calendar"></span> Closing date: <time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate>16th October 2013</time>&nbsp;&nbsp;~&nbsp;&nbsp;<span class="glyphicon glyphicon-calendar"></span> Start date: <time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate>16th October 2013</time>
 		
-		<a href="<?php the_permalink(); ?>" class="view-btn">View Position <span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+		<a href="<?php the_permalink(); ?>" class="view-btn">View Position</a>
 	</footer>
 	
 </article>

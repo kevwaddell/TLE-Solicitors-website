@@ -1,5 +1,6 @@
 #panels {
-	.bg-col( lighten(@black, 60%) );
+	//.bg-col( lighten(@black, 60%) );
+	.gray-gradient-bg;
 	.pad-top(3);
 	.pad-bot(4);
 	
@@ -60,8 +61,8 @@
 				}
 
 				
-				&#corporate-litigation-icon {
-				.bg-img("corporate-litigation-icon.png");
+				&#business-litigation-icon {
+				.bg-img("business-litigation-icon.png");
 				}
 
 		}
@@ -71,7 +72,12 @@
 		.center;
 		.mag-bot(2);
 		.bold;
+		.serif;
+		.col(@red);
 		.no-text-dec;
+			&:hover, &:active {
+			.col(@redMid);
+			}
 		}
 		
 		.panel-list-wrap {
@@ -98,35 +104,86 @@
 				.line-h(1.6);
 				.pad-bot(.8);
 				.mag-bot(.8);
-				.border-bot(@black;0.1);
+				.border-bot(@grey80;0.1);
 				a {
+				.pad-right(2);
+				.block;
 				.no-text-dec;
+				.bg(transparent; "circle-arrow-right-red.png"; no-repeat; right ; center);
 				}
 			}
 		}
 		
 		.panel-list-btn {
 		.mag-bot(1);
-		.bg-col(@black);
+		.bg-col(@redMid);
 		.col(@white);
+		.slab-serif;
+		.no-border;
+		.rel;
+		.align-left;
+		.pad-left(2);
+		
+			span {
+			.abs;
+			.right(0);
+			.top(0);
+			.bottom(0);
+			.w(3.2);
+			.bg-col(@red);	
+			.border-radius(4px, 4px, 0, 0);
+			.bg-pos(@red; no-repeat; center; center);
+				&.up {
+				.bg-img("practice-minus.png")
+				}
+				
+				&.down {
+				.bg-img("practice-plus.png");
+				}
+			}
 			
 			&.list-closed {
 				span.up {
+			
 					.none;
 				}
 			}
 			
 			&.list-open {
-				
+			.bg-col(@grey);	
 				span.down {
 					.none;
 				}
+			}
+			
+			&:hover, &:active {
+			.bg-col(@grey);	
 			}
 		}
 				
 		.claim-btn {
 		.abs;
 		.bottom(0);
+		.bg-col(@red);
+		.col(@white);
+		.no-border;
+		.slab-serif;
+		.align-left;
+		.pad-left(2);
+			span {
+			.abs;
+			.top(0);
+			.right(0);
+			.bottom(0);
+			.w(3);
+			.bg-col(@redMid);	
+			.border-radius(4px, 4px, 0, 0);
+			.bg(@redMid; "arrow-right.png"; no-repeat;  center; center);
+			}
+			
+			&:hover, &:active {
+			.bg-col(@grey);	
+			}
 		}
 	}
 	

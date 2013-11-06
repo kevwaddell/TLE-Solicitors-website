@@ -9,7 +9,7 @@
 	
 	<article>
 		<header class="page-header">
-		<h1>Topic: <?php single_cat_title(); ?></h1>
+		<h1><span>Topic: <?php single_cat_title(); ?></span></h1>
 		</header>
 		
 		<?php if (category_description()) { ?>

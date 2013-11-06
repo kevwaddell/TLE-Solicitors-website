@@ -74,16 +74,28 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4 col-sm-offset-8 col-md-4 col-md-offset-8 col-lg-3 col-lg-offset-9">
-				<button id="show-main-menu-btn">Menu <span class="glyphicon glyphicon-th-list"></span></button>
+				<button id="show-main-menu-btn">Navigation</button>
 			</div>
 		</div>
 	</div>
 </div>
 
 <?php 
-$make_a_claim_page = get_page_by_title("Make a Claim");
+global $post;
 
-if ($post->ID != $make_a_claim_page->ID) { ?>
+if (has_sub_field("content", $post->ID)) {
+
+	$remove_global_claim_form = get_sub_field('remove_gb_claim_fm', $post->ID);
+
+}
+
+if (has_sub_field("sidebar", $post->ID)) {
+
+	$remove_global_claim_form = get_sub_field('remove_claim_form', $post->ID);
+
+}
+
+if ( !$remove_global_claim_form ) { ?>
 
 <!-- CLAIM FORM SIDBAR START -->
 <div id="claim-form-wrap" class="no-touch-move fixed">

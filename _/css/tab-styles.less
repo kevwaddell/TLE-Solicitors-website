@@ -1,19 +1,41 @@
 .pages-tabs {
-	
+.mag-top(2);
+.mag-bot(2);
+
 	.nav {
-	.pad-left(1);
+	.font-size(2.5);
+	.serif;
+	.italic;
+	.no-border;
+		
+		li {
+		.rel;
+			a {
+			.bg-col(@redMid);
+			.col(@white);
+			.no-border;
+			.pad(0;2;0;2);
+			.h(4);
+			.line-h(4);
+				&:hover {
+					.col(@grey70);
+				}
+			}
+			
+			&.active {
+			z-index: 1;
+			 	a {
+				.bg-col(@grey70);	
+				.col(@redMid);
+			 	}
+			}	
+		}
 	}
 	
 	.tab-content {
-		.bg-col(white);
-		.border-left(#dddddd, 0.1);
-		.border-right(#dddddd, 0.1);
-		.border-bot(#dddddd, 0.1);	
+		.bg-col(@grey70);	
 		.pad(2;2;1;2);
-	}
-	
-	h2 {
-	.mag-top(0);
+		.border-radius(4px, 4px, 4px, 0);
 	}
 	
 	a {

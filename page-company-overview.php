@@ -28,24 +28,13 @@
 	
 			<?php if ($feat_img_id) { ?>
 				
-			<figure class="feat-img">
-			
-				<div class="corner-top"></div>
-				<div class="corner-bottom"></div>
-			
-				<div class="img">
-					<?php holder( array( 'height' => '350', 'width' => '850', 'theme' => 'lite-gray' , 'text'=>'Featured image') ); ?>
-					
-					<div class="inner-shadow"></div>
-				</div>
-
-			</figure>
+				<?php include (STYLESHEETPATH . '/_/inc/global/featured-img.php'); ?> 
 				
 			<?php }  ?>
 
 			<article class="page intro">
 				<header class="page-header">
-				<h1><?php the_title(); ?></h1>
+				<h1><span><?php the_title(); ?></span></h1>
 				</header>
 				
 				<?php the_content(); ?>
@@ -83,7 +72,6 @@
 				?>	
 				
 					<div id="panel-<?php echo $post->post_name; ?>" class="tab-pane <?php echo ($tab_panel_counter == 1) ? 'active fade in': 'fade'; ?>">
-						<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute('before=View &after= page'); ?>"><span class="txt"><?php the_title(); ?></span></a></h2>
 						
 						<div class="txt-wrap">
 							<?php the_content(); ?>
@@ -96,15 +84,7 @@
 				</div>
 			
 			<?php wp_reset_postdata();?>
-			
-		<!--
-	<script>
-				$(function () {
-				$('#company-pages-tabs a:first').tab('show');
-				})
-			</script>
--->
-			
+						
 			</section>
 			
 			<?php endif; ?>
@@ -164,7 +144,7 @@
 			    			<p class="position">Partner</p>
 			    			<a href="mailto:jburn@tlwsolicitors.co.uk" class="email-link"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;jburn@tlwsolicitors.co.uk</a>
 			    			
-			    			<a href="#" class="more-info-link btn btn-default btn-lg btn-block">More details <span class="glyphicon glyphicon-arrow-right"></span></a>
+			    			<a href="#" class="more-info-link btn btn-default btn-block">More details</a>
 			    			
 			    		</div>
 			    		
@@ -182,7 +162,7 @@
 			    			<p class="position">Partner</p>
 			    			<a href="mailto:jburn@tlwsolicitors.co.uk" class="email-link"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;jburn@tlwsolicitors.co.uk</a>
 			    			
-			    			<a href="#" class="more-info-link btn btn-default btn-lg btn-block">More details <span class="glyphicon glyphicon-arrow-right"></span></a>
+			    			<a href="#" class="more-info-link btn btn-default btn-block">More details</a>
 			    			
 			    		</div>
 			    		
@@ -200,7 +180,7 @@
 			    			<p class="position">Head of RTA Department</p>
 			    			<a href="mailto:jburn@tlwsolicitors.co.uk" class="email-link"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;jburn@tlwsolicitors.co.uk</a>
 			    			
-			    			<a href="#" class="more-info-link btn btn-default btn-lg btn-block">More details <span class="glyphicon glyphicon-arrow-right"></span></a>
+			    			<a href="#" class="more-info-link btn btn-default btn-block">More details</a>
 			    			
 			    		</div>
 			    		
@@ -218,7 +198,7 @@
 			    			<p class="position">Head of Personal Injury</p>
 			    			<a href="mailto:jburn@tlwsolicitors.co.uk" class="email-link"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;jburn@tlwsolicitors.co.uk</a>
 			    			
-			    			<a href="#" class="more-info-link btn btn-default btn-lg btn-block">More details <span class="glyphicon glyphicon-arrow-right"></span></a>
+			    			<a href="#" class="more-info-link btn btn-default btn-block">More details</a>
 			    			
 			    		</div>
 			    		
@@ -244,7 +224,7 @@
 			    			<p class="position">Partner</p>
 			    			<a href="mailto:jburn@tlwsolicitors.co.uk" class="email-link"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;jburn@tlwsolicitors.co.uk</a>
 			    			
-			    			<a href="#" class="more-info-link btn btn-default btn-lg btn-block">More details <span class="glyphicon glyphicon-arrow-right"></span></a>
+			    			<a href="#" class="more-info-link btn btn-default btn-block">More details</a>
 			    			
 			    		</div>
 			    		
@@ -262,7 +242,7 @@
 			    			<p class="position">Partner</p>
 			    			<a href="mailto:jburn@tlwsolicitors.co.uk" class="email-link"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;jburn@tlwsolicitors.co.uk</a>
 			    			
-			    			<a href="#" class="more-info-link btn btn-default btn-lg btn-block">More details <span class="glyphicon glyphicon-arrow-right"></span></a>
+			    			<a href="#" class="more-info-link btn btn-default btn-block">More details</a>
 			    			
 			    		</div>
 			    		
@@ -280,7 +260,7 @@
 			    			<p class="position">Partner</p>
 			    			<a href="mailto:jburn@tlwsolicitors.co.uk" class="email-link"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;jburn@tlwsolicitors.co.uk</a>
 			    			
-			    			<a href="#" class="more-info-link btn btn-default btn-lg btn-block">More details <span class="glyphicon glyphicon-arrow-right"></span></a>
+			    			<a href="#" class="more-info-link btn btn-default btn-block">More details</a>
 			    			
 			    		</div>
 			    		
@@ -298,7 +278,7 @@
 			    			<p class="position">Partner</p>
 			    			<a href="mailto:jburn@tlwsolicitors.co.uk" class="email-link"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;jburn@tlwsolicitors.co.uk</a>
 			    			
-			    			<a href="#" class="more-info-link btn btn-default btn-lg btn-block">More details <span class="glyphicon glyphicon-arrow-right"></span></a>
+			    			<a href="#" class="more-info-link btn btn-default btn-block">More details</a>
 			    			
 			    		</div>
 			    		
@@ -324,7 +304,7 @@
 			    			<p class="position">Partner</p>
 			    			<a href="mailto:jburn@tlwsolicitors.co.uk" class="email-link"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;jburn@tlwsolicitors.co.uk</a>
 			    			
-			    			<a href="#" class="more-info-link btn btn-default btn-lg btn-block">More details <span class="glyphicon glyphicon-arrow-right"></span></a>
+			    			<a href="#" class="more-info-link btn btn-default btn-block">More details</a>
 			    			
 			    		</div>
 			    		
@@ -342,7 +322,7 @@
 			    			<p class="position">Partner</p>
 			    			<a href="mailto:jburn@tlwsolicitors.co.uk" class="email-link"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;jburn@tlwsolicitors.co.uk</a>
 			    			
-			    			<a href="#" class="more-info-link btn btn-default btn-lg btn-block">More details <span class="glyphicon glyphicon-arrow-right"></span></a>
+			    			<a href="#" class="more-info-link btn btn-default btn-block">More details</a>
 			    			
 			    		</div>
 			    		
@@ -360,7 +340,7 @@
 			    			<p class="position">Partner</p>
 			    			<a href="mailto:jburn@tlwsolicitors.co.uk" class="email-link"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;jburn@tlwsolicitors.co.uk</a>
 			    			
-			    			<a href="#" class="more-info-link btn btn-default btn-lg btn-block">More details <span class="glyphicon glyphicon-arrow-right"></span></a>
+			    			<a href="#" class="more-info-link btn btn-default btn-block">More details</a>
 			    			
 			    		</div>
 			    		
@@ -378,7 +358,7 @@
 			    			<p class="position">Partner</p>
 			    			<a href="mailto:jburn@tlwsolicitors.co.uk" class="email-link"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;jburn@tlwsolicitors.co.uk</a>
 			    			
-			    			<a href="#" class="more-info-link btn btn-default btn-lg btn-block">More details <span class="glyphicon glyphicon-arrow-right"></span></a>
+			    			<a href="#" class="more-info-link btn btn-default btn-block">More details</a>
 			    			
 			    		</div>
 			    		
@@ -391,8 +371,8 @@
 		  </div>
 		
 		  <!-- Controls -->
-		  <a class="carousel-control left" href="#our-team-slider" data-slide="prev"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>
-		  <a class="carousel-control right" href="#our-team-slider" data-slide="next"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+		  <a class="carousel-control left" href="#our-team-slider" data-slide="prev"></a>
+		  <a class="carousel-control right" href="#our-team-slider" data-slide="next">></a>
 		  
 	</div>
 	

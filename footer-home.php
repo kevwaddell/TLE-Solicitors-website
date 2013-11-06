@@ -1,4 +1,10 @@
-		<?php $home_screen_seen = $_COOKIE["home_screen"]; ?>
+		<?php 
+		$home_screen_seen = $_COOKIE["home_screen"]; 
+		$copyright_notice = get_field('copyright_notice', 'option');
+		$freephone_number = get_field('freephone_tel', 'option');
+		$contact_email = get_field('contact_email', 'option');
+		$standards_logos = get_field('standards_logos', 'option');
+		?>
 		
 		<!-- FOOTER START -->
 		<section class="footer-info in-flow">
@@ -15,10 +21,30 @@
 						<?php wp_nav_menu(array( 'container' => 'nav', 'container_id' => 'quick-links', 'theme_location' => 'quick_links_menu', 'fallback_cb' => false ) ); ?>
 					</div>
 					
+					<?php if ($standards_logos) { ?>
 					<div id="standards-logos">
-						<?php holder( array( 'height' => '75', 'width' => '175', 'theme' => 'gray' ) ); ?>
-						<?php holder( array( 'height' => '75', 'width' => '175', 'theme' => 'gray' ) ); ?>
+						<p>Members of:</p>
+						
+						<?php foreach ($standards_logos as $logo) { 
+						$logo_id = 	$logo['logo'];
+						$logo_src = wp_get_attachment_image_src($logo_id,'standards-logo');
+						$logo_url = $logo_src[0];
+						?>
+						
+						<?php if ($logo_id) { ?>
+						<a href="<?php echo $logo['url']; ?>" target="_blank" title="<?php echo $logo['title']; ?>">
+							<img src="<?php echo $logo_url; ?>" alt="<?php echo $logo['title']; ?>">
+						</a>
+						<?php } else {?>
+							
+						<a href="<?php echo $logo['url']; ?>" target="_blank" title="<?php echo $logo['title']; ?>"><?php echo $logo['title']; ?></a>
+						
+						<?php } ?>
+
+						<?php } ?>
+						
 					</div>
+					<?php } ?>
 					
 				</div>
 				
@@ -28,9 +54,7 @@
 					
 					<div id="footer-copyright" class="col-sm-9 col-md-9">
 						<div class="footer-copyright-inner">
-							<p>TLW solicitors is a trading name of TLW LLP a limited liability partnership registered in England (Registration OC314139).</p>
-							<p>TLW LLP are a firm of solicitors authorised and regulated by the Solicitors Regulation Authority.</p>
-							<p>TLW LLP has its registered office at 9 Hedley Court, Orion Business, North Shields, NE29 7ST. VAT registration no. 746973089.</p>
+							<?php echo $copyright_notice; ?>
 							<p>&copy; <?php echo date("Y"); ?> <?php bloginfo( 'name' ); ?>. All rights reserved.</p>
 						</div>
 					</div>
@@ -47,8 +71,8 @@
 		
 		<div id="side-icon-links" class="without-print icons-hidden">
 			<ul>
-				<li class="tel-icon with-div disabled"><div class="in-block">0800 169 5925</div><button><span class="glyphicon glyphicon-phone-alt"></span></button></li>
-				<li class="email-icon"><a href="mailto:kwaddell@tlwsolicitors.co.uk" title="Email TLW Solicitors"><span class="glyphicon glyphicon-send"></span></a></li>
+				<li class="tel-icon with-div disabled"><div class="in-block"><?php echo $freephone_number; ?></div><button><span class="glyphicon glyphicon-phone-alt"></span></button></li>
+				<li class="email-icon"><a href="mailto:<?php echo $contact_email; ?>" title="Email TLW Solicitors"><span class="glyphicon glyphicon-send"></span></a></li>
 				<li class="search-icon with-div disabled"><div class="in-block"><?php get_search_form(); ?></div><button><span class="glyphicon glyphicon-search"></span></button></li>
 			</ul>
 		</div>
@@ -57,7 +81,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-3 col-sm-offset-9 col-md-3 col-md-offset-9">
-						<button class="inactive">Start your claim today <span class="glyphicon glyphicon-chevron-right"></span></button>
+						<button class="inactive">Start your claim today</button>
 					</div>
 				</div>
 			</div>

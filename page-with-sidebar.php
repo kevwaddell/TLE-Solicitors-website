@@ -31,25 +31,14 @@ Template Name: Page with right hand sidebar
 	
 			<?php if ($feat_img_id) { ?>
 				
-				<figure class="feat-img">
-				
-					<div class="corner-top"></div>
-					<div class="corner-bottom"></div>
-				
-					<div class="img">
-						<?php holder( array( 'height' => '350', 'width' => '850', 'theme' => 'lite-gray' , 'text'=>'Featured image') ); ?>
-						
-						<div class="inner-shadow"></div>
-					</div>
-				
-				</figure>
+				<?php include (STYLESHEETPATH . '/_/inc/global/featured-img.php'); ?> 
 				
 			<?php }  ?>
 			
 			<article class="page<?php echo ( $children ) ? ' intro':''; ?>">
 				
 				<header class="page-header">
-				<h1><?php the_title(); ?></h1>
+				<h1><span><?php the_title(); ?></span></h1>
 				</header>
 				
 				<?php the_content(); ?>
@@ -57,10 +46,6 @@ Template Name: Page with right hand sidebar
 				<?php if (!$children) { ?>
 				
 				<div class="rule"></div>
-			
-				<div class="sharing-links">
-				<?php echo do_shortcode('[shareaholic app="share_buttons" id="410103"]'); ?>
-				</div>
 				
 				<?php }  ?>
 				
@@ -78,7 +63,12 @@ Template Name: Page with right hand sidebar
 			
 			<article id="list-item-<?php echo $post->post_name; ?>" class="page-list-item">
 			
-				<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute('before=View &after= page'); ?>"><span class="txt"><?php the_title(); ?></span> <span class="glyphicon glyphicon-circle-arrow-right"></span></a></h2>
+			<?php 
+			$parent = get_page($post->post_parent);
+			 ?>
+
+			
+				<h2<?php echo ($parent) ? ' class="'. $parent->post_name .'"':''; ?>><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute('before=View &after= page'); ?>"><span class="txt"><?php the_title(); ?></span> <span class="icon"></span></a></h2>
 				
 				
 				<div class="row">
@@ -105,15 +95,9 @@ Template Name: Page with right hand sidebar
 			
 			<div class="rule"></div>
 			
-			<div class="sharing-links">
-				<?php echo do_shortcode('[shareaholic app="share_buttons" id="410103"]'); ?>
-			</div>
-			
 			<?php endif; ?>
 	
 		<?php endwhile; ?>
-	
-	<?php endif; ?>
 	
 	</div>
 	
@@ -122,6 +106,8 @@ Template Name: Page with right hand sidebar
 	<?php get_sidebar('pages'); ?>
 		
 	</div>
+	
+	<?php endif; ?>
 
 </div>
 

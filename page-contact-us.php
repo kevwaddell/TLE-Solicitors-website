@@ -3,11 +3,11 @@
 <!-- MAIN CONTENT START -->
 <section id="main-content" class="content container">
 
+<?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>	
+
 <div class="row">
 
 	<div class="col-sm-8 col-md-8 col-lg-9 col-sm-push-4 col-md-push-4 col-lg-push-3">
-
-	<?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>	
 	
 	<?php 
 	$children_args = array(
@@ -25,7 +25,7 @@
 			<article class="page intro">
 				
 				<header class="page-header">
-				<h1><?php the_title(); ?></h1>
+				<h1><span><?php the_title(); ?></span></h1>
 				</header>
 				
 				<?php the_content(); ?>
@@ -37,69 +37,57 @@
 				</div>
 				
 			</article>
-			
-		<?php endwhile; ?>
-	
-	<?php endif; ?>
 	
 	</div>
 	
 	<div class="col-sm-4 col-md-4 col-lg-3 col-sm-pull-8 col-md-pull-8 col-lg-pull-9">
 		<aside class="sidebar">
-		
-			<div class="promo-message">
-				<p><span class="glyphicon glyphicon-phone-alt"></span> Call Free on:</p>
-				<h3>0800 169 5925</h3>
-				<p><span class="glyphicon glyphicon-comment"></span> For a no obligation enquiry</p>
-			</div>
-		
-			<div class="sidebar-map">
-			<?php holder( array( 'height' => '300', 'width' => '360', 'theme' => 'wordpress' , 'text'=>'Map image') ); ?>
-			</div>
+		<?php $freephone_box_active = get_field('sb_freephone_active', 'option'); ?>
+	 
+		 <?php if ($freephone_box_active) { 
+			 $freephone_box_title =  get_field('freephone_box_title', 'option');
+			 $freephone_box_number = get_field('freephone_tel', 'option');
+		 ?>
+		 <div class="sidebar-freephone">
+			<h3><?php echo $freephone_box_title; ?></h3>
+			<p><span class="glyphicon glyphicon-earphone"></span><?php echo $freephone_box_number; ?></p>
+		</div>
+		 <?php } ?>
+		 
+		 <div class="sidebar-map">
+		 <?php echo do_shortcode("[mapbox layers='kevwaddell.g6jnb7mp' api='' options='' lat='55.00900332166974' lon='-1.4895915985107422' z='11' width='262' height='262']"); ?>
+		 </div>
 			
-			<div class="sidebar-block">
+			<?php if ( get_field("sidebar") ) : ?>
+	
+			<?php foreach( get_field("sidebar", $post->ID) as $sb_item ): ?>
+
+				<?php if ($sb_item['acf_fc_layout'] == "sb_panel") : 	?>
 				
-				<h2>Address</h2>
+				<div class="sidebar-block">
+					<h2><?php echo $sb_item['panel_title']; ?></h2>
 				
-				<div class="block-content">
-				<p class="large-txt bold">TLW Solicitors</p>
-				<p>9 Hedley Court</p>
-				<p>Orion Business Park</p>
-				<p>North Shields</p>
-				<p>Tyne & Wear</p>
-				<p>NE29 7ST</p>
+					<div class="block-content">
+					<?php echo $sb_item['panel_content']; ?>
+					</div>
+					
 				</div>
-			
-			</div>
-			
-			<div class="sidebar-block">
 				
-				<h2>Useful numbers</h2>
-				
-				<div class="block-content">
-				<p><strong>Freephone: </strong> 0800 169 5925</p>
-				<p><strong>Office Tel: </strong> 0191 293 1500</p>
-				<p><strong>Tax: </strong> 0191 293 1501</p>
-				</div>
+				<?php endif; ?>			
+					
+			<?php endforeach; ?>
 			
-			</div>
-			
-			<div class="sidebar-block">
-				
-				<h2>Contact emails</h2>
-				
-				<div class="block-content">
-				<p><a href="mailto:info@tlwsolicitors.co.uk">info@tlwsolicitors.co.uk</a></p>
-				<p><a href="mailto:enquiries@tlwsolicitors.co.uk">enquiries@tlwsolicitors.co.uk</a></p>
-				</div>
-			
-			</div>
-			
+			<?php endif; ?>	
+						
 		</aside>
 		
 	</div>
 
 </div>
+
+<?php endwhile; ?>
+
+<?php endif; ?>
 
 </section>
 <!-- MAIN CONTENT END -->
