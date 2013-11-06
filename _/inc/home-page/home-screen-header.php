@@ -1,7 +1,7 @@
 <header class="home-header" role="home-banner">
 			
 	<div id="home-logo" class="left50">
-		<h1><span><?php bloginfo('name'); ?></span></h1>
+		<h1><?php bloginfo('name'); ?></h1>
 		<h2>For added TLC think&hellip;</h2>
 	</div>
 	
