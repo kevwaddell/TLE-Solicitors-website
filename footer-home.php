@@ -72,7 +72,7 @@
 		<div id="side-icon-links" class="without-print icons-hidden">
 			<ul>
 				<li class="tel-icon with-div disabled"><div class="in-block"><?php echo $freephone_number; ?></div><button><span class="glyphicon glyphicon-phone-alt"></span></button></li>
-				<li class="email-icon"><a href="mailto:<?php echo $contact_email; ?>" title="Email TLW Solicitors"><span class="glyphicon glyphicon-send"></span></a></li>
+				<li class="email-icon"><a href="mailto:<?php echo $contact_email; ?>" title="Email TLW Solicitors"><span class="glyphicon glyphicon-envelope"></span></a></li>
 				<li class="search-icon with-div disabled"><div class="in-block"><?php get_search_form(); ?></div><button><span class="glyphicon glyphicon-search"></span></button></li>
 			</ul>
 		</div>

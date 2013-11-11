@@ -26,20 +26,48 @@ Template Name: Page with right hand sidebar
 	$children = get_posts($children_args);
 	
 	
-	$feat_img_id = true;
+	$images = get_field("images");
+	
+	$feat_img_id = get_field('featured_img');
+	$position = get_field('position');
+	$email = get_field('email');
 	?>	
 	
-			<?php if ($feat_img_id) { ?>
+			<?php if ($images) : ?>
+			
+			<?php foreach( $images as $img_item ): ?>
+			
+				<?php if ($sb_item['acf_fc_layout'] == "featured_img") : ?>
 				
 				<?php include (STYLESHEETPATH . '/_/inc/global/featured-img.php'); ?> 
 				
-			<?php }  ?>
+				<?php endif;  ?>
+				
+			<?php endforeach; ?>
+				
+			<?php endif;  ?>
 			
-			<article class="page<?php echo ( $children ) ? ' intro':''; ?>">
+			<article class="page">
 				
 				<header class="page-header">
 				<h1><span><?php the_title(); ?></span></h1>
+				
+				<?php if ($position) { ?>
+				<div class="head-tag"><?php echo $position; ?></div>
+				<?php } ?>
+				
+				<?php if ($email) { ?>
+				<div class="head-email">
+				<span class="glyphicon glyphicon-envelope"></span> <a href="mailto:<?php echo $email; ?>" title="Email: <?php echo $post->post_title; ?>"><?php echo $email; ?></a></div>
+				<?php } ?>
+				
 				</header>
+				
+				<div class="rule mag-bottom-20"></div>
+				
+				<div class="intro">
+				<?php the_excerpt(); ?>
+				</div>
 				
 				<?php the_content(); ?>
 				
@@ -53,48 +81,8 @@ Template Name: Page with right hand sidebar
 		
 			<?php if ( $children ): ?>	
 			
-			<div class="rule"></div>
-			
-			<section id="page-children" class="pages-list">
-	
-			<?php foreach ( $children as $post ) : 
-			setup_postdata($post);
-			?>	
-			
-			<article id="list-item-<?php echo $post->post_name; ?>" class="page-list-item">
-			
-			<?php 
-			$parent = get_page($post->post_parent);
-			 ?>
-
-			
-				<h2<?php echo ($parent) ? ' class="'. $parent->post_name .'"':''; ?>><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute('before=View &after= page'); ?>"><span class="txt"><?php the_title(); ?></span> <span class="icon"></span></a></h2>
-				
-				
-				<div class="row">
-				
-					<div class="col-sm-8 col-md-8 col-lg-8">
-						<div class="txt-wrap">
-						<?php the_excerpt(); ?>
-						</div>
-					</div>
-					
-					<figure class="img"><?php holder( array( 'height' => '200', 'width' => '300', 'theme' => 'lite-gray' , 'text'=>'Featured image') ); ?></figure>
-				
-				</div>
-				
-				<a href="<?php the_permalink(); ?>" class="view-btn">View More Details</a>
-				
-			</article>
-			
-			<?php endforeach; ?>
-			
-			<?php wp_reset_postdata();?>
+			<?php include (STYLESHEETPATH . '/_/inc/pages/page-children.php'); ?> 
 						
-			</section>
-			
-			<div class="rule"></div>
-			
 			<?php endif; ?>
 	
 		<?php endwhile; ?>

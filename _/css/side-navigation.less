@@ -4,28 +4,95 @@ height: 100%;
 .abs;
 .top(0);
 .right(0);
-.bg-col(@black);
+//.bg-col(@redDk);
+.bg(@redDk; 'inner-side-shadow-left.png'; repeat-y);
 .over-y;
 z-index: 2;
-
+	
+	.social-links-wrap {
+	.h(3);
+	.pad-left(3);
+	.mag-bot(1);
+		ul {
+		list-style: none;
+		.mag-all(0);
+		.pad-all(0);	
+		}
+		li {
+		.fleft;
+		.w(2.7);
+		.h(3);
+		.mag-right(.5);
+			a {
+			.block;
+			.h(3);
+			.w(2.7);
+			.txt-gone;
+			.bg(transparent; "side-nav-social-icons.png"; no-repeat;  left ;top);
+			
+				&:hover {
+				.bg-pos-y(bottom);
+				}
+			}
+			
+			&.twitter a {
+			background-position-x: 0px;
+			}
+			
+			&.facebook a {
+			background-position-x: -30px;
+			}
+			
+			&.linkedin a {
+			background-position-x: -60px;
+			}
+			
+			&.google a {
+			background-position-x: -90px;
+			}
+			
+			
+		}	
+	}
+	
+	.side-nav-logo {
+	.abs;
+	.bottom(3);
+	.left(-0);
+	width: 100%;
+	.h(10);
+	
+		.logo {
+			.h(6);
+			.w(12.2);
+			.mag-left(3);
+			.bg(transparent; "side-nav-logo.png");
+		}
+	}
+	
+	button.close {
+	.col(@red);	
+	.abs;
+	.right(1);
+	.top(.5);	
+	.opacity(1);	
+	text-shadow: none;
+		&:hover, &:active, &:focus {
+		.col(@white);	
+		}
+	}
+	
 	#side-nav {
 	.pad-all(3);	
 	.mag-bot(15);	
-	}
 	
 	a {
 	.col(@white);
 	.no-text-dec;
+	.slab-serif;
 		&:hover, &:active, &:focus {
-		.col(lighten(@black, 50%));
+		.col(@red);
 		}	
-	}
-	
-	button.close {
-	.col(@white);	
-	.abs;
-	.right(1);
-	.top(.5);	
 	}
 	
 	ul {
@@ -62,12 +129,26 @@ z-index: 2;
 			a {
 			.w(3);
 			.h(3);
-			.bg-col(lighten(@black, 20%));
 			.rounded(4px);
 			outline: none;
+			.no-border;
+			.bg(@white; "side-nav-icons.png"; no-repeat; left ;top); 
 				&:hover, &:active, &:focus {
-				.bg-col(lighten(@black, 30%));	
+				.bg-col(@red);	
+				.bg-pos-y(bottom);
 				}
+			}
+			
+			&.home a {
+			background-position-x: 0px;
+			}
+			
+			&.contact-us a {
+			background-position-x: -30px;	
+			}
+			
+			&.email a {
+			background-position-x: -60px;		
 			}
 		}
 		
@@ -105,7 +186,7 @@ z-index: 2;
 							}
 							
 							&.ui-state-active {
-							.col(lighten(@black, 50%));
+							.col(@red);
 							}
 						}
 					}
@@ -115,11 +196,13 @@ z-index: 2;
 					.mag-bot(1);
 						li {
 						.normal;
+						.mag-bot(.5);
 
 							a {
 							.block;
 							.pad-left(2);
 							.rel;
+							.line-h(1.6);
 								&:before {
 								content: "\007E";
 								.abs;
@@ -135,5 +218,7 @@ z-index: 2;
 		}//Top level li	
 		
 	}//top level ul
+	
+	}
 	
 }

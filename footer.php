@@ -72,7 +72,7 @@
 		<div id="side-icon-links" class="<?php echo ( is_single() || is_page() ) ? "with-print":"without-print"; ?> icons-visible">
 			<ul>
 				<li class="tel-icon with-div disabled"><div class="in-block"><?php echo $freephone_number; ?></div><button><span class="glyphicon glyphicon-phone-alt"></span></button></li>
-				<li class="email-icon"><a href="mailto:<?php echo $contact_email; ?>" title="Email TLW Solicitors"><span class="glyphicon glyphicon-send"></span></a></li>
+				<li class="email-icon"><a href="mailto:<?php echo $contact_email; ?>" title="Email TLW Solicitors"><span class="glyphicon glyphicon-envelope"></span></a></li>
 				<?php if (is_single() || is_page()) { ?>
 				<li class="print-icon"><a href="javascript:window.print()" title="Print page"><span class="glyphicon glyphicon-print"></span></a></li>
 				<?php } ?>

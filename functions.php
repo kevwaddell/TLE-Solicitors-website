@@ -94,6 +94,9 @@ include (STYLESHEETPATH . '/_/functions/tlw_carreers_cpt.php');
 /* REGISTER DOWNLOADS CPT */
 include (STYLESHEETPATH . '/_/functions/tlw_downloads_cpt.php');
 
+/* REGISTER FEEDBACK CPT */
+include (STYLESHEETPATH . '/_/functions/tlw_feedback_cpt.php');
+
 /* REGISTER SIDEBAR OPTIONS TAX */
 //include (STYLESHEETPATH . '/_/functions/tlw_sidebar_options_tax.php');
 
@@ -109,6 +112,12 @@ include (STYLESHEETPATH . '/_/functions/twitter-feed.php');
 /* FORM ACTIONS */
 //include (STYLESHEETPATH . '/_/functions/form_functions.php');
 include (STYLESHEETPATH . '/_/functions/gform_functions.php');
+
+/* CHANGE CPT ICONS */
+include (STYLESHEETPATH . '/_/functions/change-cpt-icons.php');
+
+/* AFC SAVE FUNCTIONS */
+include (STYLESHEETPATH . '/_/functions/afc_save_post.php');
 
 holder_add_theme( 'wordpress', '333333', 'eeeeee' );
 holder_add_theme( 'lite-gray', '888888', 'eeeeee' );

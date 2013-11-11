@@ -1,21 +1,21 @@
 #page-banner-lrg {
-.h(55);	
-.bg-col(@red);	
+.h(55.5);	
+background: @red url("img/slider-bg.png") repeat-y center top fixed;
 //.gradient(@color: #1872b6, @start: #5fbfeb, @stop: #1872b6);
 .rel;
+.border-bot(@redMid, 0.5);
 	
 	//banner image
 	.banner-img {
 	.bg-pos(transparent; no-repeat; center; center);
-	.h(54);
+	.h(55);
 	.bg-size;
 	.inner-shadow(0,0, 20px, @alpha: 0.5);
 	.rel;
-	.border-radius(0, 12px,12px, 0);
 		p.tag {
 		.abs;
-		.left(2);
-		.bottom(2);
+		.left(11);
+		.bottom(4);
 		.col(@white);
 		.serif;
 		.italic;
@@ -32,18 +32,16 @@
 		.left(1.5);
 		.right(1.5);
 		.top(0);
-		.h(54);
-		.bg(transparent; "slider-arch.png"; no-repeat; center ;top);
-		.border-radius(0, 12px,12px, 0);
+		.h(55);
+		.bg(transparent; "slider-arch.png"; no-repeat; left ;top);
 	}
 	
 	.pattern-bg {
 		.abs;
 		.right(0);
 		.top(1.5);
-		.bottom(1);
+		.bottom(0);
 		.w(40);
-		.border-radius(0, 12px,0, 0);
 		.bg(transparent; "pattern-bg.png"; repeat-y; right;top);
 	}
 	

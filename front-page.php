@@ -21,7 +21,7 @@
 		
 		<p class="tel-num"><span class="glyphicon glyphicon-earphone"></span>0800 169 5925</p>
 		
-		<button type="button" title="More details" class="enter-btn">Start your claim <span class="glyphicon glyphicon-arrow-down"></span></button>
+		<button type="button" title="More details" class="enter-btn">Start your claim</button>
 	
 	</div>
 	

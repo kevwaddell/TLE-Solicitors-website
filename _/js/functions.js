@@ -35,6 +35,8 @@ var nav_pos_top = $('.header').position().top;
 var nav_pos = $('.page-wrapper').offset().top + $('.header').outerHeight();
 var scrollPosition_calc = window_pos - ( $('.header').outerHeight() + 2 );
 
+var our_team_panels_total = $('#our-team-slider > .carousel-inner').find('.item').length;
+
 if ($('body').attr("id") == "home") {
 var header_h = $('.header').outerHeight();
 var header_pos = $('#home-page-content').offset().top;
@@ -57,6 +59,13 @@ $(document).ready(function (){
 window_pos = $(window).scrollTop();
 page_wrapper_pos = $('.page-wrapper').position().top;
 
+	/* HOME PAGE SLIDERS 
+	Slider functions for the home page.
+	- Full screen home screen slider	
+	- Testimonials slider
+	- Reccent news slider
+	*/
+	
 if ($('body').attr("id") == "home") {
 
 	if ($('#home-carousel').length == 1) {
@@ -80,6 +89,38 @@ if ($('body').attr("id") == "home") {
 	$('li.tool-tip').tooltip({html: true});
 	
 }
+
+	/* Our Team Slider
+	Functions for when slider initiates and after the slide has slid.
+	*/
+
+	
+	$('#our-team-slider').on('slid.bs.carousel', function(e){
+	
+		var active_item_index = $(this).find('.active').index();
+		
+		if ( active_item_index == (our_team_panels_total-1) ) {
+		$(this).find('a.right').hide();
+		} else {
+			
+			if ( $(this).find('a.right').is(':hidden') ) {
+				$(this).find('a.right').show();
+			}
+			
+		}
+		
+		if ( active_item_index > 0 ) {
+		$(this).find('a.left').show();
+		} else {
+			
+			if ( $(this).find('a.left').is(':visible') ) {
+				$(this).find('a.left').hide();
+			}
+			
+		}
+		
+	});
+	
 	
     /* 
     SIDE BAR MENU BUTTON 

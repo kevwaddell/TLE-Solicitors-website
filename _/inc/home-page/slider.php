@@ -51,7 +51,7 @@
 	    
 	     <div id="carousel-example-4" class="item">
 	    
-	    <figure class="img" style="background-image: url(<?php bloginfo('stylesheet_directory');?>/_/img/slide-3.jpg?v=6);">
+	    <figure class="img" style="background-image: url(<?php bloginfo('stylesheet_directory');?>/_/img/slide-6.jpg?v=1);">
 	    	<!-- <img src="http://tlw-wireframes.dev/wp-content/themes/tlwwireframedesign1/_/img/slide-2.jpg" alt="Slider image 3"> -->
 	    </figure>
 	   

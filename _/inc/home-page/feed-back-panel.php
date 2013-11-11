@@ -1,3 +1,18 @@
+<?php 
+$feedback_args = array(
+'post_type'	=> 'tlw_testimonial_cpt',
+'posts_per_page'	=> 5,
+'meta_key'	=> 'quote',
+'orderby'	=> 'rand'
+);
+
+$feedback = get_posts($feedback_args);
+$feedback_counter = 0;
+
+//echo '<pre>';print_r($feedback);echo '</pre>';
+
+ ?>
+
 <section id="testimonials">
 	<span class="icon"></span>
 	
@@ -9,36 +24,19 @@
 				
 				<div class="carousel-inner">
 				
-					<div class="quote item active">
-						<blockquote>I would like to thank everyone concerned for their friendly and efficient service. I had never dealt with the firm before, but they were reassuring and never condescending when dealing with my queries.</blockquote>
+				<?php foreach ($feedback as $quote) { 
+				$feedback_counter++;
+				$quote_txt = get_field('quote', $quote->ID);	
+				$client_name = get_field('client_name', $quote->ID);		
+				$location = get_field('location', $quote->ID);	
+				?>
+					<div class="quote item <?php echo ($feedback_counter == 1) ? " active":""; ?>">
+						<blockquote><?php echo $quote_txt; ?></blockquote>
 						
-						<p>Mrs P King, Barnsley</p>
+						<p><?php echo $client_name; ?>, <?php echo $location; ?></p>
 					</div>
-					
-					<div class="quote item">
-						<blockquote>I would like to thank everyone concerned for their friendly and efficient service. I had never dealt with the firm before, but they were reassuring and never condescending when dealing with my queries.</blockquote>
-						
-						<p>Mr R Tick, Manchester</p>
-					</div>
-					
-					<div class="quote item">
-						<blockquote>I would like to thank everyone concerned for their friendly and efficient service. I had never dealt with the firm before, but they were reassuring and never condescending when dealing with my queries.</blockquote>
-						
-						<p>Mrs G Smith, Newcastle</p>
-					</div>
-					
-					<div class="quote item">
-						<blockquote>I would like to thank everyone concerned for their friendly and efficient service. I had never dealt with the firm before, but they were reassuring and never condescending when dealing with my queries.</blockquote>
-						
-						<p>Mr J Longname, Worcester</p>
-					</div>
-					
-					<div class="quote item">
-						<blockquote>I would like to thank everyone concerned for their friendly and efficient service. I had never dealt with the firm before, but they were reassuring and never condescending when dealing with my queries.</blockquote>
-						
-						<p>Mrs K Small, Cardiff</p>
-					</div>
-				
+				<?php } ?>
+			
 				</div>
 			
 			</div>

@@ -197,7 +197,9 @@
 		}
 		
 		span {
+			.block;
 			.h(3);
+			.w(4);
 			.line-h(3);
 			.bg-col(@redDk);
 			.pad-left(1);
@@ -421,17 +423,18 @@
 
 /* PROFILE GRID */
 
+/*
 .grid-list {
 .pad-top(2);
 
 		.grid-list-item {
-		.bg-col(@black40);
+		.bg-col(@grey70);
 		.inner-shadow(0, 0, 5px, 0.5);
 		.pad(1.5, 1.5, 0, 1.5);
 		.border-radius(4px, 0, 0, 4px);
 		
 			.profile-img {
-				.border(@white, 0.5);
+				.border(@red, 0.5);
 				.mag-bot(1.5);
 				img {
 				.block;
@@ -447,6 +450,8 @@
 			h2 {
 			.mag-top(0);
 			.font-size(2);	
+			.serif;
+			.col(@red);
 			}
 			
 			h3 {
@@ -454,6 +459,11 @@
 			.font-size(1.4);
 			.caps;
 			.col(@black70);
+			.slab-serif;
+			}
+			
+			a.email-link {
+			.col(@grey);	
 			}
 			
 		}
@@ -462,19 +472,21 @@
 		.block;
 		.h(3);
 		.line-h(3);
-		.bg-col(@black70);
+		.bg-col(@redMid);
 		.col(@white);	
 		.border-radius(0, 4px, 4px, 0);
 		.mag-bot(3);	
 		.no-text-dec;
 		.center;
 		outline: 0;
+		.slab-serif;
+		.caps;
 		
 			span {
 			.block;
 			.fright;
 			.top(0);
-			.bg-col(@black);
+			.bg-col(@redDk);
 			.w(3);
 			.h(3);
 			.line-h(2.8);
@@ -482,13 +494,14 @@
 			}
 			
 			&:hover, &:active, &:focus {
-			.bg-col(@black);
+			.bg-col(@red);
 				span {
-				.bg-col(@black70);
+				.bg-col(@redMid);
 				}
 			}
 		}
 }
+*/
 
 .pagination {
 	.wp-pagenavi {
@@ -625,6 +638,7 @@
 	.txt-gone;
 	
 		&.left {
+		.none;
 		.bg-pos-x(left);		
 		}
 		

@@ -137,7 +137,7 @@ z-index: 15;
 			
 		}
 		
-		.date {
+		.date, .head-tag {
 			.in-block;
 			.pad(0;3;0;3);
 			.bg-col(@grey);
@@ -196,15 +196,27 @@ z-index: 15;
 			
 		}
 	}
+	
+	.caption {
+	.font-size(1.4);
+	.serif;
+	.italic;	
+	}
 
 	.intro {
 	.font-size(1.6);
 	.line-h(2);
 	.col(@grey);
-	.mag-bot(4);	
-		p {
-		.mag-bot(0);
-		}
+	.mag-bot(3);
+	}
+	
+	.testimonial p {
+	.center;
+	.col(@grey);
+	.serif;
+	.italic;
+	.font-size(3);
+	.line-h(3.4);	
 	}
 	
 }

@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>	
+
 <!-- MAIN CONTENT START -->
 <section id="main-content" class="content container">
 
@@ -7,7 +9,6 @@
 
 	<div class="col-sm-8 col-md-8 col-lg-9">
 
-	<?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>	
 	
 	<?php 
 	$people = array( 
@@ -40,67 +41,6 @@
 				<?php the_content(); ?>
 				
 			</article>
-		
-			<?php if ( $people ): ?>	
-			
-			<div class="rule"></div>
-			
-			<section id="people-grid" class="grid-list">
-			
-				<div class="row">
-	
-					<?php foreach ( $people as $person ) : 
-						
-					//echo '<pre>';print_r($person);echo '</pre>';
-					?>	
-					
-					<div class="col-sm-6 col-md-6 col-lg-6">
-					
-					<article id="grid-item-<?php echo $person[post_name]; ?>" class="grid-list-item">
-					
-						<div class="row">
-						
-							<div class="col-sm-12 col-md-12 col-lg-6">
-								<figure class="profile-img">
-								 <?php holder( array( 'height' => '313', 'width' => '253', 'theme' => 'lite-gray' , 'text'=>'Profile image') ); ?>
-								</figure>
-							</div>
-							
-							<div class="col-sm-12 col-md-12 col-lg-6 right-col">
-								
-								<div class="txt-wrap">
-								
-									<h2><?php echo $person[post_title]; ?></h2>
-									<h3>Position</h3>
-									<a href="mailto:name@email.com" title="Email Name"><span class="glyphicon glyphicon-send"> name@email.com</a>
-								</div>
-								
-							</div>
-
-						</div>
-					</article>
-					
-					<a href="#" title="View Details" class="view-more">
-						More Details <span class="glyphicon glyphicon-circle-arrow-right"></span>
-					</a>
-					
-					</div>
-					
-					<?php endforeach; ?>
-					
-					<?php wp_reset_postdata();?>
-			
-				</div>
-						
-			</section>
-			
-			<div class="rule"></div>
-						
-			<?php endif; ?>
-	
-		<?php endwhile; ?>
-	
-	<?php endif; ?>
 	
 	</div>
 	
@@ -114,5 +54,15 @@
 
 </section>
 <!-- MAIN CONTENT END -->
+
+<!-- TEAM SLIDER START -->
+
+<?php include (STYLESHEETPATH . '/_/inc/our-team/our-team-slider.php'); ?>
+
+<!-- TEAM SLIDER END -->
+
+<?php endwhile; ?>
+
+<?php endif; ?>
 
 <?php get_footer(); ?>

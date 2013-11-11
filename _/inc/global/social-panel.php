@@ -105,6 +105,17 @@
 	
 	<?php if (is_front_page()) { ?>
 	
+	<?php 
+	global $post;
+	$news_posts_args = array(
+	'post_type' => 'post',
+	'posts_per_page'	=> 5,
+	);
+	
+	$news_posts = get_posts($news_posts_args);
+	$news_posts_counter = 0;
+	 ?>
+	
 	<div class="panel-rule"></div>
 	
 	<!-- Container start -->
@@ -122,36 +133,22 @@
 					
 					<div class="carousel-inner">
 					
-						<div class="quote item active">
-							<h3><a href="#" title="News title 1">News headline to go in this space example 1</a></h3>
-							
-							<time>Tuesday, October 1st, 2013</time>
-						</div>
-						
-						<div class="quote item">
-							<h3><a href="#" title="News title 2">News headline to go in this space example 2</a></h3>
-							
-							<time>Monday, September 30th, 2013</time>
-						</div>
-						
-						<div class="quote item">
-							<h3><a href="#" title="News title 3">News headline to go in this space example 3</a></h3>
-							
-							<time>Friday, September 1st, 2013</time>
-						</div>
-						
-						<div class="quote item">
-							<h3><a href="#" title="News title 4">News headline to go in this space example 4</a></h3>
-							
-							<time>Tuesday, October 1st, 2013</time>
-						</div>
-						
-						<div class="quote item">
-							<h3><a href="#" title="News title 5">News headline to go in this space example 5</a></h3>
-							
-							<time>Tuesday, October 1st, 2013</time>
-						</div>
+					<?php foreach ($news_posts as $post) : 
+					setup_postdata($post);
+					$news_posts_counter++;	
+					$post_date = get_the_date('l, F jS, Y');	
+					?>
 					
+					<div class="quote item <?php echo ($news_posts_counter == 1) ? " active":""; ?>">
+							<h3><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+							
+							<time><?php echo $post_date; ?></time>
+					</div>
+					
+					<?php endforeach; 
+					wp_reset_postdata();	
+					?>
+
 					</div>
 				
 				</div>

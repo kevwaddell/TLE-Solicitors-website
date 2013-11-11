@@ -2,13 +2,13 @@
 		
 	<div class="container">
 	
-		<div class="banner-img" style="background-image: url(<?php bloginfo('stylesheet_directory');?>/_/img/slide-4.jpg);">
+		<div class="banner-img" style="background-image: url(<?php bloginfo('stylesheet_directory');?>/_/img/slide-6.jpg);">
 			<?php //holder( array( 'height' => '540', 'width' => '1140', 'theme' => 'lite-gray' , 'text'=>'Banner image') ); ?>
 			
 			<p class="tag">For Added TLC Think&hellip;</p>
 		</div>
 		
-		<div class="pattern-bg" style="right: 15px; bottom: 10px;"></div>	
+		<div class="pattern-bg" style="right: 15px;"></div>	
 		<div class="page-banner-corner"></div>
 		
 		<div id="home-banner-btn" class="promo-wrap">

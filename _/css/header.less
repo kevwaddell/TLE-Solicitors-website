@@ -17,11 +17,11 @@ z-index: 10;
 			.txt-gone;
 			.block;
 			.h(10);
-			.w(6.4);
+			.w(14.5);
 			.bg(transparent; "tlw-logo.png"; no-repeat;  left ;center);
 			.transition;
 				&:hover, &:active, &:focus {
-				.w(14.5);
+				.opacity(0.7);
 				}
 			}
 		}					
@@ -65,12 +65,13 @@ header[role="home-banner"] {
 		.bg-col(transparent);
 		.no-border;
 		.fright;
+		.col(@white);
 			&:hover, &:active, &:focus {
-			.col(@white);
+			.col(@redDk);
 			}
 			
 			&.open {
-			.col(@white);	
+			.col(@redDk);	
 			}
 		}
 	

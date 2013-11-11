@@ -37,11 +37,11 @@ width: 100%;
 			.right(0);	
 			
 			&.top-right {
-			.w(48.3);
-			.h(34.1);
+			.w(42.5);
+			.h(35);
 			.top(0);
 			.bg(transparent; "slider-corner-top.png"; no-repeat; right ;top);
-			z-index: 10;
+			z-index: 11;
 			}
 			
 			&.bottom-right {
@@ -49,7 +49,7 @@ width: 100%;
 			.h(68);
 			.bottom(0);
 			.bg(transparent; "slider-corner-bottom.png"; no-repeat; right ;top);
-			z-index: 11;
+			z-index: 10;
 			}
 		}
 
@@ -157,10 +157,8 @@ width: 100%;
 				.w(7.3);
 				.h(8.1);
 				.mag-right(1);
-				.bg-pos(transparent;no-repeat; center; center);
+				.bg(transparent; "slider-icons.png"; no-repeat; left; top);
 				.no-border;
-				.opacity(0.5);
-				.transition;
 				overflow: visible;
 				.fleft;
 					
@@ -169,27 +167,27 @@ width: 100%;
 						}
 						
 					&.active, &:hover, &:active, &:focus {
-					.opacity(1.0);
+					.bg-pos-y(bottom);
 					}
 						
 					&.clinical-negligence {
-						.bg-img("clinical-negligence-icon.png");
+					.bg-pos-x(left);
 					}
 					
 					&.personal-injury {
-						.bg-img("personal-injury-icon.png");
+					background-position-x: -80px;
 					}
 					
 					&.professional-negligence {
-						.bg-img("professional-negligence-icon.png");
+					background-position-x: -160px;
 					}
 					
 					&.rta {
-						.bg-img("road-traffic-accidents-icon.png");
+					background-position-x: -240px;
 					}
 					
 					&.business-litigation {
-						.bg-img("business-litigation-icon.png");
+					background-position-x: -320px;
 					}
 				
 				}
@@ -203,15 +201,21 @@ width: 100%;
 	.bottom(0);	
 	.w(40.5);
 	.h(8);
-	.trans-bg(@white; 0.7);
+	.trans-bg(@red; 0.8);
 	z-index: 20;
 	.font-size(3);
 	.no-border;
 	.drop-shadow(0, 0, 10px, 0.7);
 	.border-radius(4px, 0, 0, 4px);
+	.bg-img("arrow-down-lrg.png");
+	.bg-repeat (no-repeat);
+	.bg-pos-x (right);
+	.bg-pos-y (center);
+	.col(@white);
+	.align-left;
+	text-indent: 30px;
 		&:hover, &:active, &:focus {
-		.trans-bg(@black; .8);	
-		.col(@white);
+		.trans-bg(@white; .3);	
 		}
 	}
 	
@@ -229,6 +233,7 @@ width: 100%;
 		span {
 			.mag-right(.5);
 			.font-size(4);
+			.col(@red);
 		}
 	}
 	
