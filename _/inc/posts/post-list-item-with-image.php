@@ -1,7 +1,3 @@
-<?php 
-$post_date = get_the_date();
-?>
-
 <article class="post-list-item with-img">
 
 	<div class="row">
@@ -13,7 +9,17 @@ $post_date = get_the_date();
 			</header>
 			
 			<div class="txt-wrap">
+			
+				<?php if ($intro_text) : ?>
+				
+				<p><?php echo $intro_text; ?></p>
+				
+				<?php else: ?>
+				
 				<?php the_excerpt(); ?>
+				
+				<?php endif; ?>
+				
 			</div>
 		
 		</div>
@@ -21,7 +27,9 @@ $post_date = get_the_date();
 		<div class="col-sm-4 col-md-4 col-lg-4">
 	
 			<figure class="img">
-			<?php holder( array( 'height' => '150', 'width' => '245', 'theme' => 'lite-gray' , 'text'=>'Thumbnail') ); ?>
+			
+			<img src="<?php echo $feat_img_url; ?>" width="<?php echo $feat_img_w; ?>" height="<?php echo $feat_img_h; ?>">
+			
 			<div class="inset-shadow"></div>
 			</figure>
 		

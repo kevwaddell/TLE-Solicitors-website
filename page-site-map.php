@@ -9,13 +9,18 @@
 			<h1><span><?php the_title(); ?></span></h1>
 			</header>
 			
+			<div class="rule-sml mag-bottom-20"></div>
+			
+			<div class="intro center lrg">
 			<?php the_content(); ?>
+			</div>
+			
+			<div class="rule"></div>
 			
 		</article>
 <?php endwhile; ?>
 <?php endif; ?>
 
-<div class="rule"></div>
 
 <?php include (STYLESHEETPATH . '/_/inc/site-map/vars.php'); ?> 
 
@@ -24,23 +29,7 @@
 	<div class="row">
 	
 		<div class="col-sm-4 col-md-4">
-		
-		<h2><a href="<?php echo get_permalink($company_page->ID); ?>"><?php echo $company_page->post_title; ?></a></h2>
-		
-		<?php if ($company_pages) { ?>
-			<div class="list-block">
-
-				<ul>
 				
-					<?php foreach ($company_pages as $company_page) { ?>
-					<li><a href="<?php echo get_permalink($company_page->ID); ?>"><?php echo $company_page->post_title; ?></a></li>
-					<?php } ?>
-				
-				</ul>
-				
-			</div>
-		<?php } ?>
-		
 		<h2><a href="<?php echo get_permalink($practices_page->ID); ?>"><?php echo $practices_page->post_title; ?></a></h2>
 		
 		<?php foreach ($practices as $practice) { ?>
@@ -97,45 +86,23 @@
 			</div>
 				
 		<?php } ?>
-		
-		<h2><?php echo $news_page->post_title; ?>: Topics</h2>
+
 		
 		<?php if ($topics) { ?>
-				
-			<?php foreach ($topics as $topic) { ?>
-			
-			<?php 
-			$topics_children_args = array(
-			'type'			=> 'post',
-			'hide_empty'	=> 0,
-			'parent'		=> $topic->term_id,
-			'orderby'		=> 'meta_value',
-			'order'			=> 'desc'
-			); 
-			$topics_children = get_categories($topics_children_args);
-		  ?>
-
-			<h3><a href="<?php echo get_category_link($topic->term_id); ?>"><?php echo $topic->name; ?></a></h3>
-			
-				<?php if ($topics_children) { ?>
+						
+		<h2><?php echo $news_page->post_title; ?>: Topics</h2>
+		
 				<div class="list-block">
 				
 					<ul>
-					<?php foreach ($topics_children as $topics_child) { ?>
-						<li><a href="<?php echo get_category_link($topics_child->term_id); ?>"><?php echo $topics_child->name; ?></a></li>
-					<?php } ?>
+						<?php foreach ($topics as $topic) { ?>
+						<li><a href="<?php echo get_category_link($topic->term_id); ?>"><?php echo $topic->name; ?></a></li>
+						<?php } ?>
 					</ul>
 					
 				</div>
-				<?php } ?>
-				
-			<?php } ?>
 				
 		<?php } ?>
-		
-		</div>
-		
-		<div class="col-sm-4 col-md-4">
 		
 		<h2><?php echo $news_page->post_title; ?>: Subjects</h2>
 		
@@ -145,6 +112,26 @@
 			</div>
 		
 		<?php endif; ?>
+		
+		</div>
+		
+		<div class="col-sm-4 col-md-4">
+				
+		<h2><a href="<?php echo get_permalink($company_page->ID); ?>"><?php echo $company_page->post_title; ?></a></h2>
+		
+		<?php if ($company_pages) { ?>
+			<div class="list-block">
+
+				<ul>
+				
+					<?php foreach ($company_pages as $company_page) { ?>
+					<li><a href="<?php echo get_permalink($company_page->ID); ?>"><?php echo $company_page->post_title; ?></a></li>
+					<?php } ?>
+				
+				</ul>
+				
+			</div>
+		<?php } ?>
 					
 		<h2>Rescources</h2>
 		

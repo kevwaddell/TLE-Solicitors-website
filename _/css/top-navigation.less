@@ -29,7 +29,7 @@ position: inherit;
 				a {
 				.bg(transparent; "main-nav-arrow.png"; no-repeat;  center ;top);
 					&:hover {
-					.bg-pos-y(bottom);
+					background-position: center bottom;
 					}
 				}
 				
@@ -41,7 +41,7 @@ position: inherit;
 			&:hover {
 				a {
 				.bg-col(@redMid);
-				.bg-pos-y(bottom);	
+				background-position: center bottom;
 				.col(@white);
 				}
 					
@@ -56,7 +56,7 @@ position: inherit;
 			.line-h(8.5);
 			outline: 0;
 			.col(@red);
-			.border-radius(4px, 0,  0, 4px);
+			.border-radius(4px, 0, 0, 4px);
 				&:hover, &:active, &:focus {
 				.bg-col(@redMid);
 				.col(@white);
@@ -70,9 +70,11 @@ position: inherit;
 				.top(10); .left(1.5); .right(1.5);
 				.opacity(0);
 				.none;
-				.pad-all(1);
-				.border-radius(0, 10px, 10px, 0);
+				.bg-col(@redMid);
+				.pad(1;.5;1;.5);
 				z-index: 20;
+				.inner-shadow(0, 0, 5px, 0.7);
+				.border-radius(0, 4px, 4px, 0);
 				//.min-h(20);
 				
 				//sub li
@@ -98,7 +100,6 @@ position: inherit;
 					.col(@white);	
 					.line-h(3);	
 					.caps;
-					//.left;
 					.bg-col(transparent);	
 					.pad-left(0);
 					.pad-right(0);
@@ -113,34 +114,40 @@ position: inherit;
 					ul.sub-menu {
 					.border-top(@white; 0.1);
 					.rel;
-					.top(0);
+					.top(0); .left(0); right: auto;
 					.bg-col(transparent);
 					.align-left;
+					.mag-right(0);
 					.min-h(2);
-					.pad-all(0);
 					.pad-top(1);
 					.pad-bot(1);
 					width: 100%;
+					.inner-shadow(0, 0, 0, 0.0);
+					.rounded(0);
 						//li
 						li {
 						float: none;
 						width: auto;
+						clear: none;
 						.block;	
+						.mag-left(0);
 						.mag-right(0);
-						.mag-right(0);
+						.mag-bot(.5);
 							&:before {
 							content: "\007E";	
-							.col(@white);
-							.mag-right(1);	
+							.col(@white);	
+							.fleft;
 							}
 							
 							// a
 							a {
+							.block;
+							.pad-left(2);
 							.rounded(0px);
 							.mag-top(0);
-							.inline;
+							//.inline;
 							.no-caps;
-							.line-h(2);	
+							.line-h(1.6);	
 							.bg-col(transparent);
 							}// a
 						}//li
@@ -189,7 +196,7 @@ position: inherit;
 				
 			}
 			
-			&.current-menu-item, &.current_page_parent {
+			&.current-menu-item, &.current_page_ancestor {
 				a {
 				.bg-col(@red);
 				.col(@white);	
@@ -221,7 +228,7 @@ position: inherit;
 				
 				&.home {
 					a {
-					.bg-pos-y (bottom);	
+					background-position: center bottom;
 					}
 				}
 			}
@@ -234,10 +241,9 @@ position: inherit;
 				.pad-all(0);
 				.bg-img("home-page-icon.png");
 				.bg-repeat(no-repeat);
-				.bg-pos-x (center);
-				.bg-pos-y (top);
+				background-position: center top;;
 					&:hover {
-					.bg-pos-y (bottom);
+					background-position: center bottom;
 					}
 				}
 			}
@@ -247,3 +253,11 @@ position: inherit;
 	}//top level ul
 
 }/* top main navigation */
+
+body#careers #top-nav ul li.careers {
+		a {
+		.bg-col(@red);
+		.col(@white);	
+		.border-radius(4px, 0,  0, 4px);
+		}
+}

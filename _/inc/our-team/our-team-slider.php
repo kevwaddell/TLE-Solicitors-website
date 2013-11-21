@@ -10,7 +10,7 @@ $id = $team_page->ID;
 
 $num_cols = 4;
 $col_counter = 0;
-$panel_counter = 0;
+$panel_counter = 1;
 
 $team_args = array(
 'post_type'	=> 'page',
@@ -67,7 +67,9 @@ $panels_total = ceil($team_total/$num_cols);
 			    		
 			    if ($profile_img_id) {
 		    	$profile_img_src = wp_get_attachment_image_src($profile_img_id ,'profile-img');
-	    		$profile_img_url = $profile_img_src;
+	    		$profile_img_url = $profile_img_src[0];
+	    		$profile_img_w = $profile_img_src[1];
+	    		$profile_img_h = $profile_img_src[2];
 	    		}		    	
 	    		?>
 		    	
@@ -77,7 +79,7 @@ $panels_total = ceil($team_total/$num_cols);
 		    			<figure>
 		    				<div class="border">
 		    					<?php if ($profile_img_id) { ?>
-		    					<img src="<?php echo $profile_img_url; ?>" alt="<?php echo $profile->post_title; ?>">
+		    					<img src="<?php echo $profile_img_url; ?>" alt="<?php echo $profile->post_title; ?>" width="<?php echo $profile_img_w; ?>" height="<?php echo $profile_img_h; ?>">
 		    					<?php } else { ?>
 		    					<?php holder( array( 'height' => '270', 'width' => '268', 'theme' => 'lite-gray' , 'text'=>'Profile image') ); ?>
 		    					<?php } ?>
@@ -86,7 +88,7 @@ $panels_total = ceil($team_total/$num_cols);
 		    			
 		    			<p class="name"><?php echo $profile->post_title; ?></p>
 		    			<p class="position"><?php echo $position; ?></p>
-		    			<a href="mailto:<?php echo $email; ?>" class="email-link"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;<?php echo $email; ?></a>
+		    			<a href="mailto:<?php echo $email; ?>" class="email-link"><span class="glyphicon glyphicon-envelope"></span> <?php echo $email; ?></a>
 		    			
 		    			<a href="<?php echo get_permalink($profile->ID); ?>" class="more-info-link btn btn-default btn-block">More details</a>
 		    			
@@ -95,8 +97,9 @@ $panels_total = ceil($team_total/$num_cols);
 	    		</div>
 	    		
 	    		<!-- Check if column counter equals 4 then add a new panel -->
-	    		<?php if ( $col_counter == $num_cols) { 
-		    	$col_counter == 0;	
+	    		<?php if ( $col_counter == $num_cols && $panel_counter < $panels_total) { 
+		    	$col_counter = 0;	
+		    	$panel_counter++;
 	    		?>
 		    	
 		    		</div> <!-- END ROW -->

@@ -1,7 +1,3 @@
-<?php 
-$post_date = get_the_date();
-?>
-
 <article class="post-list-item">
 	
 	<header>
@@ -9,7 +5,16 @@ $post_date = get_the_date();
 	</header>
 	
 	<div class="txt-wrap">
+		<?php if ($intro_text) : ?>
+				
+		<p><?php echo $intro_text; ?></p>
+		
+		<?php else: ?>
+		
 		<?php the_excerpt(); ?>
+		
+		<?php endif; ?>
+
 	</div>
 	
 	<footer>

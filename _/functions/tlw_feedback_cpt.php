@@ -1,7 +1,7 @@
 <?php 
 add_action( 'init', 'register_cpt_tlw_testimonial_cpt' );
 
-function register_cpt_tlw_testimonial_cpt() {
+	function register_cpt_tlw_testimonial_cpt() {
 
 	$temp_directory = get_stylesheet_directory_uri();
 
@@ -34,7 +34,7 @@ function register_cpt_tlw_testimonial_cpt() {
         'show_in_nav_menus' => false,
         'publicly_queryable' => true,
         'exclude_from_search' => false,
-        'has_archive' => false,
+        'has_archive' => true,
         'query_var' => true,
         'can_export' => true,
         'rewrite' => array( 
@@ -50,24 +50,24 @@ function register_cpt_tlw_testimonial_cpt() {
     
     remove_post_type_support('tlw_testimonial_cpt', 'title');
     
-    add_action( 'edit_form_after_title', 'myprefix_clients_edit_form_after_title' );
+	add_action( 'edit_form_after_title', 'myprefix_clients_edit_form_after_title' );
+	
+	function myprefix_clients_edit_form_after_title() {
+		global $current_screen;
+		global $post;
 		
-		function myprefix_clients_edit_form_after_title() {
-			global $current_screen;
-			global $post;
+		//echo '<pre>';print_r($current_screen->id);echo '</pre>';
+		
+		if ($current_screen->id == 'tlw_testimonial_cpt') {;
 			
-			//echo '<pre>';print_r($current_screen->id);echo '</pre>';
-			
-			if ($current_screen->id == 'tlw_testimonial_cpt') {;
-				
-				if ($post->post_title && $post->post_title != "Auto Draft") {
-				echo '<h2 style="background-color: #278ab7; color: white; padding-left: 10px; text-shadow: none;">Title: '.$post->post_title.'</h2>';
-				} 
-			
-			}
-			
+			if ($post->post_title && $post->post_title != "Auto Draft") {
+			echo '<h2 style="background-color: #278ab7; color: white; padding-left: 10px; text-shadow: none;">Title: '.$post->post_title.'</h2>';
+			} 
+		
 		}
-		    
+		
 	}
+		    
+}
 
  ?>

@@ -1,21 +1,20 @@
 #home-screen {
-//.fixed;
 .transition(0.5s, ease-in);
 height: 100%;
 width: 100%;
 .min-h(60);
 .min-w(100);
-.top(0);
 .over-hide;
+z-index: 14;
+.rel;
 
 
 	#home-screen-wrap {
 	height: 100%;
 	z-index: 10;
-	//.gradient(@color: #1872b6, @start: #5fbfeb, @stop: #1872b6);
 	.bg-col(@black);
 	.rel;
-	.transition;
+	.transition(0.5s, ease-in);
 		&.sidenav-closed {
 			.left(0);		
 		}
@@ -29,7 +28,6 @@ width: 100%;
 	width: 100%;
 	height: 100%;
 	.rel;
-	//.bg(transparent; "clouds.png"; no-repeat; center ;center);
 	.bg-size;
 	
 		.slider-corner {
@@ -157,7 +155,10 @@ width: 100%;
 				.w(7.3);
 				.h(8.1);
 				.mag-right(1);
-				.bg(transparent; "slider-icons.png"; no-repeat; left; top);
+				.bg-img("slider-icons.png");
+				.bg-repeat(no-repeat);
+				.bg-col(transparent);
+				background-position: left top;
 				.no-border;
 				overflow: visible;
 				.fleft;
@@ -166,28 +167,53 @@ width: 100%;
 						.none;
 						}
 						
-					&.active, &:hover, &:active, &:focus {
-					.bg-pos-y(bottom);
+					&.active, 
+					&:hover, 
+					&:active, 
+					&:focus {
+					background-position: left bottom;
 					}
-						
-					&.clinical-negligence {
-					.bg-pos-x(left);
-					}
-					
+											
 					&.personal-injury {
-					background-position-x: -80px;
+					background-position: -80px top;
+						&.active, 
+						&:hover, 
+						&:active, 
+						&:focus {
+							background-position: -80px bottom;
+						}
 					}
 					
 					&.professional-negligence {
-					background-position-x: -160px;
+					background-position: -160px top;
+						&.active, 
+						&:hover, 
+						&:active, 
+						&:focus {
+							background-position: -160px bottom;
+						}
 					}
 					
 					&.rta {
-					background-position-x: -240px;
+					background-position: -240px top;
+					
+						&.active, 
+						&:hover, 
+						&:active, 
+						&:focus {
+							background-position: -240px bottom;;
+						}
 					}
 					
 					&.business-litigation {
-					background-position-x: -320px;
+					background-position: -320px top;
+					
+						&.active, 
+						&:hover, 
+						&:active, 
+						&:focus {
+							background-position: -320px bottom;
+						}
 					}
 				
 				}
@@ -208,9 +234,8 @@ width: 100%;
 	.drop-shadow(0, 0, 10px, 0.7);
 	.border-radius(4px, 0, 0, 4px);
 	.bg-img("arrow-down-lrg.png");
-	.bg-repeat (no-repeat);
-	.bg-pos-x (right);
-	.bg-pos-y (center);
+	.bg-repeat(no-repeat);
+	background-position: right center;
 	.col(@white);
 	.align-left;
 	text-indent: 30px;

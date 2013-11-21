@@ -8,39 +8,16 @@
 <div class="row">
 
 	<div class="col-sm-8 col-md-8 col-lg-9">
+		
+		<?php include (STYLESHEETPATH . '/_/inc/our-team/vars.php'); ?>
+	
+		<!-- FEATURED IMAGE START-->	
+		<?php include (STYLESHEETPATH . '/_/inc/global/featured-img.php'); ?> 
+		<!-- FEATURED IMAGE END -->
 
-	
-	<?php 
-	$people = array( 
-		array('post_name' => 'peter-mckenna', 'post_title' => 'Peter McKenna'),  
-		array('post_name' => 'john-burn', 'post_title' => 'John Burn') ,
-		array('post_name' => 'sarah-spruce', 'post_title' => 'Sarah Spruce'),
-		array('post_name' => 'lorraine whitney', 'post_title' => 'Lorraine Whitney'),
-		array('post_name' => 'susan-wood', 'post_title' => 'Susan Wood'),
-		array('post_name' => 'tony-wight', 'post_title' => 'Tony Wight'), 
-		array('post_name' => 'claire-redhead', 'post_title' => 'Claire Redhead')
-	);
-	
-	//echo '<pre>';print_r($people);echo '</pre>';
-	
-	$feat_img_id = true;
-	?>	
-			
-			<?php if ($feat_img_id) { ?>
-				
-				<?php include (STYLESHEETPATH . '/_/inc/global/featured-img.php'); ?> 
-				
-			<?php }  ?>
-
-			<article class="page<?php echo ( $children ) ? ' intro':''; ?>">
-							
-				<header class="page-header">
-				<h1><span><?php the_title(); ?></span></h1>
-				</header>
-				
-				<?php the_content(); ?>
-				
-			</article>
+		<!-- ARTICLE CONTENT START-->	
+		<?php include (STYLESHEETPATH . '/_/inc/pages/page-article-content.php'); ?> 
+		<!-- ARTICLE CONTENT END-->	
 	
 	</div>
 	

@@ -27,65 +27,52 @@ Template Name: Page with right hand sidebar
 	
 	
 	$images = get_field("images");
+	$content = get_field("content");
 	
-	$feat_img_id = get_field('featured_img');
 	$position = get_field('position');
 	$email = get_field('email');
 	?>	
 	
-			<?php if ($images) : ?>
+			<!-- FEATURED IMAGE START-->	
+			<?php include (STYLESHEETPATH . '/_/inc/global/featured-img.php'); ?> 
+			<!-- FEATURED IMAGE END -->
 			
-			<?php foreach( $images as $img_item ): ?>
 			
-				<?php if ($sb_item['acf_fc_layout'] == "featured_img") : ?>
-				
-				<?php include (STYLESHEETPATH . '/_/inc/global/featured-img.php'); ?> 
-				
-				<?php endif;  ?>
-				
-			<?php endforeach; ?>
-				
-			<?php endif;  ?>
-			
-			<article class="page">
-				
-				<header class="page-header">
-				<h1><span><?php the_title(); ?></span></h1>
-				
-				<?php if ($position) { ?>
-				<div class="head-tag"><?php echo $position; ?></div>
-				<?php } ?>
-				
-				<?php if ($email) { ?>
-				<div class="head-email">
-				<span class="glyphicon glyphicon-envelope"></span> <a href="mailto:<?php echo $email; ?>" title="Email: <?php echo $post->post_title; ?>"><?php echo $email; ?></a></div>
-				<?php } ?>
-				
-				</header>
-				
-				<div class="rule mag-bottom-20"></div>
-				
-				<div class="intro">
-				<?php the_excerpt(); ?>
-				</div>
-				
-				<?php the_content(); ?>
-				
-				<?php if (!$children) { ?>
-				
-				<div class="rule"></div>
-				
-				<?php }  ?>
-				
-			</article>
+			<!-- ARTICLE CONTENT START-->	
+			<?php include (STYLESHEETPATH . '/_/inc/pages/page-article-content.php'); ?> 
+			<!-- ARTICLE CONTENT END-->	
 		
 			<?php if ( $children ): ?>	
 			
+			<!-- CHILD PAGES START-->	
+			
 			<?php include (STYLESHEETPATH . '/_/inc/pages/page-children.php'); ?> 
+			
+			<!-- CHILD PAGES END-->	
 						
 			<?php endif; ?>
 	
 		<?php endwhile; ?>
+		
+	<?php if ( !$children ): ?>
+	
+	<?php 
+	$nextPage = next_page_not_post('%title', 'cousins');
+	$prevPage = previous_page_not_post('%title', 'cousins');
+	?>
+	
+	<div class="rule-sml"></div>
+	
+		<?php if ( !empty($nextPage) || !empty($prevPage) ): ?>
+	
+	<div class="pages-links">
+		<div class="prev"><?php echo $prevPage; ?></div>
+		<div class="next"><?php echo $nextPage; ?></div>
+	</div>
+	
+		<?php endif; ?>
+	
+	<?php endif; ?>
 	
 	</div>
 	

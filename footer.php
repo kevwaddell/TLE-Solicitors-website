@@ -82,23 +82,35 @@
 		
 		<?php 
 		global $post;
-
-		if (has_sub_field("content", $post->ID)) {
+		$remove_global_claim_form = false;
 		
-			$remove_global_claim_form = get_sub_field('remove_gb_claim_fm', $post->ID);
+		if (get_field("content", $post->ID) ) {
+
+			while (has_sub_field("content", $post->ID)) {
+			
+				if (get_row_layout() == "cn_form" ) {
+				$remove_global_claim_form = get_sub_field('remove_gb_claim_fm');
+				}
+		
+			}
 		
 		}
+
+		if (get_field("sidebar", $post->ID) ) {
 		
-		if (has_sub_field("sidebar", $post->ID)) {
+			while (has_sub_field("sidebar", $post->ID)) {
+			
+				if (get_row_layout() == "sb_contact_form") {
+					$remove_global_claim_form = get_sub_field('remove_claim_form');
+				}
 		
-			$remove_global_claim_form = get_sub_field('remove_claim_form', $post->ID);
+			}
 		
 		}
 
-
-		if (!$remove_global_claim_form) { ?>
+		if ( $remove_global_claim_form || !is_page('site-map') ) { ?>
 		
-		<div id="claim-form-btn" class="side-form-closed btn-visible">
+		<div id="claim-form-btn" class="btn-visible">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-4 col-sm-offset-8 col-md-4 col-md-offset-8 col-lg-3 col-lg-offset-9">

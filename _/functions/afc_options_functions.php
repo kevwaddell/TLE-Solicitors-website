@@ -9,8 +9,14 @@ if( function_exists('acf_set_options_page_title') )
 }
 
 
-if( function_exists('acf_add_options_sub_page') )
-{
+if( function_exists('acf_add_options_sub_page') ) {
+
+	acf_add_options_sub_page(
+   		array(
+        'title' => __('Site'),
+		)
+    );
+    
     acf_add_options_sub_page(
    		array(
         'title' => __('Header'),
@@ -28,6 +34,7 @@ if( function_exists('acf_add_options_sub_page') )
         'title' => __('Footer'),
 		)
     );
+    
 }
 
  ?>

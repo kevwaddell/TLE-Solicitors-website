@@ -9,27 +9,46 @@
 
 	<?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>	
 	
-			<article class="page intro">
+	<?php 
+	$images = get_field("images");
+	$content = get_field("content");
+	?>
+	
+			<article class="page">
 							
 				<header class="page-header">
 				<h1><span><?php the_title(); ?></span></h1>
 				</header>
 				
-				<?php the_content(); ?>
+				<div class="rule mag-bottom-20"></div>
 				
-				<div class="rule"></div>
-				
-				<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Newsletter Content') ) : ?>
+				<?php if ($content) : ?>
 	
-				<?php endif; ?>
+				<?php foreach( $content as $content_item ): ?>
+		
+				<?php if ($content_item['acf_fc_layout'] == "cn_intro") : ?>
 				
-				<div class="rule"></div>
-			
-				<div class="sharing-links">
-				<?php echo do_shortcode('[shareaholic app="share_buttons" id="410103"]'); ?>
+				<div class="intro center lrg">
+					<p><?php echo $content_item['intro_txt']; ?></p>
 				</div>
 				
+				<?php endif;  ?>
+				
+				<?php endforeach; ?>
+					
+				<div class="rule-sml"></div>
+				
+				<?php endif; ?>
+				
+				<?php the_content(); ?>
+				
+				<div class="rule-sml"></div>
+				
 			</article>
+			
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Newsletter Content') ) : ?>
+	
+			<?php endif; ?>
 	
 		<?php endwhile; ?>
 	

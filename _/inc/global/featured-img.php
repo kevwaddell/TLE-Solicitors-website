@@ -1,3 +1,9 @@
+<?php if ($images) : ?>
+			
+	<?php foreach( $images as $img_item ): ?>
+	
+		<?php if ($img_item['acf_fc_layout'] == "featured_img") : ?>
+
 <?php 
 $feat_img_id = $img_item['ft_img'];
 $feat_img_src = wp_get_attachment_image_src($feat_img_id,'featured-img');
@@ -8,7 +14,7 @@ $feat_img_h = $feat_img_src[2];
 $feat_img_caption = $img_item['ft_caption'];
 ?>
  
-<?php if ($feat_img_id) : ?>
+		<?php if ($feat_img_id) : ?>
 
 <figure class="feat-img">
 				
@@ -21,8 +27,14 @@ $feat_img_caption = $img_item['ft_caption'];
 
 </figure>
 
-<?php if ($feat_img_caption) { ?>
+			<?php if ($feat_img_caption) { ?>
 <div class="caption"><?php echo $feat_img_caption; ?></div>
-<?php } ?>
+			<?php } ?>
 
+			<?php endif;  ?>
+
+		<?php endif;  ?>
+				
+	<?php endforeach; ?>
+				
 <?php endif;  ?>

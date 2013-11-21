@@ -1,0 +1,86 @@
+#location-map {
+	.mag-top(4);
+	.over-hide;
+	.transition(0.5s, ease-in-out);
+	.rel;
+	&:focus {
+		outline: none;
+	}
+	
+		&.directions-closed {
+		.h(30);	
+		//.h(64);
+		}
+		
+		&.directions-open {
+		.h(64);	
+		}
+		
+	#map-canvas {
+	.h(30);
+	.mag-bot(1);	
+	.sans-serif;
+	}
+	
+	#directions-panel-wrap {
+	.h(33);	
+	}
+	
+	.panel-head {
+	.h(3);
+	.border-radius(4px, 0, 0, 4px);	
+	.bg-col(@red);
+	.col(@white);
+	.caps;
+	.slab-serif;
+	.font-size(1.6);
+	.line-h(3);
+	.center;
+	}
+	
+	#directions-panel {
+	.h(30);	
+	.bg-col(@grey80);
+	.pad(2;2;2;4);
+	.over-y;
+	.border-radius(0, 4px, 0, 0);
+
+		.adp-placemark {
+		.mag-top(0);
+			td.adp-text {
+			.center;	
+			}	
+			
+			img.adp-marker {
+				.mag-all(.5);
+			}
+		}
+		
+		.adp-directions {
+			width: 100%;
+		}
+		
+		.adp-legal {
+			.none;
+		}
+	}
+	
+	button.close-btn {
+	.abs;
+	.top(61);
+	.left(0);
+	.no-border;
+	.border-radius(4px, 0, 0, 0);
+	.h(3);
+	.w(3);
+	.bg-col(@white);
+	.col(@red);
+	.center;
+	.line-h(3);	
+		&:hover {
+			.col(@redMid);
+		}
+	}
+	
+	
+}

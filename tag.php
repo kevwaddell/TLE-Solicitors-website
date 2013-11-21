@@ -9,11 +9,11 @@
 	
 	<article>
 		<header class="page-header">
-		<h1>Subject: <?php single_tag_title(); ?></h1>
+		<h1><span>Subject: <?php single_tag_title(); ?></span></h1>
 		</header>
 	</article>
 	
-	<div class="rule"></div>
+	<div class="rule mag-bottom-20"></div>
 	
 	<?php if ( have_posts() ): ?>	
 	

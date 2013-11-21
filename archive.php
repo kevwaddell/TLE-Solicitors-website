@@ -9,11 +9,11 @@
 	
 	<article>
 		<header class="page-header">
-		<h1><span><?php single_month_title(); ?></span></h1>
+		<h1><span><?php single_month_title(' '); ?></span></h1>
 		</header>
 	</article>
 	
-	<div class="rule"></div>
+	<div class="rule-sml mag-bottom-20"></div>
 	
 	<?php if ( have_posts() ): ?>	
 	
@@ -23,9 +23,19 @@
 		<?php wp_pagenavi(); ?>
 	</div>
 	
-	<?php while ( have_posts() ) : the_post(); ?>		
+	<?php while ( have_posts() ) : the_post(); ?>	
+	
+	<?php include (STYLESHEETPATH . '/_/inc/posts/post-list-vars.php'); ?> 	
 			
+		<?php if ($feat_img_id) { ?>
+	
+		<?php include (STYLESHEETPATH . '/_/inc/posts/post-list-item-with-image.php'); ?> 
+		
+	<?php } else { ?>
+	
 		<?php include (STYLESHEETPATH . '/_/inc/posts/post-list-item.php'); ?> 
+	
+	<?php } ?>
 			
 	<?php endwhile; ?>
 	

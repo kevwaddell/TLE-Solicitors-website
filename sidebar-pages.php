@@ -21,7 +21,7 @@ $parent = get_page($post->post_parent);
 
 $related_pages = get_posts($related_page_args);
 
-$practices_page = get_page_by_title('Practice');
+$practices_page = get_page_by_title('Practice Areas');
 
 $practices_args = array(
 'post_type'		=> 'page',
@@ -34,6 +34,17 @@ $practices_args = array(
 $practices = get_posts($practices_args);
 
 $newsletter_page = get_page_by_title('Newsletter');
+
+$downloads_page = get_page_by_title('Downloads');
+
+$downloads_args = array(
+'post_type'		=> 'tlw_downloads_cpt',
+'orderby'		=> 'title',
+'order'			=> 'ASC',
+'posts_per_page'	=>	-1
+);
+
+$downloads = get_posts($downloads_args);
 
 ?>
 
@@ -85,10 +96,17 @@ $newsletter_page = get_page_by_title('Newsletter');
 		<?php endif; ?>
 
 		
-		<?php if ($sb_item['acf_fc_layout'] == "sb_download") : 	?>
+		<?php if ($sb_item['acf_fc_layout'] == "sb_download") : 
+		$download = $sb_item['dl_file'];
+		$file = get_field('download_file', $download->ID);
+		$sb_img = get_field('sidebar_img', $download->ID);
+		//echo '<pre>';print_r($download->ID);echo '</pre>';	
+		?>
 
 		<div class="sidebar-downloads">
-		<a href="#"><img src="http://tlw-wireframes.dev/wp-content/themes/tlwwireframedesign1/_/img/download-brochure-example.png" alt="Download Our Brochure: Clinical Negligence"></a>
+		<a href="<?php echo $file; ?>" title="download: <?php echo $download->post_title; ?>" target="_blank">
+			<img src="<?php echo $sb_img['sizes']['sidebar-img']; ?>" alt="<?php echo $download->post_title; ?>" width="<?php echo $sb_img['sizes']['sidebar-img-widht']; ?>" height="<?php echo $sb_img['sizes']['sidebar-img-height']; ?>">
+		</a>
 		</div>	
 		
 		<?php endif; ?>
@@ -117,6 +135,20 @@ $newsletter_page = get_page_by_title('Newsletter');
 		<ul class="links">
 			<?php foreach ($related_pages as $page) { ?>
 			<li<?php echo ($page->ID == $post->ID)? ' class="current-page"':''; ?>><a href="<?php echo get_permalink($page->ID); ?>"><?php echo $page->post_title; ?></a></li>
+			<?php } ?>
+		</ul>
+	</div>
+	<?php } ?>
+	
+	<?php if ($downloads && is_single() && $post->post_type == "tlw_downloads_cpt") { ?>
+		
+	<div class="sidebar-block">
+	
+		<h2 class="link"><a href="<?php echo get_permalink($downloads_page->ID); ?>"><?php echo $downloads_page->post_title; ?></a></h2>
+
+		<ul class="links">
+			<?php foreach ($downloads as $download) { ?>
+			<li<?php echo ($download->ID == $post->ID)? ' class="current-parent"':''; ?>><a href="<?php echo get_permalink($download->ID); ?>"><?php echo $download->post_title; ?></a></li>
 			<?php } ?>
 		</ul>
 	</div>

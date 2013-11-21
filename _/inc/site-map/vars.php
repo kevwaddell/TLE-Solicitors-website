@@ -1,6 +1,6 @@
 <?php 
 
-$practices_page = get_page_by_title('Practice');
+$practices_page = get_page_by_title('Practice Areas');
 
 $practices_args = array(
 'post_type'		=> 'page',
@@ -27,7 +27,7 @@ $company_pages = get_posts($company_args);
 $rescources_args = array(
 'post_type'		=> 'page',
 'orderby'		=> 'title',
-'include'		=> array(42, 44, 49, 259, 109),
+'include'		=> array(42, 44, 49, 259, 109, 413, 354),
 'order'			=> 'ASC'
 );
 
@@ -51,7 +51,7 @@ $topics_nopractice_args = array(
 	'parent'		=> 0,
 	'orderby'		=> 'meta_value',
 	'order'			=> 'desc',
-	'exclude'		=> array(16, 17, 18)
+	'exclude'		=> array(16, 17, 18, 33, 37)
 ); 
 $topics_nopractice = get_categories($topics_nopractice_args);
 

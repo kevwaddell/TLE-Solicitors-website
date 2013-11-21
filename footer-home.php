@@ -77,7 +77,7 @@
 			</ul>
 		</div>
 		
-		<div id="claim-form-btn" class="side-form-closed btn-hidden">
+		<div id="claim-form-btn" class="btn-hidden">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-3 col-sm-offset-9 col-md-3 col-md-offset-9">

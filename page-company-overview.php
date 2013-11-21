@@ -23,22 +23,17 @@
 	);
 	$children = get_posts($children_args);
 	
-	$feat_img_id = true;
+	$images = get_field("images");
+	$content = get_field("content");
 	?>	
 	
-			<?php if ($feat_img_id) { ?>
-				
-				<?php include (STYLESHEETPATH . '/_/inc/global/featured-img.php'); ?> 
-				
-			<?php }  ?>
+			<!-- FEATURED IMAGE START-->	
+			<?php include (STYLESHEETPATH . '/_/inc/global/featured-img.php'); ?> 
+			<!-- FEATURED IMAGE END -->
 
-			<article class="page intro">
-				<header class="page-header">
-				<h1><span><?php the_title(); ?></span></h1>
-				</header>
-				
-				<?php the_content(); ?>
-			</article>
+			<!-- ARTICLE CONTENT START-->	
+			<?php include (STYLESHEETPATH . '/_/inc/pages/page-article-content.php'); ?> 
+			<!-- ARTICLE CONTENT END-->	
 		
 			<?php if ( $children ): ?>
 			
@@ -46,8 +41,7 @@
 			$tab_counter = 0;
 			$tab_panel_counter = 0; 
 			?>	
-			
-			<div class="rule"></div>
+			<div class="rule-sml"></div>
 			
 			<section id="page-children-tabs" class="pages-tabs">
 			

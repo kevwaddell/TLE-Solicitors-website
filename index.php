@@ -41,11 +41,9 @@
 	
 	<?php while ( have_posts() ) : the_post(); ?>	
 	
-	<?php 
-	$img_id = true;
-	 ?>
-	
-	<?php if ($img_id) { ?>
+	<?php include (STYLESHEETPATH . '/_/inc/posts/post-list-vars.php'); ?> 
+		
+	<?php if ($feat_img_id) { ?>
 	
 		<?php include (STYLESHEETPATH . '/_/inc/posts/post-list-item-with-image.php'); ?> 
 		

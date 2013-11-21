@@ -1,28 +1,18 @@
 <?php get_header(); ?>
 
 <!-- MAIN CONTENT START -->
+<?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>	
 <section id="main-content" class="content container">
 
 <div class="row">
 
 	<div class="col-sm-8 col-md-8 col-lg-9">
-
-<?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>	
-
-	<?php 
-	$post_date = get_the_date('l - jS F - Y');
-	$topics = get_the_category_list(', ');
-	$subjects = get_the_tag_list('<strong>Subjects:</strong> ', ', ');
-	
-	//echo '<pre>';print_r($subjects);echo '</pre>';
-	?>	
-	
-		<?php if ($feat_img_id) { ?>
-				
-			<?php include (STYLESHEETPATH . '/_/inc/global/featured-img.php'); ?> 
-				
-		<?php }  ?>
-
+		
+		<?php include (STYLESHEETPATH . '/_/inc/posts/single-post-vars.php'); ?>
+		
+		<!-- FEATURED IMAGE START-->	
+		<?php include (STYLESHEETPATH . '/_/inc/global/featured-img.php'); ?> 
+		<!-- FEATURED IMAGE END -->
 	
 		<article class="post">
 					
@@ -33,23 +23,49 @@
 			
 			<div class="rule mag-bottom-20"></div>
 			
-			<div class="intro">
-			<?php the_excerpt(); ?>
+			<?php if ($content) : ?>
+	
+			<?php foreach( $content as $content_item ): ?>
+		
+			<?php if ($content_item['acf_fc_layout'] == "cn_intro") : ?>
+			
+			<div class="intro center lrg">
+				<p><?php echo $content_item['intro_txt']; ?></p>
 			</div>
+			
+			<?php endif;  ?>
+			
+			<?php endforeach; ?>
+				
+			<div class="rule-sml"></div>
+			
+			<?php endif; ?>
 			
 			<?php the_content(); ?>
 			
+			<div class="rule-sml"></div>
+			
 			<footer>
 			
-			<?php if ($topics) { ?>
-			<p><strong>Topics:</strong> <?php echo $topics; ?></p>
-			<?php }  ?>
+				<div class="footer-links">
+				
+					<?php if ($topics) { ?>
+					<p><strong>Topics:</strong> <?php echo $topics; ?></p>
+					<?php }  ?>
+					
+					<?php if ($subjects) { ?>
+					<p><?php echo $subjects; ?></p>
+					<?php }  ?>
+				
+				</div>
 			
-			<?php if ($subjects) { ?>
-			<p><?php echo $subjects; ?></p>
-			<?php }  ?>
-
-			<?php edit_post_link( 'Edit post', '<span class="edit-link btn btn-default">', '</span>' ); ?>	
+				<div class="post-links">
+				<?php previous_post_link('<span class="prev">%link</span>', '%title', TRUE); ?>  
+				<?php next_post_link('<span class="next">%link</span>', '%title', TRUE); ?>  
+				</div>
+			
+			<?php edit_post_link( 'Edit post', '<span class="edit-link btn btn-default btn-block">', '</span>' ); ?>	
+			
 			</footer>
 			
 			<div class="rule"></div>
@@ -59,23 +75,20 @@
 			</div>
 			
 		</article>
-<?php endwhile; ?>
-
-		<div class="post-links">
-			<?php previous_post_link('%link', '%title', TRUE); ?>  
-			<?php next_post_link('%link', '%title', TRUE); ?>  
-		</div>
-<?php endif; ?>
 
 	</div>
 	
 	<div class="col-sm-4 col-md-4 col-lg-3">
 	
-	<?php get_sidebar(); ?>
+	<?php get_sidebar('single-post'); ?>
 		
 	</div>
 
 </section>
 <!-- MAIN CONTENT END -->
+
+<?php endwhile; ?>
+
+<?php endif; ?>
 
 <?php get_footer(); ?>

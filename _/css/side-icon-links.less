@@ -48,6 +48,10 @@
 			.w(21);
 			.fleft;
 			.center;
+			.col(@redMid);
+			.serif;
+			.italic;
+			.bold;
 			}
 			
 			button {
@@ -60,6 +64,13 @@
 			.pad-all(0);
 				&:hover, &:active, &:focus {
 					.col(@redMid);
+				}
+				
+				span {
+				.block;
+				.h(4);
+				.w(4);
+				.line-h(4);	
 				}
 			}
 			
@@ -78,7 +89,6 @@
 				}
 				
 				span {
-				.top(-0.2);
 				.line-h(4);
 				.block;	
 				.h(4);
@@ -130,11 +140,20 @@
 				input.search-query {
 				.fleft;	
 				.w(25);
+					&:focus {
+					.border-col(@red);
+					}
 				}	
 				
 				.btn {
 				.fleft;	
 				.mag-top(.5);
+				.bg-col(@redMid);
+				.slab-serif;
+				.col(@white);
+					&:hover, &.active, &.focus {
+					.bg-col(@red);
+					}
 				}
 			}
 

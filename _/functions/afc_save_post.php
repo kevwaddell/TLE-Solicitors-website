@@ -30,6 +30,25 @@ function my_acf_save_post( $post_id )
 	}
 	
 	
+	if ($current_screen->id == 'tlw_jobs_cpt') {
+		
+		//echo '<pre>';print_r($_POST['fields']);echo '</pre>';	
+		
+		 $position = $_POST['fields'][field_5252c9d9bc032];
+		 $position_split = explode(" ", $position);
+		 $position_join = implode("-", $position_split);
+		 $position_slug = strtolower($position_join);
+		 
+		 $publish_date = $_POST['fields'][field_5252ca45bc033];
+		 $slug = $position_slug.'-'.$publish_date;
+		 
+		//echo '<pre>';print_r($slug);echo '</pre>';
+		//echo '<pre>';print_r($title);echo '</pre>';
+		
+		wp_update_post( array( 'ID' => $post_id, 'post_title' => $position, 'post_name' => $slug) );
+		 
+	}
+	
 	
 	
 }
