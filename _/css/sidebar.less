@@ -1,5 +1,9 @@
 .sidebar {
+	.pad-top(2);
+	
+	@media (min-width: @screen-md) {
 	.pad-top(4);
+	}
 	
 	.sidebar-block {
 		.bg-col(@redMid);
@@ -7,6 +11,10 @@
 		.rounded(4px);
 		
 		label{
+			.col(@white);
+		}
+		
+		#gforms_confirmation_message {
 			.col(@white);
 		}
 		
@@ -68,6 +76,15 @@
 				.fleft;	
 				.mag-bot(1);
 				width: 33.3%;
+				
+				@media (min-width: @screen-sm) {
+				width: 14%;
+				}
+				
+				@media (min-width: @screen-md) {
+				width: 33.3%;
+				}
+				
 					a {
 					.rel;
 					.block;
@@ -93,8 +110,7 @@
 							}
 						}
 						
-						&:hover {
-							
+						&.hover {
 							.zoom-icon {
 							.opacity(0.7);
 							}	
@@ -261,10 +277,16 @@
 		//.bg-col(@black70);
 		.gradient(@red, @redMid, @red);
 		.inner-shadow(0, 0, 10px, 0.7);
-		.pad-all(2);
+		.pad-all(1);
 		.mag-bot(1);
 		.rounded(4px);
 		.col(@white);
+		.center;
+		
+		@media (min-width: @screen-md) { 
+		.pad-all(2);
+		.align-left;
+		}
 		
 		h3 {
 		.mag-top(0);
@@ -272,6 +294,14 @@
 		.col(@white);
 		.caps;
 		.serif;
+		
+			@media (min-width: @screen-sm) { 
+			.inline;
+			}
+			
+			@media (min-width: @screen-md) { 
+			.block;
+			}
 		}
 		
 		p {
@@ -280,9 +310,22 @@
 		.italic;
 		.font-size(3);	
 		.line-h(3);
+			
+			@media (min-width: @screen-sm) { 
+			.inline;
+			}
+			
+			@media (min-width: @screen-md) { 
+			.block;
+			}
+			
 			span {
 			.mag-right(.5);
 			.font-size(2.5);		
+			}
+			
+			a {
+			.col(@white);	
 			}
 		}
 		

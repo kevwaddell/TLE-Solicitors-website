@@ -11,6 +11,17 @@ $practices_args = array(
 
 $practices = get_posts($practices_args);
 
+$downloads_page = get_page_by_title('Downloads');
+
+$downloads_args = array(
+'post_type'		=> 'tlw_downloads_cpt',
+'orderby'		=> 'title',
+'order'			=> 'ASC',
+'posts_per_page'	=> -1
+);
+
+$downloads = get_posts($downloads_args);
+
 //echo '<pre>';print_r($practices);echo '</pre>';
 
 $company_page = get_page_by_title('Company Overview');
@@ -19,6 +30,7 @@ $company_args = array(
 'post_type'		=> 'page',
 'orderby'		=> 'menu_order',
 'post_parent'	=> $company_page->ID,
+'exclude'		=> 26,
 'order'			=> 'ASC'
 );
 
@@ -27,11 +39,20 @@ $company_pages = get_posts($company_args);
 $rescources_args = array(
 'post_type'		=> 'page',
 'orderby'		=> 'title',
-'include'		=> array(42, 44, 49, 259, 109, 413, 354),
+'include'		=> array(42, 44, 49, 413, 68),
 'order'			=> 'ASC'
 );
 
 $rescources_pages = get_posts($rescources_args);
+
+$useful_args = array(
+'post_type'		=> 'page',
+'orderby'		=> 'title',
+'include'		=> array(109, 354),
+'order'			=> 'ASC'
+);
+
+$useful_pages = get_posts($useful_args);
 
 $legal_args = array(
 'post_type'		=> 'page',

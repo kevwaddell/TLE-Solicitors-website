@@ -13,7 +13,7 @@ $feedback_counter = 0;
 
  ?>
 
-<section id="testimonials">
+<section id="testimonials" class="hidden-xs hidden-sm">
 	<span class="icon"></span>
 	
 	<div class="container">

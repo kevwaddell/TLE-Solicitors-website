@@ -9,9 +9,18 @@ z-index: 15;
 	}
 	
 	#promo-links {
+		.pad(3;0;2;0);
+		.red-gradient-bg;
+		
+		@media (min-width: @screen-md) { 
+		.pad(3;0;3;0);	
+		.border-bot(@red, 0.5);
+		}
+	
+		@media (min-width: @screen-lg) { 
 		.pad(3;0;3;0);
 		.border-bot(@red, 0.5);
-		.red-gradient-bg;
+		}
 		
 		.btn {
 		.bg(@white; "quick-link-arrow.png"; no-repeat; right ; center);
@@ -20,6 +29,16 @@ z-index: 15;
 		.slab-serif;
 		.rel;
 		.no-border;
+		.mag-bot(1);
+		.font-size(1);
+			
+			@media (min-width: @screen-xs) { 
+			.font-size(1.8);	
+			}
+			
+			@media (min-width: @screen-md) { 
+			.mag-bot(0);
+			}
 		
 			span {
 			.abs;
@@ -31,10 +50,29 @@ z-index: 15;
 			.border-radius(0, 0, 4px, 4px);
 				&.newsletter {
 					.bg-img("newsletter-icon.png");
+					
+					@media
+					only screen and (-webkit-min-device-pixel-ratio: 2),
+					only screen and (   min--moz-device-pixel-ratio: 2),
+					only screen and (     -o-min-device-pixel-ratio: 2/1),
+					only screen and (        min-device-pixel-ratio: 2){ 
+					  
+					.bg-img("x2/newsletter-icon-x2.png");
+					.bg-size(contain);
+					}
 				}
 				
 				&.contact-us {
 					.bg-img("contact-us-icon.png");
+					
+					only screen and (-webkit-min-device-pixel-ratio: 2),
+					only screen and (   min--moz-device-pixel-ratio: 2),
+					only screen and (     -o-min-device-pixel-ratio: 2/1),
+					only screen and (        min-device-pixel-ratio: 2){ 
+					  
+					.bg-img("x2/contact-us-icon-x2.png");
+					.bg-size(contain);
+					}
 				}
 			}
 			

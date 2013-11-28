@@ -12,7 +12,7 @@
 </div>
  <?php } ?> 
  
- <div class="sidebar-block">
+ <div class="sidebar-block hidden-xs hidden-sm">
 	<h2>Route finder</h2>
 
 <div id="control" class="block-content">

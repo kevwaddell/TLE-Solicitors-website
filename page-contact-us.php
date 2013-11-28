@@ -7,7 +7,7 @@
 
 <div class="row">
 
-	<div class="col-sm-8 col-md-8 col-lg-9 col-sm-push-4 col-md-push-4 col-lg-push-3">
+	<div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 col-md-push-4 col-lg-push-3">
 	
 	<?php 
 	$location = get_field('map_location');
@@ -41,7 +41,7 @@
 	
 	</div>
 	
-	<div class="col-sm-4 col-md-4 col-lg-3 col-sm-pull-8 col-md-pull-8 col-lg-pull-9">
+	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-md-pull-8 col-lg-pull-9">
 	
 	<?php get_sidebar('contact-us'); ?>
 			

@@ -5,7 +5,7 @@
 
 <div class="row">
 
-	<div class="col-sm-8 col-md-8 col-lg-9">
+	<div class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
 
 	<?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>	
 	
@@ -20,7 +20,7 @@
 				<h1><span><?php the_title(); ?></span></h1>
 				</header>
 				
-				<div class="rule mag-bottom-20"></div>
+				<div class="rule-sml mag-bottom-20"></div>
 				
 				<?php if ($content) : ?>
 	
@@ -42,7 +42,7 @@
 				
 				<?php the_content(); ?>
 				
-				<div class="rule-sml"></div>
+				<div class="rule"></div>
 				
 			</article>
 			
@@ -56,7 +56,7 @@
 	
 	</div>
 	
-	<div class="col-sm-4 col-md-4 col-lg-3">
+	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
 	
 	<?php get_sidebar('pages'); ?>
 		

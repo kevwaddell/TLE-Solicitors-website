@@ -28,17 +28,17 @@ position: inherit;
 			&.with-sub-nav {
 				a {
 				.bg(transparent; "main-nav-arrow.png"; no-repeat;  center ;top);
-					&:hover {
+					&:hover,&:active, &:focus {
 					background-position: center bottom;
 					}
 				}
 				
-				&:hover {
+				&:hover, &:active, &:focus  {
 				.border-col(@redMid);	
 				}
 			}
 			
-			&:hover {
+			&:hover, &:active, &:focus  {
 				a {
 				.bg-col(@redMid);
 				background-position: center bottom;
@@ -89,7 +89,7 @@ position: inherit;
 				font-style: normal;
 				.slab-serif;
 				.font-size(1.4);
-					&:hover {
+					&:hover, &:active, &:focus  {
 						a {
 						.bg-col(transparent);	
 						}
@@ -105,7 +105,7 @@ position: inherit;
 					.pad-right(0);
 					.rounded(0px);
 					background-image: none;
-						&:hover, &:active {
+						&:hover, &:active, &:focus {
 						.col(@red);
 						}
 					}
@@ -159,7 +159,7 @@ position: inherit;
 			}//sub ul
 			
 			//sub level hover
-			&:hover, &:active {
+			&.sub-hover {
 				
 				ul.sub-menu {
 				height: auto;
@@ -187,7 +187,7 @@ position: inherit;
 					.mag-right(0);
 						a {
 						.no-caps;	
-							&:hover {
+							&:hover, &:active, &:focus {
 							.bg-col(transparent);	
 							}
 						}
@@ -206,7 +206,7 @@ position: inherit;
 				&.with-sub-nav {
 					a {
 					.bg(@red; "main-nav-arrow.png"; no-repeat;  center ;bottom);
-						&:hover {
+						&:hover, &:active, &:focus {
 						.bg-col(@redMid);	
 						}
 					}
@@ -242,7 +242,7 @@ position: inherit;
 				.bg-img("home-page-icon.png");
 				.bg-repeat(no-repeat);
 				background-position: center top;;
-					&:hover {
+					&:hover, &:active, &:focus {
 					background-position: center bottom;
 					}
 				}

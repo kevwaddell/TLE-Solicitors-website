@@ -11,7 +11,7 @@ Template Name: Page with right hand sidebar
 
 <div class="row">
 
-	<div class="col-sm-8 col-md-8 col-lg-9">
+	<div class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
 
 	<?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>	
 	
@@ -65,7 +65,7 @@ Template Name: Page with right hand sidebar
 	
 		<?php if ( !empty($nextPage) || !empty($prevPage) ): ?>
 	
-	<div class="pages-links">
+	<div class="pages-links hidden-xs">
 		<div class="prev"><?php echo $prevPage; ?></div>
 		<div class="next"><?php echo $nextPage; ?></div>
 	</div>
@@ -76,7 +76,7 @@ Template Name: Page with right hand sidebar
 	
 	</div>
 	
-	<div class="col-sm-4 col-md-4 col-lg-3">
+	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
 	
 	<?php get_sidebar('pages'); ?>
 		

@@ -1,28 +1,80 @@
 #page-banner-lrg {
-.h(55.5);	
+.h(20.5);	
 background: @red url("img/slider-bg.png") repeat-y center top fixed;
 //.gradient(@color: #1872b6, @start: #5fbfeb, @stop: #1872b6);
 .rel;
 .border-bot(@redMid, 0.5);
+
+	@media (min-width: @screen-sm) { 
+	.h(35.5);
+	}
+
+	@media (min-width: @screen-md) { 
+	.h(55.5);
+	}
+	
+	@media (min-width: @screen-lg) { 
+	.h(55.5);
+	}
 	
 	//banner image
 	.banner-img {
 	.bg-pos(transparent; no-repeat; center; center);
-	.h(55);
+	.bg-size;
+	.h(20);
 	.bg-size;
 	.inner-shadow(0,0, 20px, @alpha: 0.5);
 	.rel;
+	
+	@media (min-width: @screen-sm) { 
+	.h(35);	
+	}
+	
+	@media (min-width: @screen-md) { 
+	.h(55);	
+	}
+	
+	@media (min-width: @screen-lg) { 
+	.h(55);
+	}
+
 		p.tag {
 		.abs;
-		.left(11);
-		.bottom(4);
+		.left(2);
+		.bottom(2);
 		.col(@white);
 		.serif;
 		.italic;
 		.mag-all(0);
-		.font-size(5);
-		.line-h(4);
+		.font-size(2.5);
+		.line-h(2);
 		.txt-shadow;
+		
+			@media (min-width: @screen-xs) { 
+			.font-size(3);
+			.left(2);
+			.bottom(2);
+			}
+			
+			@media (min-width: @screen-sm) { 
+			.font-size(3);
+			.left(6);
+			.bottom(2);
+			}
+		
+			@media (min-width: @screen-md) { 
+			.left(11);
+			.bottom(4);
+			.font-size(5);	
+			.line-h(4);
+			}
+			
+			@media (min-width: @screen-lg) { 
+			.left(11);
+			.bottom(4);
+			.font-size(5);
+			.line-h(4);
+			}
 		}
 	}
 
@@ -32,21 +84,66 @@ background: @red url("img/slider-bg.png") repeat-y center top fixed;
 		.left(1.5);
 		.right(1.5);
 		.top(0);
-		.h(55);
+		.h(20);
 		.bg(transparent; "slider-arch.png"; no-repeat; left ;top);
+		.bg-size;
+		
+			@media (min-width: @screen-sm) { 
+			.h(35);
+			}
+			
+			@media (min-width: @screen-md) { 
+			.h(55);
+			}
+			
+			@media (min-width: @screen-lg) { 
+			.h(55);
+			}
 	}
 	
 	.pattern-bg {
 		.abs;
-		.right(0);
+		.right(1.5);
 		.top(1.5);
 		.bottom(0);
 		.w(40);
 		.bg(transparent; "pattern-bg.png"; repeat-y; right;top);
+		
+		
+			@media (min-width: @screen-sm) { 
+			.h(35);
+			}
+			
+			@media (min-width: @screen-md) { 
+			.h(55);
+			}
+			
+			@media (min-width: @screen-lg) { 
+			.h(55);
+			}
 	}
 	
 	.container {
 	height: 100%;
+	
+	.pad-right(0);
+	.pad-left(0);
+	
+	@media (min-width: @screen-sm) { 
+	.pad-right(1.5);
+	.pad-left(1.5);
+	}
+	
+	@media (min-width: @screen-md) { 
+	.pad-right(1.5);
+	.pad-left(1.5);
+	}
+	
+	@media (min-width: @screen-lg) { 
+	.pad-right(1.5);
+	.pad-left(1.5);
+	}
+	
 	}
 	
 	.promo-wrap {

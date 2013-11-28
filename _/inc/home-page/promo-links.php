@@ -17,9 +17,9 @@ $promo_links = get_posts($promo_links_args);
 		<?php foreach ($promo_links as $promo_link) { 
 		$btn_title = get_field('btn_title', $promo_link->ID);	
 		?>
-		<div class="col-sm-6 col-md-6">
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 				
-				<a href="newsletter/" class="btn btn-default btn-lg btn-block">
+				<a href="<?php echo get_permalink($promo_link->ID); ?>" class="btn btn-default btn-lg btn-block">
 					<?php echo $btn_title; ?>
 					<span class="<?php echo $promo_link->post_name; ?>"></span>
 				</a>

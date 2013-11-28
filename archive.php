@@ -5,11 +5,24 @@
 
 <div class="row">
 
-	<div class="col-sm-8 col-md-8 col-lg-9">
+	<div class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
 	
 	<article>
 		<header class="page-header">
-		<h1><span><?php single_month_title(' '); ?></span></h1>
+		<h1><span>
+		<?php //single_month_title(' '); 
+			
+			if ( is_day() ) :
+			printf( __( 'Daily Archives: %s', 'tlwsolicitors' ), get_the_date() );
+			elseif ( is_month() ) :
+			printf( __( 'Monthly Archives: %s', 'tlwsolicitors' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'tlwsolicitors' ) ) );
+			elseif ( is_year() ) :
+			printf( __( 'Yearly Archives: %s', 'tlwsolicitors' ), get_the_date( _x( 'Y', 'yearly archives date format', 'tlwsolicitors' ) ) );
+			else :
+			_e( 'Archives' );
+			endif;
+		?>
+		</span></h1>
 		</header>
 	</article>
 	
@@ -56,7 +69,7 @@
 	
 	</div>
 	
-	<div class="col-sm-4 col-md-4 col-lg-3">
+	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
 	
 	<?php get_sidebar(); ?>
 		

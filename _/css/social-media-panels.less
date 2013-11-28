@@ -2,9 +2,14 @@
 	.rel;
 	//.bg-col(lighten(@black, 60%));
 	.gray-gradient-bg;
-	.pad-top(4);
-	.pad-bot(4);
+	.pad-top(2);
+	.pad-bot(2);
 	.border-top(@red, 0.5);
+	
+		@media (min-width: @screen-sm) { 
+		.pad-top(4);
+		.pad-bot(4);
+		}
 	
 	span.icon {
 		.abs;
@@ -18,11 +23,17 @@
 	
 	h2 {
 	.mag-top(0);
-	.mag-bot(3);
+	.mag-bot(1);
 	.center;
 	.caps;
 	.serif;	
 	.col(@red);
+	.font-size(2);
+	
+		@media (min-width: @screen-sm) { 
+		.font-size(3);
+		.mag-bot(3);
+		}
 	}
 	
 	.panel-rule {
@@ -45,14 +56,52 @@
 	.social-icon {
 		img {
 		.block;
-		width: 100%;
-		height: auto;	
+		width:100%;
+		height: auto;
+		.mag-bot(1);
+		margin-left: auto;
+		margin-right: auto; 
+	
+			
+			@media (min-width: @screen-sm) { 
+			.mag-bot(0);
+			width:100%;
+			height: auto;
+			}
+	
+		}
+		
+		&.news-icon {
+			img {
+			width:20%;
+			height: auto;	
+			
+				@media (min-width: @screen-sm) { 
+					.mag-bot(0);
+					width:100%;
+					height: auto;
+				}
+				
+			}
+		}
+
+	}
+	
+	.slimScrollDiv {
+	.border-top(@red, 0.1);
+	.border-bot(@redMid, 0.3);
+	.mag-bot(2);
+	
+		@media (min-width: @screen-lg) { 
+		.mag-bot(0);
 		}
 	}
 	
 	.feed-wrap {
 	.h(18);
 	overflow-y: auto;
+	.pad-top(1);
+	
 		ul {
 		list-style: none;
 		.pad-left(0);
@@ -64,12 +113,14 @@
 			.border-bot(@red, 0.1);	
 			word-wrap: break-word;
 				a {
-				.block;
 				.font-size(1.2);
 				.bold;
 				.col(@red);
 					&:hover {
 						.col(@redMid);
+					}
+					&.tweet_user {
+					.block;	
 					}
 				}
 				
@@ -99,8 +150,12 @@
 		h3 {
 		.mag-top(0);
 		.center;
-		.font-size(3.6);
+		.font-size(1.8);
 		.serif;	
+		
+			@media (min-width: @screen-sm) { 
+			 .font-size(3.6);
+			}
 		}
 		
 		time {
@@ -108,6 +163,11 @@
 		.caps;
 		.center;	
 		.col(@grey);
+		.font-size(1.2);
+		
+			@media (min-width: @screen-sm) { 
+				 .font-size(1.4);
+			}
 		}
 		
 	}

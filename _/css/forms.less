@@ -4,7 +4,7 @@
 	height: 100%;
 	.top(0);
 	.right(0);
-	.over-y;
+	overflow: auto;
 	.bg(@redDk; 'inner-side-shadow-left.png'; repeat-y);
 	z-index: 10;
 	
@@ -14,6 +14,19 @@
 	
 	&.fixed {
 	.top(0);
+	}
+	
+	h3 {
+	.col(@red);
+	.serif;
+	.italic;	
+	.font-size(3);
+	.normal;
+	.mag-top(0);
+	}
+	
+	#gforms_confirmation_message {
+	.col(@white);	
 	}
 	
 	.sidebar-inner {
@@ -46,6 +59,7 @@
 				.italic;	
 				.font-size(3);
 				.normal;
+				.mag-top(0);
 				}
 				
 				span.gform_description {
@@ -159,6 +173,23 @@
 	.rounded(4px);
 	.pad-all(2);
 	
+	#gforms_confirmation_message {
+		.center;	
+			h3 {
+			.serif;
+			.col(@red);
+			.italic;
+			.font-size(3);
+			.mag-top(0);
+			.mag;
+			}
+			
+			p, a {
+			.font-size(1.6);
+			}
+			
+	}
+	
 	.gform_wrapper {
 	.mag-all(0);
 	max-width: 100%;
@@ -186,11 +217,15 @@
 		 .h(4);
 		 .rounded(4px);
 		 .no-border;
+		 text-indent: 10px;
+		  .font-size(1.6);
 		 }
 		 
 		 textarea { 
 		 .rounded(4px);
 		 .no-border;
+		  .font-size(1.6);
+		  .h(15);
 		 }
 		 
 		 .gform_footer {
@@ -215,19 +250,42 @@
 	
 }
 
+.search-form-wrap {
+	.center;
+	.mag-bot(2);
+	
+	input[type="search"]{
+		.w(30);
+	}
+}
+
 .form-wrap {
 .mag(2;0;2;0);
-.pad-all(2);
+.pad-all(1);
 .bg-col(@black40);
 .inner-shadow(0, 0, 5px, 0.5);
 .rounded(4px);
+
+	@media (min-width: @screen-sm) { 
+	.pad-all(2);
+	}
+
+	gforms_confirmation_message {
+			h3 {
+			.mag-top(0);
+			}
+			
+			p {
+			.mag-bot(1);
+			}
+	}
 	.gform_wrapper {
 		.mag-all(0);
 		max-width: 100%;
-		
+	
 		.gform_heading {
 		.center;
-			
+				
 			h3.gform_title {
 			.none;
 			}
@@ -244,11 +302,17 @@
 		 .h(4);
 		 .rounded(4px);
 		 .no-border;
+		 .font-size(1.6);
+		 text-indent: 10px;
 		 }
 		 
 		 textarea { 
 		 .rounded(4px);
 		 .no-border;
+		 .font-size(1.6);
+		 	&.large {
+			 .h(15); 	
+		 	}
 		 }
 		 
 		 .gform_footer {
@@ -256,6 +320,7 @@
 		 }
 		 
 		 input.button {
+		 	width: 50%;
 			.no-border;
 			.bg(@red; "circle-arrow-right-20x20.png"; no-repeat; right ;center);
 			.rounded(4px);
@@ -286,8 +351,16 @@
 		.mag-bot(1);
 	}
 	
-	.gform_description, label {
+	.gform_description, label, input[type="file"] {
 	.col(@white);
+	}
+	
+	.gfield_description {
+	.col(@red);
+	}
+	
+	input[type="file"] {
+	width: 99% !important;
 	}
 	
 	.validation_error {
@@ -300,8 +373,9 @@
 		.mag-top(0);
 	}
 	
-	gfield_description validation_message {
+	.validation_message {
 		.mag-top(0);
+		.col(@red);
 	}
 	
 	.top_label .gfield_description.validation_message, 

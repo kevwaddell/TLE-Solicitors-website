@@ -5,7 +5,7 @@
 
 <div class="row">
 
-	<div class="col-sm-8 col-md-8 col-lg-9">
+	<div class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
 
 	<?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>	
 	
@@ -43,11 +43,24 @@
 			?>	
 			<div class="rule-sml"></div>
 			
-			<section id="page-children-tabs" class="pages-tabs">
+			<div id="page-children-btns" class="child-btns visible-xs">
+			
+				<?php foreach ( $children as $child ) : 
+				//echo '<pre>';print_r($child);echo '</pre>'; 
+				?>	
+					<a href="<?php echo get_permalink($child->ID); ?>" class="btn btn-default btn-lg btn-block"><?php echo $child->post_title; ?></a>
+				<?php endforeach; ?>
+				
+					<a href="<?php echo get_permalink($team_page->ID); ?>" class="btn btn-default btn-lg btn-block"><?php echo $team_page->post_title; ?></a>
+
+			</div>
+			
+			<section id="page-children-tabs" class="pages-tabs hidden-xs">
 			
 				<ul class="nav nav-tabs" id="company-pages-tabs">
 				<?php foreach ( $children as $child ) : 
 				$tab_counter++;
+				//echo '<pre>';print_r($tab_counter);echo '</pre>';
 				?>	
 				
 					<li<?php echo ($tab_counter == 1) ? ' class="active"': ''; ?>>
@@ -89,7 +102,7 @@
 	
 	</div>
 	
-	<div class="col-sm-4 col-md-4 col-lg-3">
+	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
 	
 	<?php get_sidebar('pages'); ?>
 		

@@ -12,19 +12,19 @@
 		<!-- Row start -->
 		<div class="row">
 			
-			<div class="col-sm-1 col-md-1 social-icon">
+			<div class="col-xs-3 col-sm-2 col-md-1 col-lg-1 social-icon">
 				<a href="https://twitter.com/TLWSolicitors" title="View Twitter page"><img src="<?php echo get_stylesheet_directory_uri() ?>/_/img/twitter-icon-lg.png" alt="Twitter"></a>
 			</div>
 			
-			<div class="col-sm-5 col-md-5 col-lg-2">
+			<div class="col-xs-12 col-sm-4 col-md-5 col-lg-2 hidden-xs">
 					<?php tlw_twitter_feed(); ?>
 			</div>		
 				
-			<div class="col-sm-1 col-md-1 social-icon">
+			<div class="col-xs-3 col-sm-2 col-md-1 col-lg-1 social-icon">
 				<a href="#" title="View Facebook page"><img src="<?php echo get_stylesheet_directory_uri() ?>/_/img/facebook-icon-lg.png" alt="Facebook"></a>
 			</div>
 			
-			<div class="col-sm-5 col-md-5 col-lg-2">
+			<div class="col-xs-12 col-sm-4 col-md-5 col-lg-2 hidden-xs">
 				
 				<div class="feed-wrap">
 					<ul>
@@ -47,11 +47,11 @@
 				
 			</div>
 			
-			<div class="col-sm-1 col-md-1 social-icon">
+			<div class="col-xs-3 col-sm-2 col-md-1 col-lg-1 social-icon">
 				<a href="#" title="View LinkedIn page"><img src="<?php echo get_stylesheet_directory_uri() ?>/_/img/linkedin-icon-lg.png" alt="LinkedIn"></a>
 			</div>
 			
-			<div class="col-sm-5 col-md-5 col-lg-2">
+			<div class="col-xs-12 col-sm-4 col-md-5 col-lg-2 hidden-xs">
 				<div class="feed-wrap">
 					<ul>
 						<li>
@@ -72,11 +72,11 @@
 				</div>
 			</div>
 			
-			<div class="col-sm-1 col-md-1 social-icon">
+			<div class="col-xs-3 col-sm-2 col-md-1 col-lg-1 social-icon">
 				<a href="#" title="View Google+ page"><img src="<?php echo get_stylesheet_directory_uri() ?>/_/img/google-icon-lg.png" alt="Google+"></a>
 			</div>
 			
-			<div class="col-sm-5 col-md-5 col-lg-2">
+			<div class="col-xs-12 col-sm-4 col-md-5 col-lg-2 hidden-xs">
 				<div class="feed-wrap">
 					<ul>
 						<li>
@@ -123,11 +123,11 @@
 	
 		<div class="row">
 			
-			<div class="col-sm-1 col-md-1 social-icon">
+			<div class="col-sm-2 col-md-1 social-icon news-icon">
 				<a href="#" title="View News and Media page"><img src="<?php echo get_stylesheet_directory_uri() ?>/_/img/news-icon-lg.png" alt="News and Media"></a>
 			</div>
 			
-			<div class="col-sm-11 col-md-11">
+			<div class="col-sm-10 col-md-11">
 				
 				<div id="news-carousel" class="carousel slide">
 					

@@ -1,4 +1,4 @@
-<div id="side-nav-wrap" class="no-touch-move">
+<div id="side-nav-wrap">
 	
 	<button type="button" class="close side-nav-close">&times;</button>
  

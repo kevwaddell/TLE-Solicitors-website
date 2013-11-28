@@ -14,7 +14,7 @@
 	
 	</header>
 	
-	<div class="rule mag-bottom-20"></div>
+	<div class="rule-sml mag-bottom-20"></div>
 	
 	<?php if ($content) : ?>
 	
@@ -30,7 +30,7 @@
 	
 		<?php endforeach; ?>
 		
-	<div class="rule-sml"></div>
+	<div class="rule mag-bottom-20"></div>
 	
 	<?php endif; ?>
 	

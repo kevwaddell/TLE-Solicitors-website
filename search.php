@@ -4,16 +4,16 @@
 
 <!-- MAIN CONTENT START -->
 <section id="main-content" class="content container">
-
-<div class="row">
-
-	<div class="col-sm-8 col-md-8 col-lg-9">
 	 
-	 <article>
+	<article class="page">
 		<header class="page-header">
-		<h1><span>>Search Results</span></h1>
-		<h2>You Searched for: "<?php echo $search_query; ?>"</h2>
+		<h1><span>Search Results</span></h1>
+		<h2 class="grey-txt">You Searched for: "<?php echo $search_query; ?>"</h2>
 		</header>
+		
+		<div class="search-form-wrap">
+		<?php get_search_form(); ?>
+		</div>
 	</article>
 	
 	<div class="rule"></div>
@@ -26,14 +26,20 @@
 		<?php wp_pagenavi(); ?>
 	</div>
 
-	<?php while ( have_posts() ) : the_post(); ?>		
-			<article class="post-list-item">
+	<?php while ( have_posts() ) : the_post(); 
+	$excerpt = strip_tags(get_the_excerpt());	
+	$url = get_permalink();
+	?>		
+			<article class="search-list-item">
 			
-				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 				
-				<?php the_excerpt(); ?>
+				<p><?php echo $excerpt;?></p>
+				
+				<a href="<?php the_permalink(); ?>" title="Vie Article"><?php echo $url;?></a>
 				
 			</article>
+				
 	<?php endwhile; ?>
 	
 	<div class="pagination">
@@ -49,16 +55,6 @@
 	</div>
 	<?php endif; ?>
 	
-	</div>
-	
-	<div class="col-sm-4 col-md-4 col-lg-3">
-	
-	<?php get_sidebar('pages'); ?>
-		
-	</div>
-
-</div>
-
 </section>
 <!-- MAIN CONTENT END -->
 

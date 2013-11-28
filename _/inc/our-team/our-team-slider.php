@@ -27,7 +27,7 @@ $panels_total = ceil($team_total/$num_cols);
 //'<pre>';print_r($panels_total);echo '</pre>';
  ?>
 
-<section id="<?php echo $slug; ?>-section">
+<section id="<?php echo $slug; ?>-section" class="hidden-xs hidden-sm">
 
 	<span class="icon"></span>
 	
@@ -73,7 +73,7 @@ $panels_total = ceil($team_total/$num_cols);
 	    		}		    	
 	    		?>
 		    	
-		    	<div class="col-sm-3 col-md-3">
+		    	<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 			    		
 		    		<div class="profile-info">
 		    			<figure>

@@ -4,7 +4,7 @@
 
 <?php if (!$home_screen_seen) { ?>
 
-<div id="home-screen">
+<div id="home-screen" class="hidden-xs hidden-sm">
 	
 	<!-- HOME SCREEN WRAP -->
 	<div id="home-screen-wrap" class="sidenav-closed no-touch-move">

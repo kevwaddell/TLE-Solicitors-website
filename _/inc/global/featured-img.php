@@ -22,8 +22,8 @@ $feat_img_caption = $img_item['ft_caption'];
 		<img src="<?php echo $feat_img_url; ?>" width="<?php echo $feat_img_w; ?>" height="<?php echo $feat_img_h; ?>">
 	</div>
 	
-	<div class="corner-top"></div>
-	<div class="corner-bottom"></div>
+	<div class="corner-top hidden-xs"></div>
+	<div class="corner-bottom hidden-xs"></div>
 
 </figure>
 

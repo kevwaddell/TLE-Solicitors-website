@@ -25,14 +25,14 @@
 					
 					<a href="<?php the_permalink(); ?>" class="<?php echo $post->post_name; ?>-link parent-link" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 					
-					<button class="panel-list-btn btn btn-default btn-block list-closed">
-						View Practice Areas 
+					<button class="panel-list-btn btn btn-default btn-block list-closed hidden-xs hidden-sm">
+						Practice Areas 
 						<span class="down"></span>
 						<span class="up"></span>
 					</button>
 					
 					<?php if ($children) { ?>
-					<div class="panel-list-wrap list-closed">
+					<div class="panel-list-wrap list-closed hidden-xs hidden-sm">
 						<ul>
 							<?php foreach($children as $child): ?>
 							
@@ -43,7 +43,7 @@
 					</div>
 					<?php } ?>
 					
-					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="claim-btn btn btn-default btn-lg btn-block">Find out more <span></span></a>
+					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="claim-btn btn btn-default btn-lg btn-block hidden-xs">Find out more <span></span></a>
 					
 				</div>
 				

@@ -6,7 +6,7 @@
 
 <div class="row">
 
-	<div class="col-sm-8 col-md-8 col-lg-9">
+	<div class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
 		
 		<?php include (STYLESHEETPATH . '/_/inc/downloads/downloads-single-vars.php'); ?>
 		
@@ -65,11 +65,11 @@
 			<div class="download-links">
 				<div class="row">
 				
-					<div class="col-sm-6 col-md-6 col-lg-6">
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 					<a href="<?php echo $file; ?>" class="btn btn-default btn-block download-btn" title="Download" target="_blank">Download Brochure</a>
 					</div>
 					
-					<div class="col-sm-6 col-md-6 col-lg-6">
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 hidden-xs">
 					<a href="<?php echo $file; ?>" class="btn btn-default btn-block preview-btn fancybox-pdf" title="Download">Preview Brochure</a>	
 					</div>
 				
@@ -84,7 +84,7 @@
 
 	</div>
 	
-	<div class="col-sm-4 col-md-4 col-lg-3">
+	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
 	
 	<?php get_sidebar('pages'); ?>
 		

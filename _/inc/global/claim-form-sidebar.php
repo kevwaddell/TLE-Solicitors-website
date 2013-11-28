@@ -1,4 +1,6 @@
-<div id="claim-form-wrap" class="no-touch-move <?php echo ($home_screen_seen) ? "fixed":"abs"; ?> <?php echo $home_screen_class; ?>">
+<?php if (!$is_iphone) : ?>
+
+<div id="claim-form-wrap" class="<?php echo ($home_screen_seen) ? "fixed":"abs"; ?> <?php echo $home_screen_class; ?>">
 	
 	<div class="sidebar-inner">
 	
@@ -8,3 +10,5 @@
 	</div>
 	
 </div>
+
+<?php endif;  ?>

@@ -5,7 +5,7 @@
 
 <div class="row">
 
-	<div class="col-sm-8 col-md-8 col-lg-9">
+	<div class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
 	
 	<article class="post">
 		<header class="page-header">
@@ -66,7 +66,7 @@
 	
 	</div>
 	
-	<div class="col-sm-4 col-md-4 col-lg-3">
+	<div class="ccol-xs-12 col-sm-12 col-md-4 col-lg-3">
 	
 	<?php get_sidebar(); ?>
 		

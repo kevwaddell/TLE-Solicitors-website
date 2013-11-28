@@ -1,6 +1,10 @@
 <?php 
 global $post;
 
+if (is_post_type_archive('tlw_jobs_cpt')) {
+$post = get_page_by_title('Careers');	
+}
+
 $related_page_args = array(
 'post_type'			=> 'page',
 'orderby'			=> 'menu_order',
@@ -65,14 +69,16 @@ $downloads = get_posts($downloads_args);
 	</div>
 	 <?php } ?>
 	
-	<?php if (get_field("sidebar", $post->ID)) : ?>
+	<?php if (get_field("sidebar", $post->ID)) : 
+		
+		//echo '<pre>';print_r(get_field("sidebar", $post->ID));echo '</pre>';
+	?>
 	
 	<?php foreach( get_field("sidebar", $post->ID) as $sb_item ): ?>
 		
-		
 		<?php if ($sb_item['acf_fc_layout'] == "sb_contact_form") : 	?>
 		
-		<div class="sidebar-block">
+		<div class="sidebar-block hidden-xs hidden-sm">
 			<h2><?php echo $sb_item['form_title']; ?></h2>
 		
 			<div class="block-content">
@@ -89,7 +95,7 @@ $downloads = get_posts($downloads_args);
 		$sb_img_url = $sb_img_src[0];
 		 ?>
 		
-		<div class="sidebar-image">
+		<div class="sidebar-image hidden-xs hidden-sm">
 			<img src="<?php echo $sb_img_url; ?>" alt="<?php echo $logo['sb_img_alt']; ?>">
 		</div>
 		
@@ -103,7 +109,7 @@ $downloads = get_posts($downloads_args);
 		//echo '<pre>';print_r($download->ID);echo '</pre>';	
 		?>
 
-		<div class="sidebar-downloads">
+		<div class="sidebar-downloads hidden-xs hidden-sm">
 		<a href="<?php echo $file; ?>" title="download: <?php echo $download->post_title; ?>" target="_blank">
 			<img src="<?php echo $sb_img['sizes']['sidebar-img']; ?>" alt="<?php echo $download->post_title; ?>" width="<?php echo $sb_img['sizes']['sidebar-img-widht']; ?>" height="<?php echo $sb_img['sizes']['sidebar-img-height']; ?>">
 		</a>
@@ -124,7 +130,7 @@ $downloads = get_posts($downloads_args);
 		
 	<?php if ($related_pages  && $parent->ID != $practices_page->ID) { ?>
 		
-	<div class="sidebar-block">
+	<div class="sidebar-block hidden-xs hidden-sm">
 	
 	<?php if ($parent) { ?>
 		<h2 class="link"><a href="<?php echo get_permalink($parent->ID); ?>"><?php echo $parent->post_title; ?></a></h2>
@@ -142,7 +148,7 @@ $downloads = get_posts($downloads_args);
 	
 	<?php if ($downloads && is_single() && $post->post_type == "tlw_downloads_cpt") { ?>
 		
-	<div class="sidebar-block">
+	<div class="sidebar-block hidden-xs hidden-sm">
 	
 		<h2 class="link"><a href="<?php echo get_permalink($downloads_page->ID); ?>"><?php echo $downloads_page->post_title; ?></a></h2>
 
@@ -156,7 +162,7 @@ $downloads = get_posts($downloads_args);
 	
 	<?php if ($practices && $post->ID != $practices_page->ID) { ?>
 		
-	<div class="sidebar-block">
+	<div class="sidebar-block hidden-xs hidden-sm">
 	
 		<h2 class="link"><a href="<?php echo get_permalink($practices_page->ID); ?>"><?php echo $practices_page->post_title; ?></a></h2>
 

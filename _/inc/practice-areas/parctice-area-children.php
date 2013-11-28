@@ -24,11 +24,11 @@
 	
 	<article id="list-item-<?php echo $post->post_name; ?>" class="page-list-item">
 					
-		<h2 class="<?php echo $post->post_name; ?>"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute('before=View &after= page'); ?>"><span class="txt"><?php the_title(); ?></span> <span class="icon"></span></a></h2>
+		<h2 class="<?php echo $post->post_name; ?>"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute('before=View &after= page'); ?>"><span class="txt"><?php the_title(); ?></span> <span class="icon hidden-xs"></span></a></h2>
 		
 		<div class="row">
 		
-			<div class="col-sm-8 col-md-8 col-lg-8">
+			<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 				<div class="txt-wrap">
 					<div class="txt-cell">
 				
@@ -38,7 +38,7 @@
 				<?php if ($content_item['acf_fc_layout'] == "cn_intro") : ?>
 	
 
-				<p><?php echo $content_item['intro_txt']; ?></p>
+				<p><?php echo strip_tags($content_item['intro_txt']); ?></p>
 	
 				<?php endif;  ?>
 	
@@ -53,7 +53,7 @@
 				</div>
 			</div>
 			
-			<figure class="img">
+			<figure class="img hidden-xs hidden-sm">
 			
 			<?php if ($child_images) : ?>
 				<?php foreach( $child_images as $img_item ): ?>

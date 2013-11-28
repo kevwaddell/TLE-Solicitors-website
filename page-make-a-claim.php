@@ -5,7 +5,7 @@
 
 <div class="row">
 
-	<div class="col-sm-8 col-md-8 col-lg-9">
+	<div class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
 
 	<?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>	
 	
@@ -46,19 +46,27 @@
 								
 			</article>
 			
-			<?php if ($content) : ?>
-	
-				<?php foreach( $content as $content_item ): ?>
+			<?php if (get_field("content")) : ?>
+
+				<?php while( has_sub_field("content") ): ?>
 		
-				<?php if ($content_item['acf_fc_layout'] == "cn_form") : ?>
+				<?php if (get_row_layout() == "cn_form") : 
+				$global_form_active = get_sub_field('gb_claim_fm');
+				?>
+				
+				<?php if ( !$global_form_active ) : 
+				$claim_form = get_sub_field('form');	
+				?>
 				
 				<div class="form-wrap">
-					<?php gravity_form(1, true, true, false, null, true); ?>
+					<?php gravity_form($claim_form->id, true, true, false, null, true); ?>
 				</div>
 				
 				<?php endif; ?>
 				
-				<?php endforeach; ?>
+				<?php endif; ?>
+				
+				<?php endwhile; ?>
 				
 				<?php endif; ?>
 	
@@ -68,7 +76,7 @@
 	
 	</div>
 	
-	<div class="col-sm-4 col-md-4 col-lg-3">
+	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
 	
 	<?php get_sidebar('pages'); ?>
 		

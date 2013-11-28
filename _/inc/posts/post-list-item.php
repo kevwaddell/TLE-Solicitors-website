@@ -18,7 +18,7 @@
 	</div>
 	
 	<footer>
-		<span class="glyphicon glyphicon-calendar"></span> <time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php echo $post_date; ?> <?php the_time(); ?></time>
+		<span class="glyphicon glyphicon-calendar"></span> <time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php echo $post_date; ?></time>
 		
 		<a href="<?php the_permalink(); ?>" class="view-btn">View Article</a>
 	</footer>

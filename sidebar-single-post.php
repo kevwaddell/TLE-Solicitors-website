@@ -23,6 +23,7 @@
 	 
 	 <?php 
 	$images = get_field("images");
+	//echo '<pre>';print_r($images);echo '</pre>';
 	if ($images) : ?>
 	
 		<?php foreach( $images as $img_item ): ?>
@@ -34,7 +35,6 @@
 			<?php 
 			$gallery_imgs = $img_item['gl_imgs'];
 			//echo '<pre>';print_r($gallery_imgs);echo '</pre>';
-			
 			?>
 			
 			<?php foreach( $gallery_imgs as $gallery_img ): 
@@ -61,7 +61,7 @@
 	<?php endif;  ?>
 	 
 	 <?php if ($topics) { ?>
-	  <div class="sidebar-block">
+	  <div class="sidebar-block hidden-xs hidden-sm">
 	  <h2>Topics</h2>
 	  <ul class="links">
 			<?php foreach ($topics as $topic) { ?>
@@ -71,8 +71,9 @@
 	  </div>
 	 <?php }  ?>
 
-	
+	<div class="hidden-xs hidden-sm">
 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Blog Sidebar') ) : ?>
 <?php endif; ?>
+	</div>
 	
 </aside>

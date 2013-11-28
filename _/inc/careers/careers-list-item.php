@@ -1,7 +1,7 @@
 <?php 
 $end_date_raw = get_field('end_date');
 $end_date_convert = strtotime($end_date_raw);
-$end_date = date('l jS F, Y', $end_date_convert);
+$end_date = date('D jS M, Y', $end_date_convert);
 $content = get_field('content');
 
 if ($content) {
@@ -27,7 +27,7 @@ if ($content) {
 		
 		<?php if ($intro_text) : ?>
 				
-		<p><?php echo $intro_text; ?></p>
+		<p><?php echo strip_tags($intro_text); ?></p>
 		
 		<?php else: ?>
 		

@@ -7,7 +7,7 @@
 
 <div class="row">
 
-	<div class="col-sm-8 col-md-8 col-lg-9">
+	<div class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
 		
 		<?php include (STYLESHEETPATH . '/_/inc/our-team/vars.php'); ?>
 	
@@ -18,10 +18,14 @@
 		<!-- ARTICLE CONTENT START-->	
 		<?php include (STYLESHEETPATH . '/_/inc/pages/page-article-content.php'); ?> 
 		<!-- ARTICLE CONTENT END-->	
+		
+		<!-- OUR TEAM LIST MOBILE-->	
+		<?php include (STYLESHEETPATH . '/_/inc/our-team/our-team-list.php'); ?> 
+		<!-- OUR TEAM LIST MOBILE END-->	
 	
 	</div>
 	
-	<div class="col-sm-4 col-md-4 col-lg-3">
+	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
 	
 	<?php get_sidebar('pages'); ?>
 		

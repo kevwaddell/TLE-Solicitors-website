@@ -5,7 +5,7 @@
 
 	<div class="row">
 
-		<div class="col-sm-8 col-md-8 col-lg-9">
+		<div class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
 
 <?php 
 $page = get_page_by_title('Careers');
@@ -72,7 +72,6 @@ $args = array(
 			'compare' => '>',
 			'type'	=> 'DATE'
 		)
-
 	)
 );
 //echo '<pre>';print_r($wp_query);echo '</pre>';
@@ -98,16 +97,18 @@ $wp_query = new WP_Query( $args );
 				
 			</section>
 
-		<?php else: ?>
+		<?php else: 
+		$no_posts_message = get_field("no_posts_message", $page->ID);
+		//echo '<pre>';print_r($no_posts_message);echo '</pre>';	
+		?>
 			<div class="well no-posts-message">
-				<h2>Sorry</h2>
-				<p>There are no positions open at the moment.</p>
+				<?php echo $no_posts_message; ?>
 			</div>
 		<?php endif; ?>
 
 		</div>
 		
-		<div class="col-sm-4 col-md-4 col-lg-3">
+		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
 	
 			<?php get_sidebar('pages'); ?>
 		

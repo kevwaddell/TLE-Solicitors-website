@@ -15,6 +15,8 @@
 	<?php } ?>
 	<meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
 	<meta name="format-detection" content="telephone=no">
 	
 	<title>
@@ -40,6 +42,11 @@
 			   
 	<meta name="description" content="<?php bloginfo('description'); ?>">
 	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/_/img/favicon.ico">
+	<link rel="apple-touch-icon" href="<?php bloginfo('template_directory'); ?>/_/img/touch-icon-iphone.png" /> 
+	<link rel="apple-touch-icon" sizes="76x76" href="<?php bloginfo('template_directory'); ?>/_/img/touch-icon-ipad.png" /> 
+	<link rel="apple-touch-icon" sizes="120x120" href="<?php bloginfo('template_directory'); ?>/_/img/touch-icon-iphone-retina.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="<?php bloginfo('template_directory'); ?>/_/img/touch-icon-ipad-retina.png" />
+	<link rel="apple-touch-startup-image" href="<?php bloginfo('template_directory'); ?>/_/img/apple-start-up-img.png">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 	<?php wp_head(); ?>
@@ -64,12 +71,14 @@
 
 <body id="home" <?php body_class($home_screen_class); ?>>
 
-<div id="show-main-menu" class="btn-hidden side-form-closed">
+<?php if (!$is_iphone) : ?>
+<div id="show-main-menu" class="btn-hidden side-form-closed hidden-xs">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-4 col-sm-offset-8 col-md-4 col-md-offset-8 col-lg-3 col-lg-offset-9">
+			<div class="col-md-4 col-md-offset-8 col-lg-3 col-lg-offset-9">
 				<button id="show-main-menu-btn">Navigation</button>
 			</div>
 		</div>
 	</div>
 </div>
+<?php endif;  ?>

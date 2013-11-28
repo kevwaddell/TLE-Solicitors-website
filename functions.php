@@ -25,6 +25,8 @@ if ( !function_exists(core_mods) ) {
 	core_mods();
 }
 
+add_theme_support('html5', array('search-form'));
+
 
 if ( function_exists( 'register_nav_menus' ) ) {
 		register_nav_menus(
@@ -87,6 +89,9 @@ if ( function_exists( 'register_sidebar' ) ) {
 	register_sidebar( $newsletter_sb_args );
 	register_sidebar( $newsletter_content_args );
 }
+
+/* DE-REGISTER STYLES */
+include (STYLESHEETPATH . '/_/functions/de-register-styles.php');
 
 /* REGISTER CAREERS CPT */
 include (STYLESHEETPATH . '/_/functions/tlw_carreers_cpt.php');

@@ -22,7 +22,7 @@
 	 <?php } ?>
 	 
 	 <?php if ($topics) { ?>
-	  <div class="sidebar-block">
+	  <div class="sidebar-block hidden-xs hidden-sm">
 	  <h2>Topics</h2>
 	  <ul class="links">
 			<?php foreach ($topics as $topic) { ?>
@@ -32,8 +32,9 @@
 	  </div>
 	 <?php }  ?>
 
-	
+	<div class="hidden-xs hidden-sm">
 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Blog Sidebar') ) : ?>
 <?php endif; ?>
+	</div>
 	
 </aside>
