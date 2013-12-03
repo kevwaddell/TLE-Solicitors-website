@@ -57,6 +57,43 @@
 		.bg-col(@grey70);	
 		.pad(2;2;1;2);
 		.border-radius(4px, 4px, 4px, 0);
+		
+		ul {
+		list-style: none;
+		.pad-left(2);
+			li {
+			.pad-left(2);
+			.rel;
+			}
+			li:before {
+			.abs;
+			.left(0);
+			content: "\00BB";
+			.col(@red);
+			.bold;		
+			.mag-right(1);
+			}
+		}
+		
+		//Ordered list
+		ol {
+		list-style: none;
+		.pad-left(2);
+		list-style-position: inside;
+			li {
+			counter-increment: list-counter;
+			.pad-left(2);
+			.rel;
+				&:before {
+				.abs;
+				.left(0);
+				content: counter(list-counter) ". \0020";
+				.col(@red);
+				.bold;
+				}
+			}
+		}
+
 	}
 	
 	a {

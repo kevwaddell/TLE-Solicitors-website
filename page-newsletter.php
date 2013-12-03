@@ -12,6 +12,8 @@
 	<?php 
 	$images = get_field("images");
 	$content = get_field("content");
+	$form_message = get_field("message");
+	$newsletter_form = get_field("message");
 	?>
 	
 			<article class="page">
@@ -46,10 +48,25 @@
 				
 			</article>
 			
-			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Newsletter Content') ) : ?>
-	
+			<?php if (get_field("content")) : ?>
+
+				<?php while( has_sub_field("content") ): ?>
+		
+				<?php if (get_row_layout() == "cn_form") : 
+				$form = get_sub_field('form');	
+				?>
+				
+				<div class="form-wrap">
+					<h3>Sign up</h3>
+					<?php gravity_form($form->id, false, true, false, null, true); ?>
+				</div>
+				
+				<?php endif; ?>
+				
+				<?php endwhile; ?>
+				
 			<?php endif; ?>
-	
+							
 		<?php endwhile; ?>
 	
 	<?php endif; ?>

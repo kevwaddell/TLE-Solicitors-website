@@ -269,27 +269,41 @@
 	@media (min-width: @screen-sm) { 
 	.pad-all(2);
 	}
+	
+	h3 {
+	.serif;
+	.col(@red);
+	.italic;
+	.font-size(3);
+	.mag-top(0);
+	.mag-bot(1);
+	.center;
+	}
 
-	gforms_confirmation_message {
+	#gforms_confirmation_message {
+		.center;	
 			h3 {
+			.serif;
+			.col(@red);
+			.italic;
+			.font-size(3);
 			.mag-top(0);
+			.mag;
 			}
 			
-			p {
-			.mag-bot(1);
+			p, a {
+			.font-size(1.6);
 			}
+			
 	}
+
 	.gform_wrapper {
 		.mag-all(0);
 		max-width: 100%;
 	
 		.gform_heading {
 		.center;
-				
-			h3.gform_title {
-			.none;
-			}
-			
+							
 			span {
 				.block;
 				.pad-bot(2);

@@ -124,6 +124,9 @@ include (STYLESHEETPATH . '/_/functions/change-cpt-icons.php');
 /* AFC SAVE FUNCTIONS */
 include (STYLESHEETPATH . '/_/functions/afc_save_post.php');
 
+/* SEND NEWSLETTER TO DOTMAILER */
+include (STYLESHEETPATH . '/_/functions/submit_newsletter.php');
+
 holder_add_theme( 'wordpress', '333333', 'eeeeee' );
 holder_add_theme( 'lite-gray', '888888', 'eeeeee' );
  ?>

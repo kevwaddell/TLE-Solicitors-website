@@ -14,6 +14,7 @@ $page_content_raw = $page->post_content;
 $page_content = apply_filters('the_content', $page_content_raw );
 
 $images = get_field("images", $page->ID);
+$content = get_field("content", $page->ID);
 ?>	
 	
 		<article>
@@ -23,9 +24,25 @@ $images = get_field("images", $page->ID);
 			
 			<div class="rule mag-bottom-20"></div>
 			
-			<div class="intro center lrg">
-				<?php echo $page_content; ?>
-			</div>
+			<?php if ($content) : ?>
+	
+		<?php foreach( $content as $content_item ): ?>
+
+			<?php if ($content_item['acf_fc_layout'] == "cn_intro") : ?>
+		
+		<div class="intro center lrg">
+			<p><?php echo $content_item['intro_txt']; ?></p>
+		</div>
+		
+			<?php endif;  ?>
+		
+			<?php endforeach; ?>
+			
+		<div class="rule mag-bottom-20"></div>
+		
+		<?php endif; ?>
+
+			<?php echo $page_content; ?>
 			
 			<div class="rule-sml"></div>
 			
