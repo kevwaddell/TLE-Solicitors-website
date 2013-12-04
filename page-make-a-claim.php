@@ -59,7 +59,7 @@
 				?>
 				
 				<div class="form-wrap">
-					<?php gravity_form($claim_form->id, true, true, false, null, true); ?>
+					<?php gravity_form($claim_form->id, false, true, false, null, true); ?>
 				</div>
 				
 				<?php endif; ?>
