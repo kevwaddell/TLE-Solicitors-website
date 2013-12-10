@@ -1,0 +1,45 @@
+body#login {
+	
+	#site-content {
+	.bg(@red; "user-bg.jpg"; no-repeat; center; center);	
+	.bg-size;
+	//background-size: 50% 50%;
+	}
+	
+	.login {
+	.mag-top(22);
+	.pad(11;2;2;2);
+	.trans-bg(@white; 0.7);
+	.bg-img('tlw-logo.png');
+	.bg-repeat(no-repeat);
+	background-position: 50% 20px;
+	.drop-shadow( 0, 0, 20px, 0.5); 	
+	.rounded(20px);
+	
+		.tml-action-links {
+		.mag-all(0);
+		.pad-all(0);
+		list-style: none;
+		
+			li {
+			.mag-bot(1);	
+			}
+		
+			a {
+			.block;
+			.h(4);
+			.line-h(4);
+			.col(@black);
+			.center;
+			.rounded(4px);
+			.no-text-dec;
+			.border(@grey80, 0.1);
+				&:hover, &:active, &:focus {
+				.bg-col(@grey70);
+				.border-col(@grey);
+				}	
+			}
+		}
+	}
+	
+}

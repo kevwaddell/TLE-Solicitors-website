@@ -1,4 +1,7 @@
-<?php if ($images) : ?>
+<?php 
+$images = get_field("images");
+
+if ($images) : ?>
 
 	<?php foreach( $images as $img_item ): ?>
 	

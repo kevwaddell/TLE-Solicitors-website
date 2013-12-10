@@ -81,7 +81,7 @@
 	
 	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
 	
-	<?php get_sidebar('single-post'); ?>
+	<?php get_sidebar('single'); ?>
 		
 	</div>
 

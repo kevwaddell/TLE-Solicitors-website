@@ -63,6 +63,9 @@
 			<footer>
 
 			<div class="download-links">
+
+				
+				<?php if (!$is_iphone) { ?>
 				<div class="row">
 				
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -74,6 +77,12 @@
 					</div>
 				
 				</div>
+				<?php } else { ?>
+					
+				<a href="<?php echo $file; ?>" class="btn btn-default btn-block download-btn" title="Download" target="_blank">Download Brochure</a>
+					
+				<?php } ?>
+				
 			</div>
 			
 			<?php edit_post_link( 'Edit post', '<span class="edit-link btn btn-default btn-block">', '</span>' ); ?>	

@@ -27,7 +27,8 @@
     directionsDisplay = new google.maps.DirectionsRenderer();
     
     var featureOpts = [
-	    {
+	    /*
+{
       stylers: [
         { hue: '#918e8e' }
       ]
@@ -38,15 +39,16 @@
         { color: '#c60751' }
       ]
     }
+*/
   ];
     
 	var mapOptions = {
 		zoom: 12, 
 		center: myLatLang, 
+		//mapTypeId: TLW_MAPTYPE_ID,
 		mapTypeControlOptions: {
 			 mapTypeIds: [google.maps.MapTypeId.ROADMAP, TLW_MAPTYPE_ID]
-		},
-		mapTypeId: TLW_MAPTYPE_ID
+		}
 		};
 		
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -61,7 +63,8 @@
 		directionsDisplay.setMap(map);
 		directionsDisplay.setPanel(document.getElementById('directions-panel'));
 		
-		var control = document.getElementById('control');
+		/*
+var control = document.getElementById('control');
 		
 		var styledMapOptions = {
 			name: 'Custom Style'
@@ -70,6 +73,7 @@
 		var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
 		
 		map.mapTypes.set(TLW_MAPTYPE_ID, customMapType);
+*/
 		
 	};
 	

@@ -103,6 +103,23 @@ if ($('body').attr("id") == "home") {
 		pause: false,
 		interval: 10000
 		});
+		
+		$('#home-carousel').on('slide.bs.carousel', function () {
+			var bg_img;
+			var first_slide = $(this).children('.carousel-inner').find('.item:first-child');
+			var last_slide = $(this).children('.carousel-inner').find('.item:last-child');
+			var current_slide = $(this).children('.carousel-inner').find('.active');
+			
+			if (current_slide.index() == last_slide.index()) {
+			bg_img = first_slide.find('.img').css('background-image');	
+			$(this).children('.carousel-inner').css('background-image', bg_img);
+			} else {
+			bg_img = current_slide.find('.img').css('background-image');		
+			$(this).children('.carousel-inner').css('background-image', bg_img);
+			}
+			
+			
+  		});
 	}
 	
 	$('#testy-carousel').carousel({
@@ -149,6 +166,32 @@ if ($('body').attr("id") == "home") {
 		}
 		
 	});
+	
+	/* CLAIM TYPES CHANGE FUNCTION 
+		When the claim type slider c
+	*/
+	
+	$('#claim-types-slider').on('slide.bs.carousel', function(e){
+	
+		var practice_info = $(this).find('.practice-info');
+		
+		if (practice_info.hasClass('visible')) {
+			practice_info.removeClass('visible').addClass('hidden');
+		}
+		
+	});
+	
+	$('#claim-types-slider').on('slid.bs.carousel', function(e){
+	
+		var active_item = $(this).find('.item.active');
+		var practice_info =  active_item.find('.practice-info');
+		
+		if (practice_info.hasClass('hidden')) {
+			practice_info.removeClass('hidden').addClass('visible');
+		}
+		
+	});
+	
 	
 	
     /* 
@@ -267,7 +310,10 @@ if ($('body').attr("id") == "home") {
 	    $(this).parent().toggleClass('hover');
 	});
     
-    
+    /* ENTER SITE FROM HOME SCREEN 
+	   When clicked the screen will scroll to the home page
+	   and set a cookie to say that the home screen has been seen.
+    */
     $('body').on(event_type, "button.enter-btn", function(){
 	   
 	  header_pos = $('#home-page-content').offset().top;
@@ -385,7 +431,7 @@ if ($('body').attr("id") == "home") {
 
     
      /* MAKE A CLAIM BUTTON 
-	Opens the sidebar for the Make a clame form
+	When clicked the sidebar make a claim form will slide out.
     */
     
      $('#claim-form-btn').on(event_type, "button", function(){
@@ -406,6 +452,9 @@ if ($('body').attr("id") == "home") {
      });
      
      
+     /* HOME BANNER BUTTON TO SHOW CLAIM FORM 
+	    When clicked the sidebar make a claim form will slide out.
+     */
      $('#home-banner-btn').on(event_type, "button", function(){
      
      	if ($('.page-wrapper').hasClass('side-form-closed')) {
@@ -421,7 +470,7 @@ if ($('body').attr("id") == "home") {
      });
      
       /* 
-    MAKE A CLAIM SIDE BAR LOSE BUTTON 
+    MAKE A CLAIM SIDE BAR CLOSE BUTTON 
 	Closes the sidebar for the Make a clame form.    
     */
     
@@ -440,6 +489,8 @@ if ($('body').attr("id") == "home") {
     	
 	    $('.page-wrapper').removeClass('side-form-open').addClass('side-form-closed');
 	    $('#show-main-menu').removeClass('side-form-open').addClass('side-form-closed');
+	    
+		reset_sideform();
 		
 		return false;
     });

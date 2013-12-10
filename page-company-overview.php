@@ -23,6 +23,16 @@
 			<?php include (STYLESHEETPATH . '/_/inc/company-page/company-tabs.php'); ?> 
 			<!-- SUB PAGE DETAILS END -->
 			
+
+	
+			<?php if ($team_page) { ?>
+			<div class="child-btns visible-sm">
+			
+				<a href="<?php echo get_permalink($team_page->ID); ?>" class="btn btn-default btn-lg btn-block"><?php echo $team_page->post_title; ?></a>
+					    
+			</div>
+			<?php }  ?>
+			
 			<!-- CORPORATE SOCIAL PAGE -->	
 			<?php include (STYLESHEETPATH . '/_/inc/company-page/social-response.php'); ?> 
 			<!-- CORPORATE SOCIAL PAGE END -->

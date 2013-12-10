@@ -14,7 +14,7 @@
 	
 	</header>
 	
-	<div class="rule-sml mag-bottom-20"></div>
+	<div class="rule mag-bottom-20"></div>
 	
 	<?php if ($content) : ?>
 	
@@ -30,14 +30,12 @@
 	
 		<?php endforeach; ?>
 		
-	<div class="rule mag-bottom-20"></div>
+	<div class="rule-sml mag-bottom-20"></div>
 	
 	<?php endif; ?>
 	
 	<?php the_content(); ?>
 	
-	<?php if (!$children) { ?>
 	<p class="tagline">For added TLC Think TLW Solicitors.</p>
-	<?php }  ?>
 
 </article>

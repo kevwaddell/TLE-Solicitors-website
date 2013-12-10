@@ -38,13 +38,13 @@ $content = get_field("content", $page->ID);
 		
 			<?php endforeach; ?>
 			
-		<div class="rule mag-bottom-20"></div>
+		<div class="rule-sml mag-bottom-20"></div>
 		
 		<?php endif; ?>
 
 			<?php echo $page_content; ?>
 			
-			<div class="rule-sml"></div>
+			<div class="rule mag-bottom-20"></div>
 			
 		</article>
 

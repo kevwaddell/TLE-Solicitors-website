@@ -1,8 +1,6 @@
-<?php 
-$freephone_box_active = get_field('sb_freephone_active', 'option');
- ?>
- 
  <?php 
+ $freephone_box_active = get_field('sb_freephone_active', 'option');
+ 
  if ($freephone_box_active) { 
 	 $freephone_box_title =  get_field('freephone_box_title', 'option');
 	 $freephone_box_number = get_field('freephone_tel', 'option');

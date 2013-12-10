@@ -10,6 +10,7 @@
 	<?php 
 	$blog_page_ID = get_option('page_for_posts');
 	$blog_page = get_page($blog_page_ID);
+	$content_intro = get_field("content", $blog_page_ID);
 	//echo '<pre>';print_r($blog_page);echo '</pre>';
 	$blog_page_content = $blog_page->post_content;
 	$content = apply_filters('the_content', $blog_page_content );
@@ -21,11 +22,28 @@
 		<time class="date" datetime="<?php echo date('Y-m-d', time()); ?>"><span class="glyphicon glyphicon-calendar"></span> <?php echo date('l - jS F - Y', time()); ?></time>
 		</header>
 		
-		<?php if ($content) { ?>
-		<div class="page-intro">
-			<?php echo $content; ?>
+		<?php if ($content_intro) : ?>
+
+			<?php foreach( $content_intro as $content_item ): ?>
+	
+			<?php if ($content_item['acf_fc_layout'] == "cn_intro") : ?>
+		
+		<div class="intro center lrg">
+			<p><?php echo $content_item['intro_txt']; ?></p>
 		</div>
+		
+			<?php endif;  ?>
+		
+			<?php endforeach; ?>
+			
+		<div class="rule-sml"></div>
+		
+		<?php endif; ?>
+		
+		<?php if ($content) { ?>
+		<?php echo $content; ?>
 		<?php } ?>
+		
 	</article>
 	
 	<div class="rule"></div>

@@ -1,4 +1,13 @@
-<section id="home-slider" class="wireframe">
+<?php  
+$slides = get_field('slides');	
+$first_slide_img = get_field('first_slide_img');	
+$slides_total = count($slides);
+$indicator_counter = 0;
+$slides_counter = 0;
+//echo '<pre>';print_r($first_slide_img);echo '</pre>';	
+//echo '<pre>';print_r($slides);echo '</pre>';	
+?>
+<section id="home-slider">
 		
 	<!-- <div class="caption-bg"></div> -->
 			
@@ -7,84 +16,48 @@
 	 <!-- Indicators -->
 	  <ol class="carousel-indicators">
 	    <li data-target="#home-carousel" data-slide-to="0" class="active first"></li>
-	    <li data-target="#home-carousel" data-slide-to="1" data-toggle="tooltip" data-title="Clinical Negligence" class="clinical-negligence tool-tip"></li>
-	    <li data-target="#home-carousel" data-slide-to="2" data-toggle="tooltip" data-title="Personal Injury" class="personal-injury tool-tip"></li>
-	    <li data-target="#home-carousel" data-slide-to="3" data-toggle="tooltip" data-title="Road Traffic Accidents" class="rta tool-tip"></li>
-	    <li data-target="#home-carousel" data-slide-to="4" data-toggle="tooltip" data-title="Professional Negligence" class="professional-negligence tool-tip"></li>
-	    <li data-target="#home-carousel" data-slide-to="5" data-toggle="tooltip" data-title="Business Litigation" class="business-litigation tool-tip"></li>
+	    
+	    <?php foreach ($slides as $indicator) { 
+		 $indicator_counter++;
+	    ?>
+	     <li data-target="#home-carousel" data-slide-to="<?php echo $indicator_counter; ?>" data-toggle="tooltip" data-title="<?php echo $indicator['title']; ?>" class="tool-tip">
+		     <img src="<?php echo $indicator['icon']['url']; ?>" width="<?php echo $indicator['icon']['width']; ?>" height="<?php echo $indicator['icon']['height']; ?>" alt="<?php echo $indicator['title']; ?>">
+	     </li>
+	    <?php } ?>
+	    
 	  </ol>
 	
 	  <!-- Wrapper for slides -->
-	  <div class="carousel-inner">
-	    <div id="carousel-example-1" class="item active">
+	  <div class="carousel-inner" style="background-image: url(<?php echo $slides[0]['img']['url']; ?>);">
+	   
+	    <div id="slide-<?php echo $slides_counter; ?>" class="item active">
 	    
-	    <figure class="img" style="background-image: url(<?php bloginfo('stylesheet_directory');?>/_/img/slide-1.jpg?v=2);">
-	    	<!-- <img src="http://muddytracks.files.wordpress.com/2011/05/whitley-bay.jpg" alt="Slider image 1"> -->
+	    <figure class="img" style="background-image: url(<?php echo $first_slide_img['url']; ?>);">
+	    	<!-- <img src="<?php echo $first_slide_img['url']; ?>" alt="Slider image 1"> -->
 	    </figure>
 	      
 	    </div>
 	    
-	    <div id="carousel-example-2" class="item">
+	    <?php foreach ($slides as $slide) { 
+		 $slides_counter++; 
+		 $img_url =  $slide['img']['url']; 
+	    ?>
+	   
+	    <div id="slide-<?php echo $slides_counter; ?>" class="item">
 	    
-	     <figure class="img" style="background-image: url(<?php bloginfo('stylesheet_directory');?>/_/img/slide-2.jpg?v=3);">
-	     	<!-- <img src="http://tlw-wireframes.dev/wp-content/themes/tlwwireframedesign1/_/img/slide-2.jpg" alt="Slider image 2"> -->
+	     <figure class="img" style="background-image: url(<?php echo $img_url; ?>);">
+	     	<!-- <img src="<?php echo $img_url; ?>" alt="Slider image <?php echo $slides_counter+1; ?>"> -->
 	     </figure>
 	     
 	      <div class="carousel-caption">
 	       	<p class="tag">We Specialise in&hellip;</p>
-	        <p class="title">Clinical Negligence</p>
+	        <p class="title"><?php echo $slide['title']; ?></p>
 	      </div>
 	      
 	    </div>
-	    
-	    <div id="carousel-example-3" class="item">
-	    
-	    <figure class="img" style="background-image: url(<?php bloginfo('stylesheet_directory');?>/_/img/slide-3.jpg?v=6);">
-	    	<!-- <img src="http://tlw-wireframes.dev/wp-content/themes/tlwwireframedesign1/_/img/slide-2.jpg" alt="Slider image 3"> -->
-	    </figure>
-	   
-	      <div class="carousel-caption">
-	       <p class="tag">We Specialise in&hellip;</p>
-	       <p class="title">Personal Injury</p>
-	      </div>
-	    </div>
-	    
-	     <div id="carousel-example-4" class="item">
-	    
-	    <figure class="img" style="background-image: url(<?php bloginfo('stylesheet_directory');?>/_/img/slide-6.jpg?v=1);">
-	    	<!-- <img src="http://tlw-wireframes.dev/wp-content/themes/tlwwireframedesign1/_/img/slide-2.jpg" alt="Slider image 3"> -->
-	    </figure>
-	   
-	      <div class="carousel-caption">
-	       <p class="tag">We Specialise in&hellip;</p>
-	       <p class="title">Road Traffic Accidents</p>
-	      </div>
-	    </div>
-	    
-	    <div id="carousel-example-5" class="item">
-	    
-	    <figure class="img" style="background-image: url(<?php bloginfo('stylesheet_directory');?>/_/img/slide-4.jpg?v=1);">
-	    	<!-- <img src="http://tlw-wireframes.dev/wp-content/themes/tlwwireframedesign1/_/img/slide-4.jpg" alt="Slider image 4"> -->
-	    </figure>
-	   
-	      <div class="carousel-caption">
-	       <p class="tag">We Specialise in&hellip;</p>
-	       <p class="title">Professional Negligence</p>
-	      </div>
-	    </div>
-	    
-	     <div id="carousel-example-6" class="item">
-	    
-	    <figure class="img" style="background-image: url(<?php bloginfo('stylesheet_directory');?>/_/img/slide-5.jpg?v=2);">
-	    	<!-- <img src="http://tlw-wireframes.dev/wp-content/themes/tlwwireframedesign1/_/img/slide-4.jpg" alt="Slider image 5"> -->
-	    </figure>
-	   
-	      <div class="carousel-caption">
-	       <p class="tag">We Specialise in&hellip;</p>
-	       <p class="title">Corporate Litigation</p>
-	      </div>
-	    </div>
-	
+
+	    <?php } ?>  
+	    	
 	  </div>
 	
 	</div>

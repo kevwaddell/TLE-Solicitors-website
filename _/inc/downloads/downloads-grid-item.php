@@ -15,7 +15,10 @@
 	<div class="download-btns">
 	
 	<a href="<?php echo $file; ?>" title="Download" target="_blank" class="btn btn-default btn-block download-btn">Download</a>
-	<a href="<?php echo $file; ?>" title="Preview" class="btn btn-default btn-block preview-btn fancybox-pdf hidden-xs">Preview</a>
+	
+	<?php if (!$is_iphone) { ?>
+	<a href="<?php echo $file; ?>" title="Preview" class="btn btn-default btn-block preview-btn fancybox-pdf">Preview</a>
+	<?php } ?>
 	
 	</div>
 

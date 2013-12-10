@@ -33,4 +33,6 @@
 	
 	<?php }  ?>
 	
+	<p class="tagline">For added TLC Think TLW Solicitors.</p>
+	
 </article>

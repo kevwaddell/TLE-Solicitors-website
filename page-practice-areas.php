@@ -1,15 +1,8 @@
 <?php get_header(); ?>
 
-<!-- MAIN CONTENT START -->
-<section id="main-content" class="content container">
+<?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>	
 
-<div class="row">
-
-	<div class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
-
-	<?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>	
-	
-	<?php 
+<?php 
 
 	$children_args = array(
 	'post_type'		=> 'page',
@@ -22,7 +15,26 @@
 	
 	$images = get_field("images");
 	$content = get_field("content");
-	?>	
+	
+	global $is_iphone;
+?>	
+
+<?php if ( $children ): ?>	
+			<!-- PRACTICES SLIDER START -->
+			
+<?php include (STYLESHEETPATH . '/_/inc/practice-areas/practice-areas-slider-top.php'); ?>
+
+<!-- PRACTICES SLIDER END -->
+<?php endif; ?>
+
+
+<!-- MAIN CONTENT START -->
+<section id="main-content" class="content container">
+
+<div class="row">
+
+	<div class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
+
 			<!-- FEATURED IMAGE START-->	
 			<?php include (STYLESHEETPATH . '/_/inc/global/featured-img.php'); ?> 
 			<!-- FEATURED IMAGE END -->
@@ -31,13 +43,8 @@
 			<?php include (STYLESHEETPATH . '/_/inc/practice-areas/parctice-area-content.php'); ?> 
 			<!-- ARTICLE CONTENT END-->	
 			
+			<?php include (STYLESHEETPATH . '/_/inc/practice-areas/parctice-area-children.php'); ?> 
 		
-			<?php include (STYLESHEETPATH . '/_/inc/practice-areas/parctice-area-children.php'); ?> 	
-			
-		<?php endwhile; ?>
-	
-	<?php endif; ?>
-	
 	</div>
 	
 	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
@@ -50,5 +57,9 @@
 
 </section>
 <!-- MAIN CONTENT END -->
+
+	<?php endwhile; ?>
+
+<?php endif; ?>
 
 <?php get_footer(); ?>

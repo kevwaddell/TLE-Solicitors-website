@@ -1,16 +1,5 @@
 <aside id="right-sidebar" class="sidebar">
 
-	<?php 
-	$topics_args = array(
-	'type'                     => 'post',
-	'taxonomy'                 => 'category'
-	);  
-	
-	$topics = get_categories( $topics_args );
-	//echo '<pre>';print_r($topics);echo '</pre>';
-	$freephone_box_active = get_field('sb_freephone_active', 'option');
-	 ?>
-	 
 	 <?php include (STYLESHEETPATH . '/_/inc/sidebar/sidebar-freephone.php'); ?>
 	 
 	 <?php include (STYLESHEETPATH . '/_/inc/sidebar/sidebar-topics.php'); ?>

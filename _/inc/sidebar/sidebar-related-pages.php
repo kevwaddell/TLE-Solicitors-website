@@ -1,4 +1,4 @@
-<?php if ($related_pages  && $parent->ID != $practices_page->ID) { ?>
+<?php if ($related_pages && $parent->ID != $practices_page->ID && $post->ID != $practices_page->ID) { ?>
 		
 <div class="sidebar-block hidden-xs hidden-sm">
 

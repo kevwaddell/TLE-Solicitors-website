@@ -22,7 +22,7 @@
 				<h1><span><?php the_title(); ?></span></h1>
 				</header>
 				
-				<div class="rule-sml mag-bottom-20"></div>
+				<div class="rule mag-bottom-20"></div>
 				
 				<?php if ($content) : ?>
 	

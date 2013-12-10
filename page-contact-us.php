@@ -27,7 +27,7 @@
 			<h1><span><?php the_title(); ?></span></h1>
 			</header>
 			
-			<div class="intro center lrg">
+			<div class="intro lrg">
 			<?php the_content(); ?>
 			</div>
 			

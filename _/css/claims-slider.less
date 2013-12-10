@@ -1,0 +1,244 @@
+#claim-types-section {
+
+	span.icon {
+		.abs;
+		.top(-2);
+		.w(3);
+		.h(4);
+		left: 50%;
+		.mag-left(-1.5);	
+		.bg-pos(transparent; no-repeat;center ;center);
+			
+			&.clinical-negligence-icon-sml {
+			.bg-img("clinical-negligence-icon-sml.png");
+			}
+			
+			&.personal-injury-icon-sml {
+			.bg-img("personal-injury-icon-sml.png");
+			}
+			
+			&.road-traffic-accidents-icon-sml {
+			.bg-img("road-traffic-accidents-icon-sml.png");
+			}
+			
+			&.professional-negligence-icon-sml {
+			.bg-img("professional-negligence-icon-sml.png");
+			}
+			
+			&.commercial-litigation-icon-sml {
+			.bg-img("commercial-litigation-icon-sml.png");
+			}
+
+	}
+
+}
+
+#claim-types-slider {
+	.mag-bot(2);
+		
+	.carousel-indicators {
+	.rel;
+	top: auto;
+	left: auto;
+	width: auto;
+	height: auto;
+	bottom: auto;
+	.mag-left(-1.5);
+	.pad-all(0);
+		
+		li {	
+		.block;	
+		text-indent: 0;
+		height: auto;
+		width: 50%;
+		.no-border;
+		.mag-all(0);
+		.mag-bot(.5);
+		.font-size(1.2);
+		.center;
+		.caps;
+		.slab-serif;
+		.line-h(1.2);
+		.rounded(0px);
+		.bg-col(transparent);
+		
+		@media (min-width: @screen-md) { 
+		width: 100%;
+		}
+		
+		span {
+		.block;	
+		.rounded(4px);
+		.bg-col(@grey70);
+		.col(@grey);
+		.pad(1;1;1;1);
+		}
+	
+		@media (min-width: @screen-lg) { 
+		.font-size(1.4);
+		.line-h(1.4);
+		.mag-bot(1);
+		}
+		
+			&:hover, &:active, &:focus {
+			
+				span {
+				.bg-col(@grey);	
+				.col(@white);
+				}
+			}
+			
+			&.active {
+				span {
+				.bg-col(@red);	
+				.col(@white);
+				}
+			}
+		}
+	}
+
+	.carousel-inner {
+	//.pad-left(29);
+	.h(41);
+	.border(@red, 0.5);
+	.rounded(10px);
+	.bg-col(@white);
+	.shadow-inset-10;
+	.mag-bot(2);
+	
+	@media (min-width: @screen-md) { 
+	.h(36);
+	.mag-bot(0);
+	}
+	
+	@media (min-width: @screen-lg) { 
+	.h(46);
+	}
+	
+		.item {
+		.h(40);	
+		.bg-col(@grey70);
+		.rounded(5px);
+		.shadow-inset-10;
+		.left(0);
+		.over-hide;
+		.bg-repeat(no-repeat);
+		background-position: center center;
+		.bg-size(contain);
+		 -webkit-transition: 0.6s ease-in-out top;
+	     -moz-transition: 0.6s ease-in-out top;
+	      -ms-transition: 0.6s ease-in-out top;
+	       -o-transition: 0.6s ease-in-out top;
+	          transition: 0.6s ease-in-out top;
+	          
+	     @media (min-width: @screen-md) { 
+		.h(35);
+		}
+	
+		 @media (min-width: @screen-lg) { 
+		.h(45);
+		 }
+	          
+	         &.active {
+		     .top(0);   
+	         }
+	          
+	         &.next {
+		     .top(40);
+		     	 @media (min-width: @screen-md) { 
+				 .top(35);
+				 } 
+				 @media (min-width: @screen-lg) { 
+				.top(45);
+				}  
+	         }
+	          
+	         &.prev {
+		      .top(40);  
+		     	 @media (min-width: @screen-md) { 
+				 .top(35);
+				 } 
+				 @media (min-width: @screen-lg) { 
+				 .top(45);
+				}  
+	         }
+	          
+	         &.next.left, &.prev.right {
+		     .top(0);   
+	         }
+	          
+	         &.active.left {
+		     .top(-40);  
+		     	 @media (min-width: @screen-md) { 
+				 .top(-35);
+				 } 
+				 @media (min-width: @screen-lg) { 
+				 .top(-45);
+				}   
+	         }
+	          
+	         &.active.right {
+		     .top(-40);  
+		     	 @media (min-width: @screen-md) { 
+				 .top(-35);
+				 } 
+				 @media (min-width: @screen-lg) { 
+				 .top(-45);
+				}   
+	         }
+	         
+	         img {
+		     .abs;
+		     .top(0);
+		     .left(0);
+			 width: auto !important;
+			 height: 100% !important;
+	         }
+			
+			.practice-info {
+			.abs;
+			.trans-bg(@white; 0.8);
+			.left(2);
+			.right(2);
+			.bottom(2);
+			.pad-all(1.5);
+			.rounded(4px);
+			.font-size(1.6);
+			.serif;
+			.italic;
+			.col(@black);
+			
+				br {
+				.none;	
+				}
+				
+				&.hidden {
+				.opacity(0.0);
+				}
+				
+				&.visible {
+				.opacity(1.0);
+				}
+				
+				.view-btn {
+				.no-border;
+				.bg-col(@redMid);
+				.bg(@redMid; "circle-arrow-right-20x20.png"; no-repeat; right ; center);
+				.col(@white);
+				.slab-serif;
+				.caps;
+				.mag-top(1);
+				font-style: normal;	
+					&:hover, &:active, &:focus {
+					.bg-col(@redDk);	
+					}
+				}
+			}
+		}
+	}
+	
+	&.top-page {
+	.mag-bot(0);
+	}	
+	
+}

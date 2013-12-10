@@ -39,12 +39,29 @@ $tab_panel_counter = 0;
 	<?php foreach ( $children as $post ) : 
 	setup_postdata($post);
 	$tab_panel_counter++;
+	$content = get_field('content', $post->ID);
 	?>	
 	
 		<div id="panel-<?php echo $post->post_name; ?>" class="tab-pane <?php echo ($tab_panel_counter == 1) ? 'active fade in': 'fade'; ?>">
 			
 			<div class="txt-wrap">
+			
+				<?php if ($content) : ?>
+		
+				<?php foreach( $content as $content_item ): ?>
+	
+				<?php if ($content_item['acf_fc_layout'] == "cn_intro") : ?>
+		
+				<p><strong><?php echo $content_item['intro_txt']; ?></strong></p>
+		
+				<?php endif;  ?>
+		
+				<?php endforeach; ?>
+	
+				<?php endif; ?>
+
 				<?php the_content(); ?>
+				
 			</div>
 			
 		</div>

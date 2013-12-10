@@ -2,7 +2,15 @@
 			
 	<div class="rule"></div>
 	
-	<section id="<?php echo $post->post_name; ?>-page-children" class="pages-list">
+	<div id="page-children-btns" class="child-btns hidden-xs mag-top-20">
+	
+	<?php foreach ( $children as $child ) : ?>	
+		<a href="<?php echo get_permalink($child->ID); ?>" title="View <?php echo $child->post_title; ?> page" class="btn btn-default btn-lg btn-block"><?php echo $child->post_title; ?></a>
+	<?php endforeach; ?>
+	
+	</div>
+	
+	<section id="<?php echo $post->post_name; ?>-page-children" class="pages-list visible-xs">
 
 	<?php foreach ( $children as $post ) : 
 	setup_postdata($post);
@@ -86,7 +94,7 @@
 		
 		<?php if ($grand_children) { ?>
 		
-		<button class="inactive-btn list-btn"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span><span class="glyphicon glyphicon-remove"></span> View Practises</button>
+		<button class="inactive-btn list-btn"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span><span class="glyphicon glyphicon-remove"></span> View More details</button>
 		
 			<ul class="closed">
 				<?php foreach ($grand_children as $grand_child) { ?>

@@ -1,5 +1,7 @@
 <?php get_header('home'); ?>
 
+<?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>	
+
 <?php include (STYLESHEETPATH . '/_/inc/home-page/vars.php'); ?> 
 
 <?php if (!$home_screen_seen) { ?>
@@ -66,5 +68,7 @@
 	
 	<?php include (STYLESHEETPATH . '/_/inc/global/social-panel.php'); ?> 
 		
-	
+<?php endwhile; ?>
+<?php endif; ?>
+
 <?php get_footer('home'); ?>

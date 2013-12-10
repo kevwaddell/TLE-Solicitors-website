@@ -15,63 +15,18 @@
 		
 		$images = get_field("images", $page->ID);
 		$content = get_field("content", $page->ID);
+		global $is_iphone;
 		?>	
 		
 		<!-- FEATURED IMAGE START-->	
 		<?php include (STYLESHEETPATH . '/_/inc/global/featured-img.php'); ?> 
 		<!-- FEATURED IMAGE END -->
 	
-		<article>
-			
-			<header class="page-header">
-			<h1><span><?php echo $page->post_title; ?></span></h1>
-			</header>
-			
-			<div class="rule mag-bottom-20"></div>
-			
-			<?php if ($content) : ?>
-
-			<?php foreach( $content as $content_item ): ?>
-	
-			<?php if ($content_item['acf_fc_layout'] == "cn_intro") : ?>
+		<!-- CONTENT START-->	
+		<?php include (STYLESHEETPATH . '/_/inc/downloads/downloads-archive-content.php'); ?> 
+		<!-- CONTENT END -->
 		
-			<div class="intro center lrg">
-				<p><?php echo $content_item['intro_txt']; ?></p>
-			</div>
-		
-			<?php endif;  ?>
-		
-			<?php endforeach; ?>
-			
-			<div class="rule-sml"></div>
-			
-			<?php endif; ?>
-				
-			<?php echo $page_content; ?>
-					
-		</article>
-		
-		<div class="rule"></div>
-
-<?php 
-$post_type = get_query_var( 'post_type' ); 
-$posts_per_page = get_query_var('posts_per_page'); 
-$paged = get_query_var( 'paged' ); 
-$today_raw = time();
-$today = date("Ymd", $today_raw);
-//echo '<pre>';print_r($today);echo '</pre>';
-
-$args = array(
-	'post_type' => $post_type,
-	'posts_per_page' => $posts_per_page,
-	'paged' => $paged,
-	'meta_key' => 'download_file',
-	'orderby'	=> 'title',
-	'order'	=> 'ASC'
-);
-//echo '<pre>';print_r($wp_query);echo '</pre>';
-$wp_query = new WP_Query( $args );
-?>
+<?php include (STYLESHEETPATH . '/_/inc/downloads/downloads-archive-vars.php'); ?> 
 		 
 <?php if ( have_posts() ): ?>	
 		 

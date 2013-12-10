@@ -30,11 +30,12 @@ position: inherit;
 				.bg(transparent; "main-nav-arrow.png"; no-repeat;  center ;top);
 					&:hover,&:active, &:focus {
 					background-position: center bottom;
+					.bg-col(@redMid);
 					}
 				}
 				
 				&:hover, &:active, &:focus  {
-				.border-col(@redMid);	
+				.border-col(@redMid);		
 				}
 			}
 			
@@ -44,7 +45,7 @@ position: inherit;
 				background-position: center bottom;
 				.col(@white);
 				}
-					
+		
 			}
 			
 			a {
@@ -201,9 +202,15 @@ position: inherit;
 				.bg-col(@red);
 				.col(@white);	
 				.border-radius(4px, 0,  0, 4px);
+					
+					&:hover, &:active, &:focus {
+					.bg-col(@redMid);	
+					}
+					
 				}
 				
-				&.with-sub-nav {
+				&.with-sub-nav, &.sub-hover {
+				
 					a {
 					.bg(@red; "main-nav-arrow.png"; no-repeat;  center ;bottom);
 						&:hover, &:active, &:focus {
@@ -211,12 +218,19 @@ position: inherit;
 						}
 					}
 					
+					&:hover {
+						a {
+						.bg-col(@redMid);
+						}	
+					}
+	
 					ul.sub-menu li {
 					 		a { 
 						 	background-image: none;
 						 	.bg-col(transparent);
 						 	}
 					}
+					
 				}
 				
 				&.one-level-menu {

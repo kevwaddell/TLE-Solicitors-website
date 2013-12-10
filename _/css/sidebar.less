@@ -54,6 +54,33 @@
 								.border-bot(transparent, 1);
 							}
 						}
+						//child ul
+						ul.children{
+						.mag-top(1);
+						list-style: none;	
+						.pad-left(0);
+						
+							li {
+							.no-border;
+							
+								a {
+								.col(@grey80);	
+									&:hover, &:active, &:focus {
+									.col(@red);	
+									}
+								}
+								
+								&:before {
+								.fleft;
+								.line-h(1);
+								content: "\00BB";
+								.col(@red);
+								.bold;		
+								.mag-right(1);
+								}	
+							}
+						}//child ul
+						
 					}
 			}
 			

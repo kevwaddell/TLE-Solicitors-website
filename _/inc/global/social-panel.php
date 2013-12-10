@@ -1,6 +1,6 @@
 <!-- SOCIAL MEDIA SECTION -->
 	
-<section id="social-media">
+<section id="social-media" class="wide-panel">
 
 	<span class="icon"></span>
 	
@@ -13,7 +13,7 @@
 		<div class="row">
 			
 			<div class="col-xs-3 col-sm-2 col-md-1 col-lg-1 social-icon">
-				<a href="https://twitter.com/TLWSolicitors" title="View Twitter page"><img src="<?php echo get_stylesheet_directory_uri() ?>/_/img/twitter-icon-lg.png" alt="Twitter"></a>
+				<a href="https://twitter.com/TLWSolicitors" target="_blank" title="View Twitter page"><img src="<?php echo get_stylesheet_directory_uri() ?>/_/img/twitter-icon-lg.png" alt="Twitter"></a>
 			</div>
 			
 			<div class="col-xs-12 col-sm-4 col-md-5 col-lg-2 hidden-xs">
@@ -48,7 +48,7 @@
 			</div>
 			
 			<div class="col-xs-3 col-sm-2 col-md-1 col-lg-1 social-icon">
-				<a href="#" title="View LinkedIn page"><img src="<?php echo get_stylesheet_directory_uri() ?>/_/img/linkedin-icon-lg.png" alt="LinkedIn"></a>
+				<a href="#" target="_blank" title="View LinkedIn page"><img src="<?php echo get_stylesheet_directory_uri() ?>/_/img/linkedin-icon-lg.png" alt="LinkedIn"></a>
 			</div>
 			
 			<div class="col-xs-12 col-sm-4 col-md-5 col-lg-2 hidden-xs">
@@ -73,7 +73,7 @@
 			</div>
 			
 			<div class="col-xs-3 col-sm-2 col-md-1 col-lg-1 social-icon">
-				<a href="#" title="View Google+ page"><img src="<?php echo get_stylesheet_directory_uri() ?>/_/img/google-icon-lg.png" alt="Google+"></a>
+				<a href="#" target="_blank" title="View Google+ page"><img src="<?php echo get_stylesheet_directory_uri() ?>/_/img/google-icon-lg.png" alt="Google+"></a>
 			</div>
 			
 			<div class="col-xs-12 col-sm-4 col-md-5 col-lg-2 hidden-xs">
