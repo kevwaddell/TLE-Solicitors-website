@@ -17,11 +17,8 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<meta name="format-detection" content="telephone=yes">
 	
-	<title><?php bloginfo('name'); echo ' | '; wp_title(''); ?></title>
-	
 	<meta name="title" content="<?php bloginfo('name'); echo ' | '; wp_title(''); ?>">
 		   
-	<meta name="description" content="<?php bloginfo('description'); ?>">
 	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/_/img/favicon.ico">
 	<link rel="apple-touch-icon" href="<?php bloginfo('template_directory'); ?>/_/img/touch-icon-iphone.png" /> 
 	<link rel="apple-touch-icon" sizes="76x76" href="<?php bloginfo('template_directory'); ?>/_/img/touch-icon-ipad.png" /> 

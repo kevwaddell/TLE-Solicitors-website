@@ -17,27 +17,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<meta name="format-detection" content="telephone=yes">
-	
-	<title>
-		   <?php
-		      if (function_exists('is_tag') && is_tag()) {
-		         single_tag_title("Tag Archive for &quot;"); echo '&quot; | '; }
-		      elseif (is_category()) {
-		         single_cat_title(''); echo ' | '; }
-		      elseif (is_search()) {
-		         echo 'Search for &quot;'.wp_specialchars($s).'&quot; - '; }
-		      elseif (!(is_404()) && (is_single()) || (is_page()) && (!is_front_page())) {
-		         wp_title(''); echo ' | '; }
-		      elseif (is_404()) {
-		         echo 'Not Found | '; }
-		      if (is_home() || is_front_page()) {
-		         bloginfo('name'); echo ' | '; bloginfo('description'); }
-		      else {
-		          bloginfo('name'); }
-		      if ($paged>1) {
-		         echo ' | page '. $paged; }
-		   ?>
-	</title>
+
 	
 	<meta name="title" content="<?php
 		      if (function_exists('is_tag') && is_tag()) {
@@ -58,7 +38,6 @@
 		         echo ' - page '. $paged; }
 		   ?>">
 		   
-	<meta name="description" content="<?php bloginfo('description'); ?>">
 	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/_/img/favicon.ico">
 	<link rel="apple-touch-icon" href="<?php bloginfo('template_directory'); ?>/_/img/touch-icon-iphone.png" /> 
 	<link rel="apple-touch-icon" sizes="76x76" href="<?php bloginfo('template_directory'); ?>/_/img/touch-icon-ipad.png" /> 
