@@ -17,7 +17,9 @@
 			</div>
 			
 			<div class="col-xs-12 col-sm-4 col-md-5 col-lg-2 hidden-xs">
-					<?php tlw_twitter_feed(); ?>
+				<div class="feed-wrap">
+					<?php echo do_shortcode('[wp_rss_multi_importer category="2"]'); ?>	
+				</div>
 			</div>		
 				
 			<div class="col-xs-3 col-sm-2 col-md-1 col-lg-1 social-icon">
@@ -27,22 +29,7 @@
 			<div class="col-xs-12 col-sm-4 col-md-5 col-lg-2 hidden-xs">
 				
 				<div class="feed-wrap">
-					<ul>
-						<li>
-							<a href="">Vellupta eceperiori con prem. Hendigenis auda sa velessunt.</a>
-							<small>19 September 2013</small>
-						</li>
-					
-						<li>
-							<a href="">Vellupta eceperiori con prem. Hendigenis auda sa velessunt.</a>
-							<small>19 September 2013</small>
-						</li>
-						
-						<li>
-							<a href="">Vellupta eceperiori con prem. Hendigenis auda sa velessunt.</a>
-							<small>19 September 2013</small>
-						</li>
-					</ul>	
+					<?php echo do_shortcode('[wp_rss_multi_importer category="4"]'); ?>
 				</div>
 				
 			</div>
@@ -53,22 +40,7 @@
 			
 			<div class="col-xs-12 col-sm-4 col-md-5 col-lg-2 hidden-xs">
 				<div class="feed-wrap">
-					<ul>
-						<li>
-							<a href="">Vellupta eceperiori con prem. Hendigenis auda sa velessunt.</a>
-							<small>19 September 2013</small>
-						</li>
-					
-						<li>
-							<a href="">Vellupta eceperiori con prem. Hendigenis auda sa velessunt.</a>
-							<small>19 September 2013</small>
-						</li>
-						
-						<li>
-							<a href="">Vellupta eceperiori con prem. Hendigenis auda sa velessunt.</a>
-							<small>19 September 2013</small>
-						</li>
-					</ul>	
+					<?php echo do_shortcode('[wp_rss_multi_importer category="3"]'); ?>	
 				</div>
 			</div>
 			
@@ -78,22 +50,7 @@
 			
 			<div class="col-xs-12 col-sm-4 col-md-5 col-lg-2 hidden-xs">
 				<div class="feed-wrap">
-					<ul>
-						<li>
-							<a href="">Vellupta eceperiori con prem. Hendigenis auda sa velessunt.</a>
-							<small>19 September 2013</small>
-						</li>
-					
-						<li>
-							<a href="">Vellupta eceperiori con prem. Hendigenis auda sa velessunt.</a>
-							<small>19 September 2013</small>
-						</li>
-						
-						<li>
-							<a href="">Vellupta eceperiori con prem. Hendigenis auda sa velessunt.</a>
-							<small>19 September 2013</small>
-						</li>
-					</ul>	
+					<?php echo do_shortcode('[wp_rss_multi_importer category="1"]'); ?>	
 				</div>
 			</div>
 			
